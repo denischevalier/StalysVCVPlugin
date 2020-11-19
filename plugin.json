@@ -7,9 +7,9 @@
   "author": "Denis Dubo Chevalier",
   "authorEmail": "stalysmusic@gmail.com",
   "authorUrl": "https://linktr.ee/stalysmusic",
-  "pluginUrl": "https://github.com/denischevalier/vcdualneuron",
-  "manualUrl": "https://github.com/denischevalier/vcdualneuron",
-  "sourceUrl": "https://github.com/denischevalier/vcdualneuron",
+  "pluginUrl": "https://github.com/denischevalier/StalysVCVPlugin",
+  "manualUrl": "https://github.com/denischevalier/StalysVCVPlugin/blob/main/README.md",
+  "sourceUrl": "https://github.com/denischevalier/StalysVCVPlugin",
   "donateUrl": "https://www.patreon.com/stalysmusic",
   "changelogUrl": "",
   "modules": [
