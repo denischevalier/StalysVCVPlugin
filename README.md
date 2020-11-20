@@ -30,7 +30,8 @@ The Combiner circuit consists of two lanes (with four-quadrant multiplication an
 - A Difference Rectifier (DIFFRECT), which is another creative mixer: the two lanes are summed. Then the negative mix is substracted from the positive mix. If the result is positive, it goes out the DIFFRECT+ output, otherwise it goes out the DIFFRECT- output.
 - A MAX circuit which outputs the max value out of the two lanes.
 - A SUM output which adds the two lanes.
-- A MIN output which substracts the bottom lane from the top lane.
+- A DIFF output which substracts the bottom lane from the top lane.
+- A MIN circuit which outputs the min value out of the two lanes.
 
 This might seem overwhelming, but just experiment: feed it with LFOs, envelopes, sequences, oscillators or even itself and watch the complex waveforms it generates. You can use just some parts of it and it becomes a mixer/ring-modulator/waveshapper/logic module.
 
