@@ -13,7 +13,7 @@ My dream is to one day port it to eurorack (but I'd need to learn electronics fi
 - Neuron original design: [Andrew Fitch](https://www.nonlinearcircuits.com/)
 - Code and Panels: [Stalys](https://linktr.ee/stalysmusic)
 - Neuron VCV implementation: [Michael Hetrick](https://mhetrick.com/)
-- Befaco AxBxC VCV implementation: [Befaco](http://www.befaco.org)
+- Befaco AxB+C VCV implementation: [Befaco](http://www.befaco.org)
 
 ## Modules
 
