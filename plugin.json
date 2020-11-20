@@ -11,7 +11,7 @@
   "manualUrl": "https://github.com/denischevalier/StalysVCVPlugin/blob/main/README.md",
   "sourceUrl": "https://github.com/denischevalier/StalysVCVPlugin",
   "donateUrl": "https://www.patreon.com/stalysmusic",
-  "changelogUrl": "",
+  "changelogUrl": "https://github.com/denischevalier/StalysVCVPlugin/blob/main/CHANGELOG.md",
   "modules": [
     {
       "slug": "VCDualNeuron",
