@@ -264,26 +264,26 @@ struct VCDualNeuronWidget : ModuleWidget {
 
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(29.104, 18.521)), module, VCDualNeuron::A_CARRIER_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(60.854, 18.521)), module, VCDualNeuron::A_OFFSET_LEVEL_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(92.604, 21.167)), module, VCDualNeuron::A_SENSE_LEVEL_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(92.604, 23.813)), module, VCDualNeuron::A_SENSE_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(29.104, 34.396)), module, VCDualNeuron::B_CARRIER_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(60.854, 34.396)), module, VCDualNeuron::B_OFFSET_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(134.805, 34.528)), module, VCDualNeuron::G_CARRIER_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(166.555, 34.528)), module, VCDualNeuron::G_OFFSET_LEVEL_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(92.604, 47.625)), module, VCDualNeuron::A_RESPONSE_LEVEL_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(92.604, 44.979)), module, VCDualNeuron::A_RESPONSE_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(29.104, 50.271)), module, VCDualNeuron::C_CARRIER_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(60.854, 50.271)), module, VCDualNeuron::C_OFFSET_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(29.104, 76.729)), module, VCDualNeuron::D_CARRIER_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(60.854, 76.729)), module, VCDualNeuron::D_OFFSET_LEVEL_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(92.548, 79.503)), module, VCDualNeuron::B_SENSE_LEVEL_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(92.548, 82.149)), module, VCDualNeuron::B_SENSE_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(29.104, 92.604)), module, VCDualNeuron::E_CARRIER_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(60.854, 92.604)), module, VCDualNeuron::E_OFFSET_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(134.805, 92.736)), module, VCDualNeuron::H_CARRIER_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(166.555, 92.737)), module, VCDualNeuron::H_OFFSET_LEVEL_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(92.548, 105.962)), module, VCDualNeuron::B_RESPONSE_LEVEL_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(92.548, 103.316)), module, VCDualNeuron::B_RESPONSE_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(29.104, 108.479)), module, VCDualNeuron::F_CARRIER_LEVEL_PARAM));
 		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(60.854, 108.479)), module, VCDualNeuron::F_OFFSET_LEVEL_PARAM));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(92.604, 11.906)), module, VCDualNeuron::A_SENSE_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(92.604, 13.494)), module, VCDualNeuron::A_SENSE_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(13.229, 18.521)), module, VCDualNeuron::A_SIGNAL_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(44.979, 18.521)), module, VCDualNeuron::A_CARRIER_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(76.729, 18.521)), module, VCDualNeuron::A_OFFSET_INPUT));
@@ -296,7 +296,7 @@ struct VCDualNeuronWidget : ModuleWidget {
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(13.229, 50.271)), module, VCDualNeuron::C_SIGNAL_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(44.979, 50.271)), module, VCDualNeuron::C_CARRIER_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(76.729, 50.271)), module, VCDualNeuron::C_OFFSET_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(92.604, 56.885)), module, VCDualNeuron::A_RESPONSE_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(92.604, 55.827)), module, VCDualNeuron::A_RESPONSE_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(92.548, 70.243)), module, VCDualNeuron::B_SENSE_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(13.229, 76.729)), module, VCDualNeuron::D_SIGNAL_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(44.979, 76.729)), module, VCDualNeuron::D_CARRIER_INPUT));
@@ -310,7 +310,7 @@ struct VCDualNeuronWidget : ModuleWidget {
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(13.229, 108.479)), module, VCDualNeuron::F_SIGNAL_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(44.979, 108.479)), module, VCDualNeuron::F_CARRIER_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(76.729, 108.479)), module, VCDualNeuron::F_OFFSET_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(92.548, 115.222)), module, VCDualNeuron::B_RESPONSE_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(92.548, 113.635)), module, VCDualNeuron::B_RESPONSE_INPUT));
 
 		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(201.082, 23.812)), module, VCDualNeuron::DIFFRECT_POS_OUTPUT));
 		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(92.604, 34.396)), module, VCDualNeuron::A_OUTPUT_OUTPUT));
