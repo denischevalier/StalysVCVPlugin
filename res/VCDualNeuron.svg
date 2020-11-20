@@ -29,13 +29,13 @@
      fit-margin-right="0"
      fit-margin-left="0"
      fit-margin-top="0"
-     showgrid="true"
+     showgrid="false"
      inkscape:document-rotation="0"
      inkscape:current-layer="layer4"
      inkscape:document-units="mm"
      inkscape:cy="242.83465"
      inkscape:cx="403.2"
-     inkscape:zoom="1.6666667"
+     inkscape:zoom="1.7113095"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -136,7 +136,6 @@
        style="fill:#000000;fill-opacity:0.5;stroke:none;stroke-width:0.53;stroke-miterlimit:4;stroke-dasharray:0.53, 1.06;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
   <g
-     sodipodi:insensitive="true"
      style="display:inline"
      inkscape:label="lines"
      id="layer3"
@@ -395,7 +394,7 @@
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
        id="path2258"
-       d="m 187.85416,63.499999 5.29167,39.687501 h 2.64583"
+       d="m 187.85416,63.499999 3.96876,39.687501 3.96874,0"
        style="fill:none;stroke:#000000;stroke-width:0.53;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
@@ -931,7 +930,7 @@
          d="m 112.49134,101.60001 v -3.19153 h 0.47956 q 0.32039,0 0.51056,0.04961 0.19224,0.04961 0.32453,0.167432 0.13436,0.121956 0.2129,0.303857 0.0806,0.183968 0.0806,0.37207 0,0.343131 -0.26252,0.580843 0.25425,0.08682 0.40101,0.303858 0.14883,0.21497 0.14883,0.50023 0,0.37413 -0.26458,0.63251 -0.15917,0.15917 -0.3576,0.22118 -0.21704,0.0599 -0.54364,0.0599 z m 0.48162,-1.821072 h 0.1509 q 0.26872,0 0.39274,-0.117822 0.12609,-0.11989 0.12609,-0.3514 0,-0.225309 -0.12816,-0.341064 -0.12816,-0.117822 -0.37207,-0.117822 h -0.1695 z m 0,1.368392 h 0.29766 q 0.32659,0 0.47956,-0.12816 0.16123,-0.13849 0.16123,-0.3514 0,-0.2067 -0.15503,-0.34726 -0.1509,-0.1385 -0.5395,-0.1385 h -0.24392 z" />
     </g>
     <g
-       transform="translate(0,-7.9375002)"
+       transform="translate(0,-8.555935)"
        style="font-size:4.23333px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;stroke-width:0.264583"
        id="text2233"
        aria-label="diffrect-">
@@ -984,7 +983,8 @@
     <g
        style="font-size:4.23333px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;stroke-width:0.264583"
        id="text2256"
-       aria-label="diffrect+">
+       aria-label="diffrect+"
+       transform="translate(-0.3092174,0.6184348)">
       <path
          inkscape:connector-curvature="0"
          id="path2944"
@@ -1063,7 +1063,7 @@
          d="m 97.654609,16.565399 h -1.442805 q 0.0186,0.248047 0.161231,0.394808 0.142626,0.144694 0.365868,0.144694 0.173633,0 0.287321,-0.08268 0.111621,-0.08268 0.254248,-0.305925 l 0.392741,0.219108 q -0.09095,0.15503 -0.192237,0.266651 -0.101285,0.109553 -0.21704,0.1819 -0.115756,0.07028 -0.250114,0.103353 -0.134359,0.03307 -0.291455,0.03307 -0.450618,0 -0.723469,-0.289388 -0.272852,-0.291455 -0.272852,-0.773078 0,-0.47749 0.264583,-0.773079 0.26665,-0.291455 0.706933,-0.291455 0.444417,0 0.702799,0.283187 0.256315,0.281119 0.256315,0.779279 z m -0.47749,-0.380338 q -0.09715,-0.37207 -0.469221,-0.37207 -0.08475,0 -0.159164,0.02687 -0.07441,0.02481 -0.136425,0.07441 -0.05994,0.04754 -0.103353,0.115755 -0.04341,0.06821 -0.06615,0.155029 z" />
     </g>
     <g
-       transform="translate(11.641668)"
+       transform="translate(11.33245,-1.5875)"
        style="font-size:4.23333px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;stroke-width:0.264583"
        id="text2326"
        aria-label="response">
@@ -1140,7 +1140,7 @@
          d="m 97.59848,74.902046 h -1.442805 q 0.0186,0.248047 0.16123,0.394808 0.142627,0.144694 0.365869,0.144694 0.173633,0 0.287321,-0.08268 0.111621,-0.08268 0.254248,-0.305924 l 0.39274,0.219107 q -0.09095,0.15503 -0.192236,0.266651 -0.101286,0.109554 -0.217041,0.1819 -0.115755,0.07028 -0.250114,0.103353 -0.134358,0.03307 -0.291454,0.03307 -0.450619,0 -0.72347,-0.289388 -0.272851,-0.291454 -0.272851,-0.773078 0,-0.47749 0.264583,-0.773079 0.26665,-0.291455 0.706933,-0.291455 0.444417,0 0.702799,0.283187 0.256315,0.281119 0.256315,0.77928 z m -0.47749,-0.380338 q -0.09715,-0.37207 -0.469222,-0.37207 -0.08475,0 -0.159163,0.02687 -0.07441,0.02481 -0.136426,0.07441 -0.05994,0.04754 -0.103353,0.115755 -0.04341,0.06821 -0.06615,0.155029 z" />
     </g>
     <g
-       transform="translate(11.641668)"
+       transform="translate(11.33245,-1.5875)"
        style="font-size:4.23333px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;display:inline;opacity:1;stroke-width:0.264583"
        id="text2326-5"
        aria-label="response">
@@ -1234,7 +1234,8 @@
     <g
        style="font-size:4.23333px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;display:inline;opacity:1;fill:#000000;stroke-width:0.264583"
        id="text1332-4"
-       aria-label="x">
+       aria-label="x"
+       transform="translate(2.4818462)">
       <path
          inkscape:connector-curvature="0"
          id="path3034"
@@ -1244,7 +1245,8 @@
     <g
        style="font-size:4.23333px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;display:inline;opacity:1;fill:#000000;stroke-width:0.264583"
        id="text1336-4"
-       aria-label="+">
+       aria-label="+"
+       transform="translate(2.4818462)">
       <path
          inkscape:connector-curvature="0"
          id="path3031"
@@ -1254,7 +1256,8 @@
     <g
        style="font-size:4.23333px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;display:inline;opacity:1;fill:#000000;stroke-width:0.264583"
        id="text1332-8"
-       aria-label="x">
+       aria-label="x"
+       transform="translate(-0.21864972)">
       <path
          inkscape:connector-curvature="0"
          id="path3028"
@@ -1264,7 +1267,8 @@
     <g
        style="font-size:4.23333px;line-height:1.25;font-family:Futura;-inkscape-font-specification:Futura;display:inline;opacity:1;fill:#000000;stroke-width:0.264583"
        id="text1336-7"
-       aria-label="+">
+       aria-label="+"
+       transform="translate(-0.21864972)">
       <path
          inkscape:connector-curvature="0"
          id="path3025"
@@ -1294,7 +1298,6 @@
     </g>
   </g>
   <g
-     sodipodi:insensitive="true"
      style="display:none"
      inkscape:label="components"
      id="layer2"
@@ -1630,7 +1633,7 @@
        r="2.6458333" />
     <circle
        r="2.6458333"
-       cy="21.166666"
+       cy="23.812502"
        cx="92.604164"
        id="path15-5-8-0-5"
        style="display:inline;fill:#f2f2f2;stroke:#ff0000;stroke-width:0.264583;stroke-opacity:1"
@@ -1639,7 +1642,7 @@
        style="display:inline;fill:#f2f2f2;stroke:#00ff00;stroke-width:0.264583;stroke-opacity:1"
        id="path15-5-9-8"
        cx="92.604164"
-       cy="11.90625"
+       cy="13.493749"
        r="2.6458333"
        inkscape:label="a_sense" />
     <circle
@@ -1647,12 +1650,12 @@
        style="display:inline;fill:#f2f2f2;stroke:#ff0000;stroke-width:0.264583;stroke-opacity:1"
        id="path15-5-8-0-5-9"
        cx="92.604164"
-       cy="47.625"
+       cy="44.979164"
        r="2.6458333" />
     <circle
        inkscape:label="a_response"
        r="2.6458333"
-       cy="56.885418"
+       cy="55.827084"
        cx="92.604164"
        id="path15-5-9-8-7"
        style="display:inline;fill:#f2f2f2;stroke:#00ff00;stroke-width:0.264583;stroke-opacity:1" />
@@ -1668,11 +1671,11 @@
        style="display:inline;fill:#f2f2f2;stroke:#ff0000;stroke-width:0.264583;stroke-opacity:1"
        id="path15-5-8-0-5-3"
        cx="92.548035"
-       cy="79.503311"
+       cy="82.149147"
        r="2.6458333" />
     <circle
        r="2.6458333"
-       cy="105.96165"
+       cy="103.31583"
        cx="92.548035"
        id="path15-5-8-0-5-9-7"
        style="display:inline;fill:#f2f2f2;stroke:#ff0000;stroke-width:0.264583;stroke-opacity:1"
@@ -1681,7 +1684,7 @@
        style="display:inline;fill:#f2f2f2;stroke:#00ff00;stroke-width:0.264583;stroke-opacity:1"
        id="path15-5-9-8-7-8"
        cx="92.548035"
-       cy="115.22199"
+       cy="113.63451"
        r="2.6458333"
        inkscape:label="b_response" />
     <circle
