@@ -165,14 +165,8 @@ struct VCDualNeuron : Module {
 		float cInput = cSignal * cCarrier/5.f + cOffset;
 
 		// Params
-		float aSense = params[A_SENSE_LEVEL_PARAM].getValue();
-		if (inputs[A_SENSE_INPUT].isConnected()) {
-			aSense = rack::math::clamp(inputs[A_SENSE_INPUT].getVoltage() * aSense, 0.f, 5.f);
-		}
-		float aResponse = params[A_RESPONSE_LEVEL_PARAM].getValue();
-		if (inputs[A_RESPONSE_INPUT].isConnected()) {
-			aResponse = rack::math::clamp(inputs[A_RESPONSE_INPUT].getVoltage() * aResponse, 1.f, 10.f);
-		}
+		float aSense = rack::math::clamp(inputs[A_SENSE_INPUT].getNormalVoltage(1.f) * params[A_SENSE_LEVEL_PARAM].getValue(), 0.f, 5.f);
+		float aResponse = rack::math::clamp(inputs[A_RESPONSE_INPUT].getNormalVoltage(1.f) * params[A_RESPONSE_INPUT].getValue(), 1.f, 10.f);
 
 		// Output
 		float aRectifiedInput = rack::math::clamp((aInput+bInput+cInput)/3+aSense, 0.f, 10.f);
@@ -199,14 +193,8 @@ struct VCDualNeuron : Module {
 		float fInput = fSignal * fCarrier/5.f + fOffset;
 
 		// Params
-		float bSense = params[B_SENSE_LEVEL_PARAM].getValue();
-		if (inputs[B_SENSE_INPUT].isConnected()) {
-			bSense = rack::math::clamp(inputs[B_SENSE_INPUT].getVoltage() * bSense, 0.f, 5.f);
-		}
-		float bResponse = params[B_RESPONSE_LEVEL_PARAM].getValue();
-		if (inputs[B_RESPONSE_INPUT].isConnected()) {
-			bResponse = rack::math::clamp(inputs[B_RESPONSE_INPUT].getVoltage() * bResponse, 1.f, 10.f);
-		}
+		float bSense = rack::math::clamp(inputs[B_SENSE_INPUT].getNormalVoltage(1.f) * params[B_SENSE_LEVEL_PARAM].getValue(), 0.f, 5.f);
+		float bResponse = rack::math::clamp(inputs[B_RESPONSE_INPUT].getNormalVoltage(1.f) * params[B_RESPONSE_LEVEL_PARAM].getValue(), 1.f, 10.f);
 
 		// Output
 		float bRectifiedInput = rack::math::clamp((dInput+eInput+fInput)/3+bSense, 0.f, 10.f);
