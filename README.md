@@ -41,7 +41,7 @@ This might seem overwhelming, but just experiment: feed it with LFOs, envelopes,
 
 ![8 Comparator](/comparator.png)
 
-This module is what its name indicates: 8 VC comparators: It outputs a get whenever the input signal is superior to the value signal (defaults to 0).
+This module is what its name indicates: 8 VC comparators: It outputs a gate whenever the input signal is superior to the value signal (defaults to 0).
 
 Plug two different LFOs to see complex rhythms emerge.
 
