@@ -1,19 +1,5 @@
 #include "plugin.hpp"
-
-inline float clip(float x) {
-	x /= 10.f;
-	// Pade approximant of x/(1 + x^12)^(1/12)
-	const float limit = 1.16691853009184f;
-	x = clamp(x, -limit, limit);
-	return ((x + 1.45833f * std::pow(x, 13) + 0.559028f * std::pow(x, 25) + 0.0427035f * std::pow(x, 37))
-		/ (1 + 1.54167f * std::pow(x, 12) + 0.642361f * std::pow(x, 24) + 0.0579909f * std::pow(x, 36))) * 10.f;
-}
-
-inline float exponentialBipolar80Pade_5_4(float x) {
-	return (0.109568f * x + 0.281588f * std::pow(x, 3) + 0.133841f * std::pow(x, 5))
-		/ (1 - 0.630374f * std::pow(x, 2) + 0.166271f * std::pow(x, 4));
-}
-
+#include "Common.hpp"
 
 struct VCDualNeuron : Module {
 	enum ParamIds {
