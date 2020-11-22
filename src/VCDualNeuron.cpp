@@ -147,81 +147,81 @@ struct VCDualNeuron : Module {
 	void process(const ProcessArgs& args) override {
 		// Neuron A
 		// Input 1
-		float aSignal = inputs[A_SIGNAL_INPUT].getVoltage();
-		float aCarrier = inputs[A_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[A_CARRIER_LEVEL_PARAM].getValue());
-		float aOffset = inputs[A_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[A_OFFSET_LEVEL_PARAM].getValue());
-		float aInput = aSignal * aCarrier/5.f + aOffset;
+		const float aSignal = inputs[A_SIGNAL_INPUT].getVoltage();
+		const float aCarrier = inputs[A_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[A_CARRIER_LEVEL_PARAM].getValue());
+		const float aOffset = inputs[A_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[A_OFFSET_LEVEL_PARAM].getValue());
+		const float aInput = aSignal * aCarrier/5.f + aOffset;
 
 		// Input 2
-		float bSignal = inputs[B_SIGNAL_INPUT].getVoltage();
-		float bCarrier = inputs[B_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[B_CARRIER_LEVEL_PARAM].getValue());
-		float bOffset = inputs[B_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[B_OFFSET_LEVEL_PARAM].getValue());
-		float bInput = bSignal * bCarrier/5.f + bOffset;
+		const float bSignal = inputs[B_SIGNAL_INPUT].getVoltage();
+		const float bCarrier = inputs[B_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[B_CARRIER_LEVEL_PARAM].getValue());
+		const float bOffset = inputs[B_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[B_OFFSET_LEVEL_PARAM].getValue());
+		const float bInput = bSignal * bCarrier/5.f + bOffset;
 
 		// Input 3
-		float cSignal = inputs[C_SIGNAL_INPUT].getVoltage();
-		float cCarrier = inputs[C_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[C_CARRIER_LEVEL_PARAM].getValue());
-		float cOffset = inputs[C_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[C_OFFSET_LEVEL_PARAM].getValue());
-		float cInput = cSignal * cCarrier/5.f + cOffset;
+		const float cSignal = inputs[C_SIGNAL_INPUT].getVoltage();
+		const float cCarrier = inputs[C_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[C_CARRIER_LEVEL_PARAM].getValue());
+		const float cOffset = inputs[C_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[C_OFFSET_LEVEL_PARAM].getValue());
+		const float cInput = cSignal * cCarrier/5.f + cOffset;
 
 		// Params
-		float aSense = rack::math::clamp(inputs[A_SENSE_INPUT].getNormalVoltage(1.f) * params[A_SENSE_LEVEL_PARAM].getValue(), 0.f, 5.f);
-		float aResponse = rack::math::clamp(inputs[A_RESPONSE_INPUT].getNormalVoltage(1.f) * params[A_RESPONSE_INPUT].getValue(), 1.f, 10.f);
+		const float aSense = rack::math::clamp(inputs[A_SENSE_INPUT].getNormalVoltage(1.f) * params[A_SENSE_LEVEL_PARAM].getValue(), 0.f, 5.f);
+		const float aResponse = rack::math::clamp(inputs[A_RESPONSE_INPUT].getNormalVoltage(1.f) * params[A_RESPONSE_INPUT].getValue(), 1.f, 10.f);
 
 		// Output
-		float aRectifiedInput = rack::math::clamp((aInput+bInput+cInput)/3+aSense, 0.f, 10.f);
-		float aComparatorOutput = aRectifiedInput > 0.f? aResponse: aResponse * -1.f;
-		float aOutput = aRectifiedInput - aComparatorOutput;
+		const float aRectifiedInput = rack::math::clamp((aInput+bInput+cInput)/3+aSense, 0.f, 10.f);
+		const float aComparatorOutput = aRectifiedInput > 0.f? aResponse: aResponse * -1.f;
+		const float aOutput = aRectifiedInput - aComparatorOutput;
 
 		// Neuron B
 		// Input 1
-		float dSignal = inputs[D_SIGNAL_INPUT].getVoltage();
-		float dCarrier = inputs[D_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[D_CARRIER_LEVEL_PARAM].getValue());
-		float dOffset = inputs[D_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[D_OFFSET_LEVEL_PARAM].getValue());
-		float dInput = dSignal * dCarrier/5.f + dOffset;
+		const float dSignal = inputs[D_SIGNAL_INPUT].getVoltage();
+		const float dCarrier = inputs[D_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[D_CARRIER_LEVEL_PARAM].getValue());
+		const float dOffset = inputs[D_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[D_OFFSET_LEVEL_PARAM].getValue());
+		const float dInput = dSignal * dCarrier/5.f + dOffset;
 
 		// Input 2
-		float eSignal = inputs[E_SIGNAL_INPUT].getVoltage();
-		float eCarrier = inputs[E_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[E_CARRIER_LEVEL_PARAM].getValue());
-		float eOffset = inputs[E_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[E_OFFSET_LEVEL_PARAM].getValue());
-		float eInput = eSignal * eCarrier/5.f + eOffset;
+		const float eSignal = inputs[E_SIGNAL_INPUT].getVoltage();
+		const float eCarrier = inputs[E_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[E_CARRIER_LEVEL_PARAM].getValue());
+		const float eOffset = inputs[E_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[E_OFFSET_LEVEL_PARAM].getValue());
+		const float eInput = eSignal * eCarrier/5.f + eOffset;
 
 		// Input 3
-		float fSignal = inputs[F_SIGNAL_INPUT].getVoltage();
-		float fCarrier = inputs[F_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[F_CARRIER_LEVEL_PARAM].getValue());
-		float fOffset = inputs[F_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[F_OFFSET_LEVEL_PARAM].getValue());
-		float fInput = fSignal * fCarrier/5.f + fOffset;
+		const float fSignal = inputs[F_SIGNAL_INPUT].getVoltage();
+		const float fCarrier = inputs[F_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[F_CARRIER_LEVEL_PARAM].getValue());
+		const float fOffset = inputs[F_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[F_OFFSET_LEVEL_PARAM].getValue());
+		const float fInput = fSignal * fCarrier/5.f + fOffset;
 
 		// Params
-		float bSense = rack::math::clamp(inputs[B_SENSE_INPUT].getNormalVoltage(1.f) * params[B_SENSE_LEVEL_PARAM].getValue(), 0.f, 5.f);
-		float bResponse = rack::math::clamp(inputs[B_RESPONSE_INPUT].getNormalVoltage(1.f) * params[B_RESPONSE_LEVEL_PARAM].getValue(), 1.f, 10.f);
+		const float bSense = rack::math::clamp(inputs[B_SENSE_INPUT].getNormalVoltage(1.f) * params[B_SENSE_LEVEL_PARAM].getValue(), 0.f, 5.f);
+		const float bResponse = rack::math::clamp(inputs[B_RESPONSE_INPUT].getNormalVoltage(1.f) * params[B_RESPONSE_LEVEL_PARAM].getValue(), 1.f, 10.f);
 
 		// Output
-		float bRectifiedInput = rack::math::clamp((dInput+eInput+fInput)/3+bSense, 0.f, 10.f);
-		float bComparatorOutput = bRectifiedInput > 0.f? bResponse: bResponse * -1.f;
-		float bOutput = bRectifiedInput - bComparatorOutput;
+		const float bRectifiedInput = rack::math::clamp((dInput+eInput+fInput)/3+bSense, 0.f, 10.f);
+		const float bComparatorOutput = bRectifiedInput > 0.f? bResponse: bResponse * -1.f;
+		const float bOutput = bRectifiedInput - bComparatorOutput;
 
 		// Combiner
 		// Input 1
-		float gSignal = inputs[G_SIGNAL_INPUT].getNormalVoltage(aOutput);
-		float gCarrier = inputs[G_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[G_CARRIER_LEVEL_PARAM].getValue());
-		float gOffset = inputs[G_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[G_OFFSET_LEVEL_PARAM].getValue());
-		float gInput = gSignal * gCarrier/5.f + gOffset;
+		const float gSignal = inputs[G_SIGNAL_INPUT].getNormalVoltage(aOutput);
+		const float gCarrier = inputs[G_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[G_CARRIER_LEVEL_PARAM].getValue());
+		const float gOffset = inputs[G_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[G_OFFSET_LEVEL_PARAM].getValue());
+		const float gInput = gSignal * gCarrier/5.f + gOffset;
 
 		// Input 2
-		float hSignal = inputs[H_SIGNAL_INPUT].getNormalVoltage(bOutput);
-		float hCarrier = inputs[H_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[H_CARRIER_LEVEL_PARAM].getValue());
-		float hOffset = inputs[H_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[H_OFFSET_LEVEL_PARAM].getValue());
-		float hInput = hSignal * hCarrier/5.f + hOffset;
+		const float hSignal = inputs[H_SIGNAL_INPUT].getNormalVoltage(bOutput);
+		const float hCarrier = inputs[H_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[H_CARRIER_LEVEL_PARAM].getValue());
+		const float hOffset = inputs[H_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[H_OFFSET_LEVEL_PARAM].getValue());
+		const float hInput = hSignal * hCarrier/5.f + hOffset;
 
 		// Outputs
-		float diff = rack::math::clamp(gInput - hInput, -10.f, 10.f);
-		float diffrectPos = diff > 0.f? diff: 0.f;
-		float diffrectNeg = diff < 0.f? diff: 0.f;
-		float max = gInput >= hInput? gInput: hInput;
-		float min = gInput >= hInput? hInput: gInput;
-		float sum = gInput + hInput;
-		float inv = gInput - hInput;
+		const float diff = rack::math::clamp(gInput - hInput, -10.f, 10.f);
+		const float diffrectPos = diff > 0.f? diff: 0.f;
+		const float diffrectNeg = diff < 0.f? diff: 0.f;
+		const float max = gInput >= hInput? gInput: hInput;
+		const float min = gInput >= hInput? hInput: gInput;
+		const float sum = gInput + hInput;
+		const float inv = gInput - hInput;
 
 		// Set outpus
 		// Neuron A
