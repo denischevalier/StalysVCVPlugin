@@ -29,6 +29,16 @@
         "vca",
         "waveshaper"
       ]
+    },
+    {
+      "slug": "Comparator",
+      "name": "8 Comparator",
+      "description": "8x Comparator",
+      "tags": [
+        "utility",
+        "clock generator",
+        "logic"
+      ]
     }
   ]
 }

@@ -19,6 +19,8 @@ My dream is to one day port it to eurorack (but I'd need to learn electronics fi
 
 ### VC Dual Neuron
 
+![VC Dual Neuron](/vcdualneuron.png)
+
 This module is heavily inspired by [Nonlinear Circuits](https://www.nonlinearcircuits.com/) [Double Neuron](https://github.com/mhetrick/nonlinearcircuits) module.
 
 The module is divided in three parts. On the left are two VC Neurons circuits, and on the right the original Combiner circuit.
@@ -34,6 +36,14 @@ The Combiner circuit consists of two lanes (with four-quadrant multiplication an
 - A MIN circuit which outputs the min value out of the two lanes.
 
 This might seem overwhelming, but just experiment: feed it with LFOs, envelopes, sequences, oscillators or even itself and watch the complex waveforms it generates. You can use just some parts of it and it becomes a mixer/ring-modulator/waveshapper/logic module.
+
+### 8 Comparator
+
+![8 Comparator](/comparator.png)
+
+This module is what its name indicates: 8 VC comparators: It outputs a gate whenever the input signal is superior to the value signal (defaults to 0).
+
+Plug two different LFOs to see complex rhythms emerge.
 
 ## Planed modules
 
@@ -55,7 +65,6 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * 8 min
 * 8 avg
 * 8 VC four quadrant multiplier mixer
-* 8 VC comparator
 * 8 A/B SEL
 * clock to V/Oct
 * V/Oct to clock
