@@ -49,14 +49,14 @@ struct Comparator : Module {
 
 	Comparator() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
-		configParam(VALUE_LEVEL1_PARAM, -10.f, 10.f, 0.f, "");
-		configParam(VALUE_LEVEL2_PARAM, -10.f, 10.f, 0.f, "");
-		configParam(VALUE_LEVEL3_PARAM, -10.f, 10.f, 0.f, "");
-		configParam(VALUE_LEVEL4_PARAM, -10.f, 10.f, 0.f, "");
-		configParam(VALUE_LEVEL5_PARAM, -10.f, 10.f, 0.f, "");
-		configParam(VALUE_LEVEL6_PARAM, -10.f, 10.f, 0.f, "");
-		configParam(VALUE_LEVEL7_PARAM, -10.f, 10.f, 0.f, "");
-		configParam(VALUE_LEVEL8_PARAM, -10.f, 10.f, 0.f, "");
+		configParam(VALUE_LEVEL1_PARAM, -10.f, 10.f, 0.f, "Value1");
+		configParam(VALUE_LEVEL2_PARAM, -10.f, 10.f, 0.f, "Value2");
+		configParam(VALUE_LEVEL3_PARAM, -10.f, 10.f, 0.f, "Value3");
+		configParam(VALUE_LEVEL4_PARAM, -10.f, 10.f, 0.f, "Value4");
+		configParam(VALUE_LEVEL5_PARAM, -10.f, 10.f, 0.f, "Value5");
+		configParam(VALUE_LEVEL6_PARAM, -10.f, 10.f, 0.f, "Value6");
+		configParam(VALUE_LEVEL7_PARAM, -10.f, 10.f, 0.f, "Value7");
+		configParam(VALUE_LEVEL8_PARAM, -10.f, 10.f, 0.f, "Value8");
 	}
 
 	void process(const ProcessArgs& args) override {
@@ -91,40 +91,40 @@ struct ComparatorWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 13.229)), module, Comparator::VALUE_LEVEL1_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 27.781)), module, Comparator::VALUE_LEVEL2_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 42.333)), module, Comparator::VALUE_LEVEL3_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 56.993)), module, Comparator::VALUE_LEVEL4_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 71.437)), module, Comparator::VALUE_LEVEL5_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 85.99)), module, Comparator::VALUE_LEVEL6_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 100.542)), module, Comparator::VALUE_LEVEL7_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 115.094)), module, Comparator::VALUE_LEVEL8_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 12.171)), module, Comparator::VALUE_LEVEL1_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 26.723)), module, Comparator::VALUE_LEVEL2_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 41.275)), module, Comparator::VALUE_LEVEL3_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 55.935)), module, Comparator::VALUE_LEVEL4_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 70.379)), module, Comparator::VALUE_LEVEL5_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 84.931)), module, Comparator::VALUE_LEVEL6_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 99.483)), module, Comparator::VALUE_LEVEL7_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 114.035)), module, Comparator::VALUE_LEVEL8_PARAM));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 13.229)), module, Comparator::SIGNAL1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 13.229)), module, Comparator::VALUE1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 27.781)), module, Comparator::SIGNAL2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 27.781)), module, Comparator::VALUE2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 42.333)), module, Comparator::SIGNAL3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 42.333)), module, Comparator::VALUE3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 56.993)), module, Comparator::SIGNAL4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 56.993)), module, Comparator::VALUE4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 71.437)), module, Comparator::SIGNAL5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 71.438)), module, Comparator::VALUE5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 85.99)), module, Comparator::SIGNAL6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 85.99)), module, Comparator::VALUE6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 100.542)), module, Comparator::SIGNAL7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 100.542)), module, Comparator::VALUE7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 115.094)), module, Comparator::SIGNAL8_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 115.094)), module, Comparator::VALUE8_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 12.171)), module, Comparator::SIGNAL1_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 12.171)), module, Comparator::VALUE1_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 26.723)), module, Comparator::SIGNAL2_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 26.723)), module, Comparator::VALUE2_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 41.275)), module, Comparator::SIGNAL3_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 41.275)), module, Comparator::VALUE3_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 55.935)), module, Comparator::SIGNAL4_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 55.935)), module, Comparator::VALUE4_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 70.379)), module, Comparator::SIGNAL5_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 70.379)), module, Comparator::VALUE5_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 84.931)), module, Comparator::SIGNAL6_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 84.931)), module, Comparator::VALUE6_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 99.483)), module, Comparator::SIGNAL7_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 99.483)), module, Comparator::VALUE7_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 114.035)), module, Comparator::SIGNAL8_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 114.035)), module, Comparator::VALUE8_INPUT));
 
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 13.229)), module, Comparator::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 27.781)), module, Comparator::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 42.333)), module, Comparator::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 56.993)), module, Comparator::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 71.437)), module, Comparator::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 85.99)), module, Comparator::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 100.542)), module, Comparator::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 115.094)), module, Comparator::OUT8_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 12.171)), module, Comparator::OUT1_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 26.723)), module, Comparator::OUT2_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 41.275)), module, Comparator::OUT3_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 55.935)), module, Comparator::OUT4_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 70.379)), module, Comparator::OUT5_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 84.931)), module, Comparator::OUT6_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 99.483)), module, Comparator::OUT7_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 114.035)), module, Comparator::OUT8_OUTPUT));
 	}
 };
 
