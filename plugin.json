@@ -85,6 +85,16 @@
         "utility",
         "waveshaper"
       ]
+    },
+    {
+      "slug": "ASR",
+      "name": "Analog Shift Register",
+      "description": "8 bits analog shift register",
+      "tags": [
+        "s&h",
+        "logic",
+        "clock modulator"
+      ]
     }
   ]
 }
