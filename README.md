@@ -55,6 +55,14 @@ If no cable is plugged into an output, it is summed to the next outputs.
 
 This module is based on [VCV Befaco AxB+C](https://github.com/VCVRack/Befaco) implementation.
 
+### 8 Sum
+
+![8 Sum](/sum.png)
+
+This module is 8 three inputs unity mixer.
+
+If no cable is plugged into an output, it is summed to the next outputs.
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.

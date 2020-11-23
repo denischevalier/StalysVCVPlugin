@@ -12,3 +12,4 @@ extern Plugin* pluginInstance;
 extern Model* modelVCDualNeuron;
 extern Model* modelComparator;
 extern Model* modelMultiplier;
+extern Model* modelSum;
