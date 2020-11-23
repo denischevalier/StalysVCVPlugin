@@ -1,5 +1,7 @@
 # Stalys
 
+![All Modules](/allmodules.png)
+
 ## Abstract
 
 This Plugin will contain the modules that I am creating in my study of [cybernetics](https://en.m.wikipedia.org/wiki/Cybernetics) in music.

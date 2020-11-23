@@ -2,6 +2,21 @@
 ## [Unreleased]
 
 
+<a name="1.2.0"></a>
+## [1.2.0] - 2020-11-23
+### Documentation
+- Update TODO list
+- Update TODO list
+
+### Module
+- Create ASR module (PR [#15](https://github.com/denischevalier/StalysVCVPlugin/issues/15))
+- Create 8 Abs module (PR [#14](https://github.com/denischevalier/StalysVCVPlugin/issues/14))
+- Create 8 Not module (PR [#13](https://github.com/denischevalier/StalysVCVPlugin/issues/13))
+- Create 8 Diff module (PR [#12](https://github.com/denischevalier/StalysVCVPlugin/issues/12))
+- Create 8 Sum module (PR [#11](https://github.com/denischevalier/StalysVCVPlugin/issues/11))
+- Create 8 Multiplier module (PR [#10](https://github.com/denischevalier/StalysVCVPlugin/issues/10))
+
+
 <a name="1.1.1"></a>
 ## [1.1.1] - 2020-11-22
 ### Bug
@@ -24,9 +39,9 @@
 - Minor interface tweaks: fix overlaping elements (PR [#2](https://github.com/denischevalier/StalysVCVPlugin/issues/2))
 
 ### Documentation
+- Add CHANGELOG.md (PR [#4](https://github.com/denischevalier/StalysVCVPlugin/issues/4))
 - Fix typo in README.md: s/AxBxC/AxB+C/ (PR [#3](https://github.com/denischevalier/StalysVCVPlugin/issues/3))
 - Update README.md with abstract, TODO and Contribute (PR [#1](https://github.com/denischevalier/StalysVCVPlugin/issues/1))
-- Add CHANGELOG.md (PR [#4](https://github.com/denischevalier/StalysVCVPlugin/issues/4))
 
 
 <a name="1.0.0"></a>
