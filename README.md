@@ -37,6 +37,14 @@ The Combiner circuit consists of two lanes (with four-quadrant multiplication an
 
 This might seem overwhelming, but just experiment: feed it with LFOs, envelopes, sequences, oscillators or even itself and watch the complex waveforms it generates. You can use just some parts of it and it becomes a mixer/ring-modulator/waveshapper/logic module.
 
+### Analog Shift Register
+
+![ASR](/asr.png)
+
+This module is an 8 step shift register: At each incoming CLOCK trigger, all output voltages are shifted down one position and the value of IN is sampled into the first output.
+
+Typical use would be to generate canon melodies.
+
 ### 8 Comparator
 
 ![8 Comparator](/comparator.png)
@@ -85,7 +93,6 @@ This modules inverses the negative portion of any input voltage.
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
 
-* 8 bit shift register
 * 8 VC CV delay
 * 8 S&H
 * 8 bit to CV converter (DAC)
