@@ -75,6 +75,12 @@ This module is 8 three inputs subtracter.
 
 This module is 8 boolean Not operators: they invert the gates they receive as inputs.
 
+### 8 Abs
+
+![8 Abs](/abs.png)
+
+This modules inverses the negative portion of any input voltage.
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
@@ -87,7 +93,6 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * 8 or
 * 8 pos/neg rect
 * 8 diffrect
-* 8 abs
 * 8 max
 * 8 min
 * 8 avg
