@@ -11,3 +11,4 @@ extern Plugin* pluginInstance;
 // extern Model* modelMyModule;
 extern Model* modelVCDualNeuron;
 extern Model* modelComparator;
+extern Model* modelMultiplier;
