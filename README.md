@@ -63,6 +63,12 @@ This module is 8 three inputs unity mixer.
 
 If no cable is plugged into an output, it is summed to the next outputs.
 
+### 8 Diff
+
+![8 Diff](/diff.png)
+
+This module is 8 three inputs subtracter.
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
@@ -77,7 +83,6 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * 8 pos/neg rect
 * 8 diffrect
 * 8 abs
-* 8 diff
 * 8 max
 * 8 min
 * 8 avg

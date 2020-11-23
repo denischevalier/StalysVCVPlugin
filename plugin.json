@@ -59,6 +59,14 @@
         "mixer",
         "utility"
       ]
+    },
+    {
+      "slug": "Diff",
+      "name": "8 Diff",
+      "description": "8 difference calculators",
+      "tags": [
+        "utility"
+      ]
     }
   ]
 }
