@@ -39,6 +39,17 @@
         "clock generator",
         "logic"
       ]
+    },
+    {
+      "slug": "Multiplier",
+      "name": "8 Multiplier",
+      "description": "8 four-quadrant multipliers / ring modulators",
+      "tags": [
+        "attenuator",
+        "ring modulator",
+        "utility",
+        "vca"
+      ]
     }
   ]
 }

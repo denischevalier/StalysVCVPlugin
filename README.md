@@ -13,7 +13,7 @@ My dream is to one day port it to eurorack (but I'd need to learn electronics fi
 - Neuron original design: [Andrew Fitch](https://www.nonlinearcircuits.com/)
 - Code and Panels: [Stalys](https://linktr.ee/stalysmusic)
 - Neuron VCV implementation: [Michael Hetrick](https://mhetrick.com/)
-- Befaco AxB+C VCV implementation: [Befaco](http://www.befaco.org)
+- Befaco AxB+C VCV implementation: [Befaco](https://github.com/VCVRack/Befaco)
 
 ## Modules
 
@@ -45,6 +45,16 @@ This module is what its name indicates: 8 VC comparators: It outputs a gate when
 
 Plug two different LFOs to see complex rhythms emerge.
 
+### 8 Multiplier
+
+![8 Multiplier](/multiplier.png)
+
+This module is 8 four quadrant multipliers or ring-modulators (with attenuversion of the Carrier). A 5V voltage is normaled to the Carrier input.
+
+If no cable is plugged into an output, it is summed to the next outputs.
+
+This module is based on [VCV Befaco AxB+C](https://github.com/VCVRack/Befaco) implementation.
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
@@ -64,7 +74,6 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * 8 max
 * 8 min
 * 8 avg
-* 8 VC four quadrant multiplier mixer
 * 8 A/B SEL
 * clock to V/Oct
 * V/Oct to clock
