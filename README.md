@@ -77,7 +77,6 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * 8 pos/neg rect
 * 8 diffrect
 * 8 abs
-* 8 sum
 * 8 diff
 * 8 max
 * 8 min
@@ -91,6 +90,9 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * 8 VC fall (CV + Trig in, VC log to exp, EOC out)
 * 8 VC rise (CV + Trig in, VC log to exp, EOC out)
 * 8 offset
+* 8 square
+* 8 log
+* 8 sqrt
 
 ## Contribute
 
