@@ -14,3 +14,4 @@ extern Model* modelComparator;
 extern Model* modelMultiplier;
 extern Model* modelSum;
 extern Model* modelDiff;
+extern Model* modelNot;

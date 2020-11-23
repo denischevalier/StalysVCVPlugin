@@ -67,6 +67,15 @@
       "tags": [
         "utility"
       ]
+    },
+    {
+      "slug": "Not",
+      "name": "8 Not",
+      "description": "8 Not operators",
+      "tags": [
+        "logic",
+        "utility"
+      ]
     }
   ]
 }

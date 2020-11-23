@@ -69,6 +69,12 @@ If no cable is plugged into an output, it is summed to the next outputs.
 
 This module is 8 three inputs subtracter.
 
+### 8 Not
+
+![8 Not](/not.png)
+
+This module is 8 boolean Not operators: they invert the gates they receive as inputs.
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
@@ -77,7 +83,6 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * 8 VC CV delay
 * 8 S&H
 * 8 bit to CV converter (DAC)
-* 8 not
 * 8 and
 * 8 or
 * 8 pos/neg rect
