@@ -76,6 +76,15 @@
         "logic",
         "utility"
       ]
+    },
+    {
+      "slug": "Abs",
+      "name": "8 Abs",
+      "description": "8 Absolute value operators",
+      "tags": [
+        "utility",
+        "waveshaper"
+      ]
     }
   ]
 }
