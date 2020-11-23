@@ -50,6 +50,15 @@
         "utility",
         "vca"
       ]
+    },
+    {
+      "slug": "Sum",
+      "name": "8 Sum",
+      "description": "8 three to one unity mixers",
+      "tags": [
+        "mixer",
+        "utility"
+      ]
     }
   ]
 }
