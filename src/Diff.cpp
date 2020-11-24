@@ -1,4 +1,5 @@
 #include "plugin.hpp"
+#include "Common.hpp"
 
 
 struct Diff : Module {
@@ -52,14 +53,14 @@ struct Diff : Module {
 	}
 
 	void process(const ProcessArgs& args) override {
-		outputs[OUT1_OUTPUT].setVoltage(rack::math::clamp(inputs[IN1_INPUT].getNormalVoltage(0.f) - inputs[IN2_INPUT].getNormalVoltage(0.f) - inputs[IN3_INPUT].getNormalVoltage(0.f),-10.f, 10.f));
-		outputs[OUT2_OUTPUT].setVoltage(rack::math::clamp(inputs[IN4_INPUT].getNormalVoltage(0.f) - inputs[IN5_INPUT].getNormalVoltage(0.f) - inputs[IN6_INPUT].getNormalVoltage(0.f),-10.f, 10.f));
-		outputs[OUT3_OUTPUT].setVoltage(rack::math::clamp(inputs[IN7_INPUT].getNormalVoltage(0.f) - inputs[IN8_INPUT].getNormalVoltage(0.f) - inputs[IN9_INPUT].getNormalVoltage(0.f),-10.f, 10.f));
-		outputs[OUT4_OUTPUT].setVoltage(rack::math::clamp(inputs[IN10_INPUT].getNormalVoltage(0.f) - inputs[IN11_INPUT].getNormalVoltage(0.f) - inputs[IN12_INPUT].getNormalVoltage(0.f),-10.f, 10.f));
-		outputs[OUT5_OUTPUT].setVoltage(rack::math::clamp(inputs[IN13_INPUT].getNormalVoltage(0.f) - inputs[IN14_INPUT].getNormalVoltage(0.f) - inputs[IN15_INPUT].getNormalVoltage(0.f),-10.f, 10.f));
-		outputs[OUT6_OUTPUT].setVoltage(rack::math::clamp(inputs[IN16_INPUT].getNormalVoltage(0.f) - inputs[IN17_INPUT].getNormalVoltage(0.f) - inputs[IN18_INPUT].getNormalVoltage(0.f),-10.f, 10.f));
-		outputs[OUT7_OUTPUT].setVoltage(rack::math::clamp(inputs[IN19_INPUT].getNormalVoltage(0.f) - inputs[IN20_INPUT].getNormalVoltage(0.f) - inputs[IN21_INPUT].getNormalVoltage(0.f),-10.f, 10.f));
-		outputs[OUT8_OUTPUT].setVoltage(rack::math::clamp(inputs[IN22_INPUT].getNormalVoltage(0.f) - inputs[IN23_INPUT].getNormalVoltage(0.f) - inputs[IN24_INPUT].getNormalVoltage(0.f),-10.f, 10.f));
+		outputs[OUT1_OUTPUT].setVoltage(clipSignal(inputs[IN1_INPUT].getNormalVoltage(0.f) - inputs[IN2_INPUT].getNormalVoltage(0.f) - inputs[IN3_INPUT].getNormalVoltage(0.f)));
+		outputs[OUT2_OUTPUT].setVoltage(clipSignal(inputs[IN4_INPUT].getNormalVoltage(0.f) - inputs[IN5_INPUT].getNormalVoltage(0.f) - inputs[IN6_INPUT].getNormalVoltage(0.f)));
+		outputs[OUT3_OUTPUT].setVoltage(clipSignal(inputs[IN7_INPUT].getNormalVoltage(0.f) - inputs[IN8_INPUT].getNormalVoltage(0.f) - inputs[IN9_INPUT].getNormalVoltage(0.f)));
+		outputs[OUT4_OUTPUT].setVoltage(clipSignal(inputs[IN10_INPUT].getNormalVoltage(0.f) - inputs[IN11_INPUT].getNormalVoltage(0.f) - inputs[IN12_INPUT].getNormalVoltage(0.f)));
+		outputs[OUT5_OUTPUT].setVoltage(clipSignal(inputs[IN13_INPUT].getNormalVoltage(0.f) - inputs[IN14_INPUT].getNormalVoltage(0.f) - inputs[IN15_INPUT].getNormalVoltage(0.f)));
+		outputs[OUT6_OUTPUT].setVoltage(clipSignal(inputs[IN16_INPUT].getNormalVoltage(0.f) - inputs[IN17_INPUT].getNormalVoltage(0.f) - inputs[IN18_INPUT].getNormalVoltage(0.f)));
+		outputs[OUT7_OUTPUT].setVoltage(clipSignal(inputs[IN19_INPUT].getNormalVoltage(0.f) - inputs[IN20_INPUT].getNormalVoltage(0.f) - inputs[IN21_INPUT].getNormalVoltage(0.f)));
+		outputs[OUT8_OUTPUT].setVoltage(clipSignal(inputs[IN22_INPUT].getNormalVoltage(0.f) - inputs[IN23_INPUT].getNormalVoltage(0.f) - inputs[IN24_INPUT].getNormalVoltage(0.f)));
 	}
 };
 
