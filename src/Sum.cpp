@@ -73,14 +73,14 @@ struct Sum : Module {
 		const float out7 = outputs[OUT6_OUTPUT].isConnected()? results[6]: results[6]+out6;
 		const float out8 = outputs[OUT7_OUTPUT].isConnected()? results[7]: results[7]+out7;
 
-		outputs[OUT1_OUTPUT].setVoltage(clip(out1));
-		outputs[OUT2_OUTPUT].setVoltage(clip(out2));
-		outputs[OUT3_OUTPUT].setVoltage(clip(out3));
-		outputs[OUT4_OUTPUT].setVoltage(clip(out4));
-		outputs[OUT5_OUTPUT].setVoltage(clip(out5));
-		outputs[OUT6_OUTPUT].setVoltage(clip(out6));
-		outputs[OUT7_OUTPUT].setVoltage(clip(out7));
-		outputs[OUT8_OUTPUT].setVoltage(clip(out8));
+		outputs[OUT1_OUTPUT].setVoltage(clipSignal(out1));
+		outputs[OUT2_OUTPUT].setVoltage(clipSignal(out2));
+		outputs[OUT3_OUTPUT].setVoltage(clipSignal(out3));
+		outputs[OUT4_OUTPUT].setVoltage(clipSignal(out4));
+		outputs[OUT5_OUTPUT].setVoltage(clipSignal(out5));
+		outputs[OUT6_OUTPUT].setVoltage(clipSignal(out6));
+		outputs[OUT7_OUTPUT].setVoltage(clipSignal(out7));
+		outputs[OUT8_OUTPUT].setVoltage(clipSignal(out8));
 	}
 };
 

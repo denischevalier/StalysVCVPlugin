@@ -134,20 +134,20 @@ struct VCDualNeuron : Module {
 		// Neuron A
 		// Input 1
 		const float aSignal = inputs[A_SIGNAL_INPUT].getVoltage();
-		const float aCarrier = inputs[A_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[A_CARRIER_LEVEL_PARAM].getValue());
-		const float aOffset = inputs[A_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[A_OFFSET_LEVEL_PARAM].getValue());
+		const float aCarrier = inputs[A_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[A_CARRIER_LEVEL_PARAM].getValue());
+		const float aOffset = inputs[A_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[A_OFFSET_LEVEL_PARAM].getValue());
 		const float aInput = aSignal * aCarrier/5.f + aOffset;
 
 		// Input 2
 		const float bSignal = inputs[B_SIGNAL_INPUT].getVoltage();
-		const float bCarrier = inputs[B_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[B_CARRIER_LEVEL_PARAM].getValue());
-		const float bOffset = inputs[B_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[B_OFFSET_LEVEL_PARAM].getValue());
+		const float bCarrier = inputs[B_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[B_CARRIER_LEVEL_PARAM].getValue());
+		const float bOffset = inputs[B_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[B_OFFSET_LEVEL_PARAM].getValue());
 		const float bInput = bSignal * bCarrier/5.f + bOffset;
 
 		// Input 3
 		const float cSignal = inputs[C_SIGNAL_INPUT].getVoltage();
-		const float cCarrier = inputs[C_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[C_CARRIER_LEVEL_PARAM].getValue());
-		const float cOffset = inputs[C_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[C_OFFSET_LEVEL_PARAM].getValue());
+		const float cCarrier = inputs[C_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[C_CARRIER_LEVEL_PARAM].getValue());
+		const float cOffset = inputs[C_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[C_OFFSET_LEVEL_PARAM].getValue());
 		const float cInput = cSignal * cCarrier/5.f + cOffset;
 
 		// Params
@@ -162,20 +162,20 @@ struct VCDualNeuron : Module {
 		// Neuron B
 		// Input 1
 		const float dSignal = inputs[D_SIGNAL_INPUT].getVoltage();
-		const float dCarrier = inputs[D_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[D_CARRIER_LEVEL_PARAM].getValue());
-		const float dOffset = inputs[D_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[D_OFFSET_LEVEL_PARAM].getValue());
+		const float dCarrier = inputs[D_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[D_CARRIER_LEVEL_PARAM].getValue());
+		const float dOffset = inputs[D_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[D_OFFSET_LEVEL_PARAM].getValue());
 		const float dInput = dSignal * dCarrier/5.f + dOffset;
 
 		// Input 2
 		const float eSignal = inputs[E_SIGNAL_INPUT].getVoltage();
-		const float eCarrier = inputs[E_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[E_CARRIER_LEVEL_PARAM].getValue());
-		const float eOffset = inputs[E_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[E_OFFSET_LEVEL_PARAM].getValue());
+		const float eCarrier = inputs[E_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[E_CARRIER_LEVEL_PARAM].getValue());
+		const float eOffset = inputs[E_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[E_OFFSET_LEVEL_PARAM].getValue());
 		const float eInput = eSignal * eCarrier/5.f + eOffset;
 
 		// Input 3
 		const float fSignal = inputs[F_SIGNAL_INPUT].getVoltage();
-		const float fCarrier = inputs[F_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[F_CARRIER_LEVEL_PARAM].getValue());
-		const float fOffset = inputs[F_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[F_OFFSET_LEVEL_PARAM].getValue());
+		const float fCarrier = inputs[F_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[F_CARRIER_LEVEL_PARAM].getValue());
+		const float fOffset = inputs[F_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[F_OFFSET_LEVEL_PARAM].getValue());
 		const float fInput = fSignal * fCarrier/5.f + fOffset;
 
 		// Params
@@ -190,14 +190,14 @@ struct VCDualNeuron : Module {
 		// Combiner
 		// Input 1
 		const float gSignal = inputs[G_SIGNAL_INPUT].getNormalVoltage(aOutput);
-		const float gCarrier = inputs[G_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[G_CARRIER_LEVEL_PARAM].getValue());
-		const float gOffset = inputs[G_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[G_OFFSET_LEVEL_PARAM].getValue());
+		const float gCarrier = inputs[G_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[G_CARRIER_LEVEL_PARAM].getValue());
+		const float gOffset = inputs[G_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[G_OFFSET_LEVEL_PARAM].getValue());
 		const float gInput = gSignal * gCarrier/5.f + gOffset;
 
 		// Input 2
 		const float hSignal = inputs[H_SIGNAL_INPUT].getNormalVoltage(bOutput);
-		const float hCarrier = inputs[H_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[H_CARRIER_LEVEL_PARAM].getValue());
-		const float hOffset = inputs[H_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponentialBipolar80Pade_5_4(params[H_OFFSET_LEVEL_PARAM].getValue());
+		const float hCarrier = inputs[H_CARRIER_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[H_CARRIER_LEVEL_PARAM].getValue());
+		const float hOffset = inputs[H_OFFSET_INPUT].getNormalVoltage(5.f) * 2.f*exponent(params[H_OFFSET_LEVEL_PARAM].getValue());
 		const float hInput = hSignal * hCarrier/5.f + hOffset;
 
 		// Outputs
@@ -211,18 +211,18 @@ struct VCDualNeuron : Module {
 
 		// Set outpus
 		// Neuron A
-		outputs[A_OUTPUT_OUTPUT].setVoltage(clip(aOutput));
+		outputs[A_OUTPUT_OUTPUT].setVoltage(clipSignal(aOutput));
 
 		// Neuron B
-		outputs[B_OUTPUT_OUTPUT].setVoltage(clip(bOutput));
+		outputs[B_OUTPUT_OUTPUT].setVoltage(clipSignal(bOutput));
 		
 		// Combiner
-		outputs[DIFFRECT_POS_OUTPUT].setVoltage(clip(diffrectPos));
-		outputs[DIFFRECT_NEG_OUTPUT].setVoltage(clip(diffrectNeg));
-		outputs[MAX_OUTPUT].setVoltage(clip(max));
-		outputs[MIN_OUTPUT].setVoltage(clip(min));
-		outputs[SUM_OUTPUT].setVoltage(clip(sum));
-		outputs[INV_OUTPUT].setVoltage(clip(inv));
+		outputs[DIFFRECT_POS_OUTPUT].setVoltage(clipSignal(diffrectPos));
+		outputs[DIFFRECT_NEG_OUTPUT].setVoltage(clipSignal(diffrectNeg));
+		outputs[MAX_OUTPUT].setVoltage(clipSignal(max));
+		outputs[MIN_OUTPUT].setVoltage(clipSignal(min));
+		outputs[SUM_OUTPUT].setVoltage(clipSignal(sum));
+		outputs[INV_OUTPUT].setVoltage(clipSignal(inv));
 	}
 };
 

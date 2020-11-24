@@ -62,14 +62,14 @@ struct Multiplier : Module {
 
 	void process(const ProcessArgs& args) override {
 		const float results[8] = {
-			inputs[SIGNAL1_INPUT].getNormalVoltage(0.f) * inputs[CARRIER1_INPUT].getNormalVoltage(5.f) * 2.f * exponentialBipolar80Pade_5_4(params[CARRIER_LEVEL1_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL2_INPUT].getNormalVoltage(0.f) * inputs[CARRIER2_INPUT].getNormalVoltage(5.f) * 2.f * exponentialBipolar80Pade_5_4(params[CARRIER_LEVEL2_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL3_INPUT].getNormalVoltage(0.f) * inputs[CARRIER3_INPUT].getNormalVoltage(5.f) * 2.f * exponentialBipolar80Pade_5_4(params[CARRIER_LEVEL3_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL4_INPUT].getNormalVoltage(0.f) * inputs[CARRIER4_INPUT].getNormalVoltage(5.f) * 2.f * exponentialBipolar80Pade_5_4(params[CARRIER_LEVEL4_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL5_INPUT].getNormalVoltage(0.f) * inputs[CARRIER5_INPUT].getNormalVoltage(5.f) * 2.f * exponentialBipolar80Pade_5_4(params[CARRIER_LEVEL5_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL6_INPUT].getNormalVoltage(0.f) * inputs[CARRIER6_INPUT].getNormalVoltage(5.f) * 2.f * exponentialBipolar80Pade_5_4(params[CARRIER_LEVEL6_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL7_INPUT].getNormalVoltage(0.f) * inputs[CARRIER7_INPUT].getNormalVoltage(5.f) * 2.f * exponentialBipolar80Pade_5_4(params[CARRIER_LEVEL7_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL8_INPUT].getNormalVoltage(0.f) * inputs[CARRIER8_INPUT].getNormalVoltage(5.f) * 2.f * exponentialBipolar80Pade_5_4(params[CARRIER_LEVEL8_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL1_INPUT].getNormalVoltage(0.f) * inputs[CARRIER1_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL1_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL2_INPUT].getNormalVoltage(0.f) * inputs[CARRIER2_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL2_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL3_INPUT].getNormalVoltage(0.f) * inputs[CARRIER3_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL3_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL4_INPUT].getNormalVoltage(0.f) * inputs[CARRIER4_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL4_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL5_INPUT].getNormalVoltage(0.f) * inputs[CARRIER5_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL5_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL6_INPUT].getNormalVoltage(0.f) * inputs[CARRIER6_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL6_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL7_INPUT].getNormalVoltage(0.f) * inputs[CARRIER7_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL7_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL8_INPUT].getNormalVoltage(0.f) * inputs[CARRIER8_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL8_PARAM].getValue()) / 5.f,
 		};
 
 		const float out1 = results[0];
@@ -81,14 +81,14 @@ struct Multiplier : Module {
 		const float out7 = outputs[OUT6_OUTPUT].isConnected()? results[6]: results[6]+out6;
 		const float out8 = outputs[OUT7_OUTPUT].isConnected()? results[7]: results[7]+out7;
 
-		outputs[OUT1_OUTPUT].setVoltage(clip(out1));
-		outputs[OUT2_OUTPUT].setVoltage(clip(out2));
-		outputs[OUT3_OUTPUT].setVoltage(clip(out3));
-		outputs[OUT4_OUTPUT].setVoltage(clip(out4));
-		outputs[OUT5_OUTPUT].setVoltage(clip(out5));
-		outputs[OUT6_OUTPUT].setVoltage(clip(out6));
-		outputs[OUT7_OUTPUT].setVoltage(clip(out7));
-		outputs[OUT8_OUTPUT].setVoltage(clip(out8));
+		outputs[OUT1_OUTPUT].setVoltage(clipSignal(out1));
+		outputs[OUT2_OUTPUT].setVoltage(clipSignal(out2));
+		outputs[OUT3_OUTPUT].setVoltage(clipSignal(out3));
+		outputs[OUT4_OUTPUT].setVoltage(clipSignal(out4));
+		outputs[OUT5_OUTPUT].setVoltage(clipSignal(out5));
+		outputs[OUT6_OUTPUT].setVoltage(clipSignal(out6));
+		outputs[OUT7_OUTPUT].setVoltage(clipSignal(out7));
+		outputs[OUT8_OUTPUT].setVoltage(clipSignal(out8));
 	}
 };
 
