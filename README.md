@@ -63,8 +63,6 @@ This module is 8 four quadrant multipliers or ring-modulators (with attenuversio
 
 If no cable is plugged into an output, it is summed to the next outputs.
 
-This module is based on [VCV Befaco AxB+C](https://github.com/VCVRack/Befaco) implementation.
-
 ### 8 Sum
 
 ![8 Sum](/sum.png)

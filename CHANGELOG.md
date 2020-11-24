@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="1.2.1"></a>
+## [1.2.1] - 2020-11-24
+### Performance
+- Reimplement clip and exponential functions ([#16](https://github.com/denischevalier/StalysVCVPlugin/issues/16))
+
+
 <a name="1.2.0"></a>
 ## [1.2.0] - 2020-11-23
 ### Documentation
