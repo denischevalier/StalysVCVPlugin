@@ -97,12 +97,18 @@ This module is 8 sample and hold with a twist: it will only take gate into accou
 
 This can serve for counterpoint melody generation, VC clock division, or any usual Sample&Hold usages.
 
+### Digital to Analog Converter
+
+![DAC](/dac.png)
+
+This modules is a 8 bit bipolar digital to analog converter. It converts input triggers and gates into bipolar CV.
+
+One example of use for it is in a Rungler context: Connect it's output to the frequency of a VCO, the inverted output to the frequency of another VCO. Send the output of VCO 1 to the Analog Shift Register, then the outs of the ASR to the DAC, and use the square out of the second VCO as clock for the ASR: You've got a pseudo-random melody generator.
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
 
-* 8 VC CV delay
-* 8 bit to CV converter (DAC)
 * 8 and
 * 8 or
 * 8 pos/neg rect
