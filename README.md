@@ -101,9 +101,17 @@ This can serve for counterpoint melody generation, VC clock division, or any usu
 
 ![DAC](/dac.png)
 
-This modules is a 8 bit bipolar digital to analog converter. It converts input triggers and gates into bipolar CV.
+This modules is an 8 bit bipolar digital to analog converter. It converts input triggers and gates into bipolar CV.
 
 One example of use for it is in a Rungler context: Connect it's output to the frequency of a VCO, the inverted output to the frequency of another VCO. Send the output of VCO 1 to the Analog Shift Register, then the outs of the ASR to the DAC, and use the square out of the second VCO as clock for the ASR: You've got a pseudo-random melody generator.
+
+### Analog to Digital Converter
+
+![ADC](/adc.png)
+
+This modules is an 8 bit bipolar analog to digital converter. It converts input signal into 8 gates. Gates 1-7 represent the number 1 to 127, where as the 8th is the sign of the signal.
+
+Pair it with DAC and invert or mute some gates to get a pretty gnarly bitcrusher/distortion/waveshaper. Or pass any signal to it to generate interesting rhythms.
 
 ## Planed modules
 
@@ -121,7 +129,6 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * V/Oct to clock
 * 8 VC clock divider
 * 8 VC CV divider
-* CV to 8 bit converter (ACD)
 * 8 VC fall (CV + Trig in, VC log to exp, EOC out)
 * 8 VC rise (CV + Trig in, VC log to exp, EOC out)
 * 8 offset

@@ -19,3 +19,4 @@ extern Model* modelAbs;
 extern Model* modelASR;
 extern Model* modelVCSampleAndDelay;
 extern Model* modelDAC;
+extern Model* modelADC;
