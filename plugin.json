@@ -146,6 +146,16 @@
         "logic",
         "utility"
       ]
+    },
+    {
+      "slug": "PosNegRectifier",
+      "name": "8 Rectifier (\u00b1)",
+      "description": "8 Positive/Negative Rectifier",
+      "tags": [
+        "distortion",
+        "waveshaper",
+        "utility"
+      ]
     }
   ]
 }
