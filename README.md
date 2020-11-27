@@ -89,12 +89,19 @@ This module is 8 boolean Not operators: they invert the gates they receive as in
 
 This modules inverses the negative portion of any input voltage.
 
+### 8 VC Sample&Delay
+
+![8 VC Sample&Delay](/vcsampleanddelay.png)
+
+This module is 8 sample and hold with a twist: it will only take gate into account every STEP pulses.
+
+This can serve for counterpoint melody generation, VC clock division, or any usual Sample&Hold usages.
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
 
 * 8 VC CV delay
-* 8 S&H
 * 8 bit to CV converter (DAC)
 * 8 and
 * 8 or
@@ -112,6 +119,8 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * 8 VC fall (CV + Trig in, VC log to exp, EOC out)
 * 8 VC rise (CV + Trig in, VC log to exp, EOC out)
 * 8 offset
+* 8 Clip
+* 8 Exp
 
 ## Contribute
 
