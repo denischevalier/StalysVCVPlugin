@@ -95,6 +95,16 @@
         "logic",
         "clock modulator"
       ]
+    },
+    {
+      "slug": "VCSampleAndDelay",
+      "name": "8 VC Sample&Delay",
+      "description": "8 Variable length Sample&Holds",
+      "tags": [
+        "S&H",
+        "clock modulator",
+        "utility"
+      ]
     }
   ]
 }
