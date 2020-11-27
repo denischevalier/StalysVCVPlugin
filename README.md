@@ -115,25 +115,27 @@ Pair it with DAC and invert or mute some gates to get a pretty gnarly bitcrusher
 
 ### 8 And
 
-![And](/and.png)
+![8 And](/and.png)
 
-This module is 8 times three input AND operator logic module. Inputs are normalized to 10 volts to permit to not use all. If an output is not plugged, it's value is and-ed to the next row, thus allowing up to a 24 inputs and computation.
+This module is 8 times three input AND operator logic module. Inputs are normalized to 10 volts to permit to not use all. If an output is not plugged, its value is and-ed to the next row, thus allowing up to a 24 inputs and computation.
+
+### 8 Max
+
+![8 Max](/max.png)
+
+This module is 8 times three input MAX operator logic module (ie. Analog OR). Inputs are normalized to -10 volts to permit to not use all. If an output is not plugged, its value is maxed with the next row, thus allowing up to a 24 inputs max computation.
 
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
 
-* 8 or
 * 8 pos/neg rect
-* 8 diffrect
-* 8 max
 * 8 min
 * 8 avg
 * 8 A/B SEL
 * clock to V/Oct
 * V/Oct to clock
 * 8 VC clock divider
-* 8 VC CV divider
 * 8 VC fall (CV + Trig in, VC log to exp, EOC out)
 * 8 VC rise (CV + Trig in, VC log to exp, EOC out)
 * 8 offset

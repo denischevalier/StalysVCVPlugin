@@ -137,6 +137,15 @@
         "logic",
         "utility"
       ]
+    },
+    {
+      "slug": "Max",
+      "name": "8 Max",
+      "description": "8 times three input Max/Or operator",
+      "tags": [
+        "logic",
+        "utility"
+      ]
     }
   ]
 }
