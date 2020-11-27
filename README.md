@@ -125,6 +125,12 @@ This module is 8 times three input AND operator logic module. Inputs are normali
 
 This module is 8 times three input MAX operator logic module (ie. Analog OR). Inputs are normalized to -10 volts to permit to not use all. If an output is not plugged, its value is maxed with the next row, thus allowing up to a 24 inputs max computation.
 
+### 8 Min
+
+![8 Min](/min.png)
+
+This module is 8 times three input MIN operator logic module (ie. Analog OR NOT). Inputs are normalized to 10 volts to permit to not use all. If an output is not plugged, its value is minimized with the next row, thus allowing up to a 24 inputs min computation.
+
 ### 8 Rectifier (±)
 
 ![8 Positive/Negative Rectifier](/posnegrectifier.png)
@@ -137,7 +143,6 @@ This can serve to apply different treatment to each half of a waveform or as a d
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
 
-* 8 min
 * 8 avg
 * 8 A/B SEL
 * clock to V/Oct
