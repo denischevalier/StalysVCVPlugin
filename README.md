@@ -113,11 +113,16 @@ This modules is an 8 bit bipolar analog to digital converter. It converts input 
 
 Pair it with DAC and invert or mute some gates to get a pretty gnarly bitcrusher/distortion/waveshaper. Or pass any signal to it to generate interesting rhythms.
 
+### 8 And
+
+![And](/and.png)
+
+This module is 8 times three input AND operator logic module. Inputs are normalized to 10 volts to permit to not use all. If an output is not plugged, it's value is and-ed to the next row, thus allowing up to a 24 inputs and computation.
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
 
-* 8 and
 * 8 or
 * 8 pos/neg rect
 * 8 diffrect
