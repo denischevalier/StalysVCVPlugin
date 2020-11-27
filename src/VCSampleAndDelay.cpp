@@ -80,14 +80,14 @@ struct VCSampleAndDelay : Module {
 
 	void process(const ProcessArgs& args) override {
 		const float steps[8] = {
-			rack::math::clamp(inputs[STEPS1_INPUT].getNormalVoltage(params[STEPS_LEVEL1_PARAM].getValue()), 1.f, 10.f),
-			rack::math::clamp(inputs[STEPS2_INPUT].getNormalVoltage(params[STEPS_LEVEL2_PARAM].getValue()), 1.f, 10.f),
-			rack::math::clamp(inputs[STEPS3_INPUT].getNormalVoltage(params[STEPS_LEVEL3_PARAM].getValue()), 1.f, 10.f),
-			rack::math::clamp(inputs[STEPS4_INPUT].getNormalVoltage(params[STEPS_LEVEL4_PARAM].getValue()), 1.f, 10.f),
-			rack::math::clamp(inputs[STEPS5_INPUT].getNormalVoltage(params[STEPS_LEVEL5_PARAM].getValue()), 1.f, 10.f),
-			rack::math::clamp(inputs[STEPS6_INPUT].getNormalVoltage(params[STEPS_LEVEL6_PARAM].getValue()), 1.f, 10.f),
-			rack::math::clamp(inputs[STEPS7_INPUT].getNormalVoltage(params[STEPS_LEVEL7_PARAM].getValue()), 1.f, 10.f),
-			rack::math::clamp(inputs[STEPS8_INPUT].getNormalVoltage(params[STEPS_LEVEL8_PARAM].getValue()), 1.f, 10.f),
+			rack::math::clamp(std::floor(inputs[STEPS1_INPUT].getNormalVoltage(params[STEPS_LEVEL1_PARAM].getValue())), 1.f, 10.f),
+			rack::math::clamp(std::floor(inputs[STEPS2_INPUT].getNormalVoltage(params[STEPS_LEVEL2_PARAM].getValue())), 1.f, 10.f),
+			rack::math::clamp(std::floor(inputs[STEPS3_INPUT].getNormalVoltage(params[STEPS_LEVEL3_PARAM].getValue())), 1.f, 10.f),
+			rack::math::clamp(std::floor(inputs[STEPS4_INPUT].getNormalVoltage(params[STEPS_LEVEL4_PARAM].getValue())), 1.f, 10.f),
+			rack::math::clamp(std::floor(inputs[STEPS5_INPUT].getNormalVoltage(params[STEPS_LEVEL5_PARAM].getValue())), 1.f, 10.f),
+			rack::math::clamp(std::floor(inputs[STEPS6_INPUT].getNormalVoltage(params[STEPS_LEVEL6_PARAM].getValue())), 1.f, 10.f),
+			rack::math::clamp(std::floor(inputs[STEPS7_INPUT].getNormalVoltage(params[STEPS_LEVEL7_PARAM].getValue())), 1.f, 10.f),
+			rack::math::clamp(std::floor(inputs[STEPS8_INPUT].getNormalVoltage(params[STEPS_LEVEL8_PARAM].getValue())), 1.f, 10.f),
 		};
 
 		if (trig1.process(inputs[CLOCK1_INPUT].getVoltage())) {
