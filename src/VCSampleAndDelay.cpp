@@ -177,14 +177,14 @@ struct VCSampleAndDelayWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(8.075, 11.769)), module, VCSampleAndDelay::STEPS_LEVEL1_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.328, 26.33)), module, VCSampleAndDelay::STEPS_LEVEL2_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.328, 40.882)), module, VCSampleAndDelay::STEPS_LEVEL3_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.328, 55.542)), module, VCSampleAndDelay::STEPS_LEVEL4_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.328, 69.986)), module, VCSampleAndDelay::STEPS_LEVEL5_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.328, 84.538)), module, VCSampleAndDelay::STEPS_LEVEL6_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.328, 99.091)), module, VCSampleAndDelay::STEPS_LEVEL7_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.328, 113.643)), module, VCSampleAndDelay::STEPS_LEVEL8_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(8.075, 11.769)), module, VCSampleAndDelay::STEPS_LEVEL1_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 26.33)), module, VCSampleAndDelay::STEPS_LEVEL2_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 40.882)), module, VCSampleAndDelay::STEPS_LEVEL3_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 55.542)), module, VCSampleAndDelay::STEPS_LEVEL4_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 69.986)), module, VCSampleAndDelay::STEPS_LEVEL5_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 84.538)), module, VCSampleAndDelay::STEPS_LEVEL6_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 99.091)), module, VCSampleAndDelay::STEPS_LEVEL7_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 113.643)), module, VCSampleAndDelay::STEPS_LEVEL8_PARAM));
 
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(21.304, 11.877)), module, VCSampleAndDelay::STEPS1_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(34.534, 11.877)), module, VCSampleAndDelay::CLOCK1_INPUT));
