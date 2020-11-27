@@ -21,6 +21,7 @@ void init(Plugin* p) {
 		p->addModel(modelDAC);
 		p->addModel(modelADC);
 		p->addModel(modelAnd);
+		p->addModel(modelMax);
 
 	// Any other plugin initialization may go here.
 	// As an alternative, consider lazy-loading assets and lookup tables when your module is created to reduce startup times of Rack.
