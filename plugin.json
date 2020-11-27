@@ -105,6 +105,16 @@
         "clock modulator",
         "utility"
       ]
+    },
+    {
+      "slug": "DAC",
+      "name": "DAC",
+      "description": "8-bit Digital to Analog Converter",
+      "tags": [
+        "digital",
+        "distortion",
+        "utility"
+      ]
     }
   ]
 }
