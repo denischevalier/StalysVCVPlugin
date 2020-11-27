@@ -22,3 +22,4 @@ extern Model* modelDAC;
 extern Model* modelADC;
 extern Model* modelAnd;
 extern Model* modelMax;
+extern Model* modelPosNegRectifier;
