@@ -156,6 +156,15 @@
         "waveshaper",
         "utility"
       ]
+    },
+    {
+      "slug": "Min",
+      "name": "8 Min",
+      "description": "8 three inputs minimum operator",
+      "tags": [
+        "utility",
+        "logic"
+      ]
     }
   ]
 }
