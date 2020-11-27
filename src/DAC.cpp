@@ -1,4 +1,5 @@
 #include "plugin.hpp"
+#include "Common.hpp"
 
 
 struct DAC : Module {
@@ -29,7 +30,7 @@ struct DAC : Module {
 	}
 
 	void process(const ProcessArgs& args) override {
-		outputs[OUT_OUTPUT].setVoltage((
+		outputs[OUT_OUTPUT].setVoltage(clipSignal((
 			(inputs[TRIG1_INPUT].getVoltage() > 1.f? 1.f: 0.f)+
 			(inputs[TRIG2_INPUT].getVoltage() > 1.f? 2.f: 0.f)+
 			(inputs[TRIG3_INPUT].getVoltage() > 1.f? 4.f: 0.f)+
@@ -37,7 +38,7 @@ struct DAC : Module {
 			(inputs[TRIG5_INPUT].getVoltage() > 1.f? 16.f: 0.f)+
 			(inputs[TRIG6_INPUT].getVoltage() > 1.f? 32.f: 0.f)+
 			(inputs[TRIG7_INPUT].getVoltage() > 1.f? 64.f: 0.f)
-		) / (inputs[TRIG8_INPUT].getVoltage() > 1.f? -127.f: 127.f));
+		) / (inputs[TRIG8_INPUT].getVoltage() > 1.f? -12.7f: 12.7f)));
 	}
 };
 

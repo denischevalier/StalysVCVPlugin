@@ -113,7 +113,20 @@
       "tags": [
         "digital",
         "distortion",
-        "utility"
+        "utility",
+        "waveshaper"
+      ]
+    },
+    {
+      "slug": "ADC",
+      "name": "ADC",
+      "description": "Analog to Digital Converter",
+      "tags": [
+        "digital",
+        "clock generator",
+        "distortion",
+        "utility",
+        "waveshaper"
       ]
     }
   ]
