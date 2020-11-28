@@ -121,12 +121,6 @@ This modules is an 8 bit bipolar analog to digital converter. It converts input 
 
 Pair it with DAC and invert or mute some gates to get a pretty gnarly bitcrusher/distortion/waveshaper. Or pass any signal to it to generate interesting rhythms.
 
-### 8 And
-
-![8 And](/and.png)
-
-This module is 8 times three input AND operator logic module. Inputs are normalized to 10 volts to permit to not use all. If an output is not plugged, its value is and-ed to the next row, thus allowing up to a 24 inputs and computation.
-
 ### 8 Max
 
 ![8 Max](/max.png)
@@ -137,7 +131,7 @@ This module is 8 times three input MAX operator logic module (ie. Analog OR). In
 
 ![8 Min](/min.png)
 
-This module is 8 times three input MIN operator logic module (ie. Analog OR NOT). Inputs are normalized to 10 volts to permit to not use all. If an output is not plugged, its value is minimized with the next row, thus allowing up to a 24 inputs min computation.
+This module is 8 times three input MIN operator logic module (ie. Analog AND). Inputs are normalized to 10 volts to permit to not use all. If an output is not plugged, its value is minimized with the next row, thus allowing up to a 24 inputs min computation.
 
 ### 8 Rectifier (±)
 

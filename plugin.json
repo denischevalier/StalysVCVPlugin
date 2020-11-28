@@ -130,15 +130,6 @@
       ]
     },
     {
-      "slug": "And",
-      "name": "8 And",
-      "description": "8 times three inputs And logic module",
-      "tags": [
-        "logic",
-        "utility"
-      ]
-    },
-    {
       "slug": "Max",
       "name": "8 Max",
       "description": "8 times three input Max/Or operator",
@@ -160,7 +151,7 @@
     {
       "slug": "Min",
       "name": "8 Min",
-      "description": "8 three inputs minimum operator",
+      "description": "8 three inputs Min/And operator",
       "tags": [
         "utility",
         "logic"

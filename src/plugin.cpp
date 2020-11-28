@@ -20,7 +20,6 @@ void init(Plugin* p) {
 		p->addModel(modelVCSampleAndDelay);
 		p->addModel(modelDAC);
 		p->addModel(modelADC);
-		p->addModel(modelAnd);
 		p->addModel(modelMax);
 		p->addModel(modelPosNegRectifier);
 		p->addModel(modelMin);
