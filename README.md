@@ -17,6 +17,14 @@ My dream is to one day port it to eurorack (but I'd need to learn electronics fi
 - Neuron VCV implementation: [Michael Hetrick](https://mhetrick.com/)
 - Befaco AxB+C VCV implementation: [Befaco](https://github.com/VCVRack/Befaco)
 
+## Installation
+
+- **Dependencies:** Follow the steps in the [official VCV Rack manual](https://vcvrack.com/manual/Building#setting-up-your-development-environment). You do not need to build the Rack itself.
+- **Clone  variablethis repository in the destination of your choice:** `git clone https://github.com/denischevalier/StalysVCVPlugin`.
+- **Go into the plugin directory:** `cd StalysVCVPlugin`.
+- **Setup the environmnent:** `export RACK_DIR=path/to/your/sdk/installation`.
+- **Build and install the modules:** `make install`.
+
 ## Modules
 
 ### VC Dual Neuron
