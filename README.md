@@ -141,6 +141,23 @@ This module is 8 rectifiers that output the positive portion of a signal to the 
 
 This can serve to apply different treatment to each half of a waveform or as a distortion effect.
 
+### 8 Function generators
+
+![8 Function](/function.png)
+
+This module is 8 function generators. Each row takes (from left to right) one trigger input, one signal input, one rise CV and param, one fall CV and param. It then outputs the slew processed signal, a gate during rising phase, a gate during falling phase and an End-Of-Cycle gate. Note that EOC is up when no cycle (as on a Serge DUSG), to permit feedback.
+
+This module is a jack of all trades. Amongst its various use-cases, here are the main ones:
+
+* AD envelope generator
+* LFO
+* VCO
+* Gate Sequencer
+* Rudimentary low-pass gate
+* Filter
+* Clock generator
+* Slew limiter
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
@@ -150,8 +167,6 @@ This list is here for me as a reminder. I might (or might not) implement them in
 * clock to V/Oct
 * V/Oct to clock
 * 8 VC clock divider
-* 8 VC fall (CV + Trig in, VC log to exp, EOC out)
-* 8 VC rise (CV + Trig in, VC log to exp, EOC out)
 * 8 offset
 * 8 Clip
 * 8 Exp

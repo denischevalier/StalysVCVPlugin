@@ -156,6 +156,24 @@
         "utility",
         "logic"
       ]
+    },
+    {
+      "slug": "Function",
+      "name": "8 Function generators",
+      "description": "8 times slew-limiters/function generators/A-R envelopes",
+      "tags": [
+        "clock generator",
+        "envelope follower",
+        "envelope generator",
+        "filter",
+        "function generator",
+        "lfo",
+        "lowpass gate",
+        "vco",
+        "sequencer",
+        "slew limiter",
+        "utility"
+      ]
     }
   ]
 }
