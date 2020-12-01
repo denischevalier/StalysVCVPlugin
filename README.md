@@ -166,11 +166,18 @@ This module is a jack of all trades. Amongst its various use-cases, here are the
 
 Inspired by [Befaco Slew Limiter](https://github.com/VCVRack/Befaco/blob/v1/src/SlewLimiter.cpp).
 
+### 8 A/B Y
+
+![8 A/B Y](/aby.png)
+
+This module is an octal 2-in 1-out switch, eg A/B Y switch.
+
+It can be used to switch between chorus and verse sequences for instance.
+
 ## Planed modules
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
 
-* 8 A/B SEL
 * clock to V/Oct
 * V/Oct to clock
 * 8 VC clock divider
