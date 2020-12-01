@@ -27,7 +27,7 @@ My dream is to one day port it to eurorack (but I'd need to learn electronics fi
 
 ## Modules
 
-### VC Dual Neuron
+<details><summary>VC Dual Neuron</summary>
 
 ![VC Dual Neuron](/vcdualneuron.png)
 
@@ -47,7 +47,9 @@ The Combiner circuit consists of two lanes (with four-quadrant multiplication an
 
 This might seem overwhelming, but just experiment: feed it with LFOs, envelopes, sequences, oscillators or even itself and watch the complex waveforms it generates. You can use just some parts of it and it becomes a mixer/ring-modulator/waveshapper/logic module.
 
-### Analog Shift Register
+</details>
+
+<details><summary>Analog Shift Register</summary>
 
 ![ASR](/asr.png)
 
@@ -55,7 +57,9 @@ This module is an 8 step shift register: At each incoming CLOCK trigger, all out
 
 Typical use would be to generate canon melodies.
 
-### 8 Comparator
+</details>
+
+<details><summary>8 Comparator</summary>
 
 ![8 Comparator](/comparator.png)
 
@@ -63,7 +67,9 @@ This module is what its name indicates: 8 VC comparators: It outputs a gate when
 
 Plug two different LFOs to see complex rhythms emerge.
 
-### 8 Multiplier
+</details>
+
+<details><summary>8 Multiplier</summary>
 
 ![8 Multiplier](/multiplier.png)
 
@@ -71,7 +77,9 @@ This module is 8 four quadrant multipliers or ring-modulators (with attenuversio
 
 If no cable is plugged into an output, it is summed to the next outputs.
 
-### 8 Sum
+</details>
+
+<details><summary>8 Sum</summary>
 
 ![8 Sum](/sum.png)
 
@@ -79,25 +87,33 @@ This module is 8 three inputs unity mixer.
 
 If no cable is plugged into an output, it is summed to the next outputs.
 
-### 8 Diff
+</details>
+
+<details><summary>8 Diff</summary>
 
 ![8 Diff](/diff.png)
 
 This module is 8 three inputs subtracter.
 
-### 8 Not
+</details>
+
+<details><summary>8 Not</summary>
 
 ![8 Not](/not.png)
 
 This module is 8 boolean Not operators: they invert the gates they receive as inputs.
 
-### 8 Abs
+</details>
+
+<details><summary>8 Abs</summary>
 
 ![8 Abs](/abs.png)
 
 This modules inverses the negative portion of any input voltage.
 
-### 8 VC Sample&Delay
+</details>
+
+<details><summary>8 VC Sample&Delay</summary>
 
 ![8 VC Sample&Delay](/vcsampleanddelay.png)
 
@@ -105,7 +121,9 @@ This module is 8 sample and hold with a twist: it will only take gate into accou
 
 This can serve for counterpoint melody generation, VC clock division, or any usual Sample&Hold usages.
 
-### Digital to Analog Converter
+</details>
+
+<details><summary>Digital to Analog Converter</summary>
 
 ![DAC](/dac.png)
 
@@ -113,7 +131,9 @@ This modules is an 8 bit bipolar digital to analog converter. It converts input 
 
 One example of use for it is in a Rungler context: Connect it's output to the frequency of a VCO, the inverted output to the frequency of another VCO. Send the output of VCO 1 to the Analog Shift Register, then the outs of the ASR to the DAC, and use the square out of the second VCO as clock for the ASR: You've got a pseudo-random melody generator.
 
-### Analog to Digital Converter
+</details>
+
+<details><summary>Analog to Digital Converter</summary>
 
 ![ADC](/adc.png)
 
@@ -121,19 +141,25 @@ This modules is an 8 bit bipolar analog to digital converter. It converts input 
 
 Pair it with DAC and invert or mute some gates to get a pretty gnarly bitcrusher/distortion/waveshaper. Or pass any signal to it to generate interesting rhythms.
 
-### 8 Max
+</details>
+
+<details><summary>8 Max</summary>
 
 ![8 Max](/max.png)
 
 This module is 8 times three input MAX operator logic module (ie. Analog OR). Inputs are normalized to -10 volts to permit to not use all. If an output is not plugged, its value is maxed with the next row, thus allowing up to a 24 inputs max computation.
 
-### 8 Min
+</details>
+
+<details><summary>8 Min</summary>
 
 ![8 Min](/min.png)
 
 This module is 8 times three input MIN operator logic module (ie. Analog AND). Inputs are normalized to 10 volts to permit to not use all. If an output is not plugged, its value is minimized with the next row, thus allowing up to a 24 inputs min computation.
 
-### 8 Rectifier (±)
+</details>
+
+<details><summary>8 Rectifier (±)</summary>
 
 ![8 Positive/Negative Rectifier](/posnegrectifier.png)
 
@@ -141,13 +167,17 @@ This module is 8 rectifiers that output the positive portion of a signal to the 
 
 This can serve to apply different treatment to each half of a waveform or as a distortion effect.
 
-### 8 Averager
+</details>
+
+<details><summary>8 Averager</summary>
 
 ![8 Avg](/avg.png)
 
 This module is an octal three-inputs averager: It computes the average of its connected inputs. If an output is not connected, it will compute add the corresponding inputs to the average of the following output, thus permitting averaging of up to 24 inputs.
 
-### 8 Function generators
+</details>
+
+<details><summary>8 Function generators</summary>
 
 ![8 Function](/function.png)
 
@@ -166,7 +196,9 @@ This module is a jack of all trades. Amongst its various use-cases, here are the
 
 Inspired by [Befaco Slew Limiter](https://github.com/VCVRack/Befaco/blob/v1/src/SlewLimiter.cpp).
 
-### 8 A/B Y
+</details>
+
+<details><summary>8 A/B Y</summary>
 
 ![8 A/B Y](/aby.png)
 
@@ -174,11 +206,15 @@ This module is an octal 2-in 1-out switch, eg A/B Y switch.
 
 It can be used to switch between chorus and verse sequences for instance.
 
-### 8 Offset
+</details>
+
+<details><summary>8 Offset</summary>
 
 ![8 Offset](/offset.png)
 
 This module is an octal offset module, generating voltages from -10 to 10V.
+
+</details>
 
 ## Contribute
 
