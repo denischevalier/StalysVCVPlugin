@@ -200,6 +200,17 @@
       "tags": [
         "utility"
       ]
+    },
+    {
+      "slug": "Clip",
+      "name": "8 Clip",
+      "description": "Octal clip distortion module",
+      "tags": [
+        "distortion",
+        "effect",
+        "waveshapper",
+        "utility"
+      ]
     }
   ]
 }
