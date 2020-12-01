@@ -1,6 +1,6 @@
 # Stalys
 
-![All Modules](/allmodules.png)
+![All Modules](/img/allmodules.png)
 
 ## Abstract
 
@@ -29,7 +29,7 @@ My dream is to one day port it to eurorack (but I'd need to learn electronics fi
 
 <details><summary>VC Dual Neuron</summary>
 
-![VC Dual Neuron](/vcdualneuron.png)
+![VC Dual Neuron](/img/vcdualneuron.png)
 
 This module is heavily inspired by [Nonlinear Circuits](https://www.nonlinearcircuits.com/) [Double Neuron](https://github.com/mhetrick/nonlinearcircuits) module.
 
@@ -51,7 +51,7 @@ This might seem overwhelming, but just experiment: feed it with LFOs, envelopes,
 
 <details><summary>Analog Shift Register</summary>
 
-![ASR](/asr.png)
+![ASR](/img/asr.png)
 
 This module is an 8 step shift register: At each incoming CLOCK trigger, all output voltages are shifted down one position and the value of IN is sampled into the first output.
 
@@ -61,7 +61,7 @@ Typical use would be to generate canon melodies.
 
 <details><summary>8 Comparator</summary>
 
-![8 Comparator](/comparator.png)
+![8 Comparator](/img/comparator.png)
 
 This module is what its name indicates: 8 VC comparators: It outputs a gate whenever the input signal is superior to the value signal (defaults to 0).
 
@@ -71,7 +71,7 @@ Plug two different LFOs to see complex rhythms emerge.
 
 <details><summary>8 Multiplier</summary>
 
-![8 Multiplier](/multiplier.png)
+![8 Multiplier](/img/multiplier.png)
 
 This module is 8 four quadrant multipliers or ring-modulators (with attenuversion of the Carrier). A 5V voltage is normaled to the Carrier input.
 
@@ -81,7 +81,7 @@ If no cable is plugged into an output, it is summed to the next outputs.
 
 <details><summary>8 Sum</summary>
 
-![8 Sum](/sum.png)
+![8 Sum](/img/sum.png)
 
 This module is 8 three inputs unity mixer.
 
@@ -91,7 +91,7 @@ If no cable is plugged into an output, it is summed to the next outputs.
 
 <details><summary>8 Diff</summary>
 
-![8 Diff](/diff.png)
+![8 Diff](/img/diff.png)
 
 This module is 8 three inputs subtracter.
 
@@ -99,7 +99,7 @@ This module is 8 three inputs subtracter.
 
 <details><summary>8 Not</summary>
 
-![8 Not](/not.png)
+![8 Not](/img/not.png)
 
 This module is 8 boolean Not operators: they invert the gates they receive as inputs.
 
@@ -107,7 +107,7 @@ This module is 8 boolean Not operators: they invert the gates they receive as in
 
 <details><summary>8 Abs</summary>
 
-![8 Abs](/abs.png)
+![8 Abs](/img/abs.png)
 
 This modules inverses the negative portion of any input voltage.
 
@@ -115,7 +115,7 @@ This modules inverses the negative portion of any input voltage.
 
 <details><summary>8 VC Sample&Delay</summary>
 
-![8 VC Sample&Delay](/vcsampleanddelay.png)
+![8 VC Sample&Delay](/img/vcsampleanddelay.png)
 
 This module is 8 sample and hold with a twist: it will only take gate into account every STEP pulses.
 
@@ -125,7 +125,7 @@ This can serve for counterpoint melody generation, VC clock division, or any usu
 
 <details><summary>Digital to Analog Converter</summary>
 
-![DAC](/dac.png)
+![DAC](/img/dac.png)
 
 This modules is an 8 bit bipolar digital to analog converter. It converts input triggers and gates into bipolar CV.
 
@@ -135,7 +135,7 @@ One example of use for it is in a Rungler context: Connect it's output to the fr
 
 <details><summary>Analog to Digital Converter</summary>
 
-![ADC](/adc.png)
+![ADC](/img/adc.png)
 
 This modules is an 8 bit bipolar analog to digital converter. It converts input signal into 8 gates. Gates 1-7 represent the number 1 to 127, where as the 8th is the sign of the signal.
 
@@ -145,7 +145,7 @@ Pair it with DAC and invert or mute some gates to get a pretty gnarly bitcrusher
 
 <details><summary>8 Max</summary>
 
-![8 Max](/max.png)
+![8 Max](/img/max.png)
 
 This module is 8 times three input MAX operator logic module (ie. Analog OR). Inputs are normalized to -10 volts to permit to not use all. If an output is not plugged, its value is maxed with the next row, thus allowing up to a 24 inputs max computation.
 
@@ -153,7 +153,7 @@ This module is 8 times three input MAX operator logic module (ie. Analog OR). In
 
 <details><summary>8 Min</summary>
 
-![8 Min](/min.png)
+![8 Min](/img/min.png)
 
 This module is 8 times three input MIN operator logic module (ie. Analog AND). Inputs are normalized to 10 volts to permit to not use all. If an output is not plugged, its value is minimized with the next row, thus allowing up to a 24 inputs min computation.
 
@@ -161,7 +161,7 @@ This module is 8 times three input MIN operator logic module (ie. Analog AND). I
 
 <details><summary>8 Rectifier (±)</summary>
 
-![8 Positive/Negative Rectifier](/posnegrectifier.png)
+![8 Positive/Negative Rectifier](/img/posnegrectifier.png)
 
 This module is 8 rectifiers that output the positive portion of a signal to the **+** output, and the negative to the **-** output.
 
@@ -171,7 +171,7 @@ This can serve to apply different treatment to each half of a waveform or as a d
 
 <details><summary>8 Averager</summary>
 
-![8 Avg](/avg.png)
+![8 Avg](/img/avg.png)
 
 This module is an octal three-inputs averager: It computes the average of its connected inputs. If an output is not connected, it will compute add the corresponding inputs to the average of the following output, thus permitting averaging of up to 24 inputs.
 
@@ -179,7 +179,7 @@ This module is an octal three-inputs averager: It computes the average of its co
 
 <details><summary>8 Function generators</summary>
 
-![8 Function](/function.png)
+![8 Function](/img/function.png)
 
 This module is 8 function generators. Each row takes (from left to right) one trigger input, one signal input, one rise CV and param, one fall CV and param. It then outputs the slew processed signal, a gate during rising phase, a gate during falling phase and an End-Of-Cycle gate. Note that EOC is up when no cycle (as on a Serge DUSG), to permit feedback.
 
@@ -200,7 +200,7 @@ Inspired by [Befaco Slew Limiter](https://github.com/VCVRack/Befaco/blob/v1/src/
 
 <details><summary>8 A/B Y</summary>
 
-![8 A/B Y](/aby.png)
+![8 A/B Y](/img/aby.png)
 
 This module is an octal 2-in 1-out switch, eg A/B Y switch.
 
@@ -210,7 +210,7 @@ It can be used to switch between chorus and verse sequences for instance.
 
 <details><summary>8 Offset</summary>
 
-![8 Offset](/offset.png)
+![8 Offset](/img/offset.png)
 
 This module is an octal offset module, generating voltages from -10 to 10V.
 
