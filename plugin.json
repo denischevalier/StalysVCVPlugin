@@ -183,6 +183,15 @@
         "utility",
         "logic"
       ]
+    },
+    {
+      "slug": "ABY",
+      "name": "8 A/B Y Module",
+      "description": "8 2-in 1-out switch (A/B Y)",
+      "tags": [
+        "utility",
+        "logic"
+      ]
     }
   ]
 }
