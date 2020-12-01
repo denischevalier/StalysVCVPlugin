@@ -141,6 +141,12 @@ This module is 8 rectifiers that output the positive portion of a signal to the 
 
 This can serve to apply different treatment to each half of a waveform or as a distortion effect.
 
+### 8 Averager
+
+![8 Avg](/avg.png)
+
+This module is an octal three-inputs averager: It computes the average of its connected inputs. If an output is not connected, it will compute add the corresponding inputs to the average of the following output, thus permitting averaging of up to 24 inputs.
+
 ### 8 Function generators
 
 ![8 Function](/function.png)
@@ -164,7 +170,6 @@ Inspired by [Befaco Slew Limiter](https://github.com/VCVRack/Befaco/blob/v1/src/
 
 This list is here for me as a reminder. I might (or might not) implement them in any order.
 
-* 8 avg
 * 8 A/B SEL
 * clock to V/Oct
 * V/Oct to clock

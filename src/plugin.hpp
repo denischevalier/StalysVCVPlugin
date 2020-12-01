@@ -24,3 +24,4 @@ extern Model* modelMax;
 extern Model* modelPosNegRectifier;
 extern Model* modelMin;
 extern Model* modelFunction;
+extern Model* modelAvg;
