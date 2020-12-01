@@ -174,16 +174,11 @@ This module is an octal 2-in 1-out switch, eg A/B Y switch.
 
 It can be used to switch between chorus and verse sequences for instance.
 
-## Planed modules
+### 8 Offset
 
-This list is here for me as a reminder. I might (or might not) implement them in any order.
+![8 Offset](/offset.png)
 
-* clock to V/Oct
-* V/Oct to clock
-* 8 VC clock divider
-* 8 offset
-* 8 Clip
-* 8 Exp
+This module is an octal offset module, generating voltages from -10 to 10V.
 
 ## Contribute
 

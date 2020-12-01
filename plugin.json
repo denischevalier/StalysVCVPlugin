@@ -192,6 +192,14 @@
         "utility",
         "logic"
       ]
+    },
+    {
+      "slug": "Offset",
+      "name": "8 Offset",
+      "description": "Octal offset module",
+      "tags": [
+        "utility"
+      ]
     }
   ]
 }

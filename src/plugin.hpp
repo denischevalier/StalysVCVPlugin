@@ -26,3 +26,4 @@ extern Model* modelMin;
 extern Model* modelFunction;
 extern Model* modelAvg;
 extern Model* modelABY;
+extern Model* modelOffset;
