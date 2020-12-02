@@ -222,7 +222,7 @@ This module is an octal offset module, generating voltages from -10 to 10V.
 
 This module is an octal soft-clipping distortion.
 
-Negative ratio will augment the amplitude of the incoming signal. Ratio towards 1 will fold the signal.
+Negative ratio will hard clip the signal. Positive ratio will soft clip the signal. Extreme values will fold the signal.
 
 ## Contribute
 
