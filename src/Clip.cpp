@@ -50,25 +50,41 @@ struct Clip : Module {
 
 	Clip() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
-		configParam(RATIO_LEVEL1_PARAM, -10.f, 10.f, 1.4925373313f, "Clip level");
-		configParam(RATIO_LEVEL2_PARAM, -10.f, 10.f, 1.4925373313f, "Clip level");
-		configParam(RATIO_LEVEL3_PARAM, -10.f, 10.f, 1.4925373313f, "Clip level");
-		configParam(RATIO_LEVEL4_PARAM, -10.f, 10.f, 1.4925373313f, "Clip level");
-		configParam(RATIO_LEVEL5_PARAM, -10.f, 10.f, 1.4925373313f, "Clip level");
-		configParam(RATIO_LEVEL6_PARAM, -10.f, 10.f, 1.4925373313f, "Clip level");
-		configParam(RATIO_LEVEL7_PARAM, -10.f, 10.f, 1.4925373313f, "Clip level");
-		configParam(RATIO_LEVEL8_PARAM, -10.f, 10.f, 1.4925373313f, "Clip level");
+		configParam(RATIO_LEVEL1_PARAM, -2.f, 2.f, 0.14925373313f, "Clip level");
+		configParam(RATIO_LEVEL2_PARAM, -2.f, 2.f, 0.14925373313f, "Clip level");
+		configParam(RATIO_LEVEL3_PARAM, -2.f, 2.f, 0.14925373313f, "Clip level");
+		configParam(RATIO_LEVEL4_PARAM, -2.f, 2.f, 0.14925373313f, "Clip level");
+		configParam(RATIO_LEVEL5_PARAM, -2.f, 2.f, 0.14925373313f, "Clip level");
+		configParam(RATIO_LEVEL6_PARAM, -2.f, 2.f, 0.14925373313f, "Clip level");
+		configParam(RATIO_LEVEL7_PARAM, -2.f, 2.f, 0.14925373313f, "Clip level");
+		configParam(RATIO_LEVEL8_PARAM, -2.f, 2.f, 0.14925373313f, "Clip level");
 	}
 
 	void process(const ProcessArgs& args) override {
-		outputs[OUT1_OUTPUT].setVoltage(clipSignal(inputs[IN1_INPUT].getVoltage(), inputs[RATIO1_INPUT].getNormalVoltage(params[RATIO_LEVEL1_PARAM].getValue())/10.f));
-		outputs[OUT2_OUTPUT].setVoltage(clipSignal(inputs[IN2_INPUT].getVoltage(), inputs[RATIO2_INPUT].getNormalVoltage(params[RATIO_LEVEL2_PARAM].getValue())/10.f));
-		outputs[OUT3_OUTPUT].setVoltage(clipSignal(inputs[IN3_INPUT].getVoltage(), inputs[RATIO3_INPUT].getNormalVoltage(params[RATIO_LEVEL3_PARAM].getValue())/10.f));
-		outputs[OUT4_OUTPUT].setVoltage(clipSignal(inputs[IN4_INPUT].getVoltage(), inputs[RATIO4_INPUT].getNormalVoltage(params[RATIO_LEVEL4_PARAM].getValue())/10.f));
-		outputs[OUT5_OUTPUT].setVoltage(clipSignal(inputs[IN5_INPUT].getVoltage(), inputs[RATIO5_INPUT].getNormalVoltage(params[RATIO_LEVEL5_PARAM].getValue())/10.f));
-		outputs[OUT6_OUTPUT].setVoltage(clipSignal(inputs[IN6_INPUT].getVoltage(), inputs[RATIO6_INPUT].getNormalVoltage(params[RATIO_LEVEL6_PARAM].getValue())/10.f));
-		outputs[OUT7_OUTPUT].setVoltage(clipSignal(inputs[IN7_INPUT].getVoltage(), inputs[RATIO7_INPUT].getNormalVoltage(params[RATIO_LEVEL7_PARAM].getValue())/10.f));
-		outputs[OUT8_OUTPUT].setVoltage(clipSignal(inputs[IN8_INPUT].getVoltage(), inputs[RATIO8_INPUT].getNormalVoltage(params[RATIO_LEVEL8_PARAM].getValue())/10.f));
+		outputs[OUT1_OUTPUT].setVoltage(rack::math::clamp(clipSignal(inputs[IN1_INPUT].getVoltage(), inputs[RATIO1_INPUT].isConnected()?
+					(inputs[RATIO1_INPUT].getVoltage()/10.f)*params[RATIO_LEVEL1_PARAM].getValue():
+					params[RATIO_LEVEL1_PARAM].getValue()), -10.f, 10.f));
+		outputs[OUT2_OUTPUT].setVoltage(rack::math::clamp(clipSignal(inputs[IN2_INPUT].getVoltage(), inputs[RATIO2_INPUT].isConnected()?
+					(inputs[RATIO2_INPUT].getVoltage()/10.f)*params[RATIO_LEVEL2_PARAM].getValue():
+					params[RATIO_LEVEL2_PARAM].getValue()), -10.f, 10.f));
+		outputs[OUT3_OUTPUT].setVoltage(rack::math::clamp(clipSignal(inputs[IN3_INPUT].getVoltage(), inputs[RATIO3_INPUT].isConnected()?
+					(inputs[RATIO3_INPUT].getVoltage()/10.f)*params[RATIO_LEVEL3_PARAM].getValue():
+					params[RATIO_LEVEL3_PARAM].getValue()), -10.f, 10.f));
+		outputs[OUT4_OUTPUT].setVoltage(rack::math::clamp(clipSignal(inputs[IN4_INPUT].getVoltage(), inputs[RATIO4_INPUT].isConnected()?
+					(inputs[RATIO4_INPUT].getVoltage()/10.f)*params[RATIO_LEVEL4_PARAM].getValue():
+					params[RATIO_LEVEL4_PARAM].getValue()), -10.f, 10.f));
+		outputs[OUT5_OUTPUT].setVoltage(rack::math::clamp(clipSignal(inputs[IN5_INPUT].getVoltage(), inputs[RATIO5_INPUT].isConnected()?
+					(inputs[RATIO5_INPUT].getVoltage()/10.f)*params[RATIO_LEVEL5_PARAM].getValue():
+					params[RATIO_LEVEL5_PARAM].getValue()), -10.f, 10.f));
+		outputs[OUT6_OUTPUT].setVoltage(rack::math::clamp(clipSignal(inputs[IN6_INPUT].getVoltage(), inputs[RATIO6_INPUT].isConnected()?
+					(inputs[RATIO6_INPUT].getVoltage()/10.f)*params[RATIO_LEVEL6_PARAM].getValue():
+					params[RATIO_LEVEL6_PARAM].getValue()), -10.f, 10.f));
+		outputs[OUT7_OUTPUT].setVoltage(rack::math::clamp(clipSignal(inputs[IN7_INPUT].getVoltage(), inputs[RATIO7_INPUT].isConnected()?
+					(inputs[RATIO7_INPUT].getVoltage()/10.f)*params[RATIO_LEVEL7_PARAM].getValue():
+					params[RATIO_LEVEL7_PARAM].getValue()), -10.f, 10.f));
+		outputs[OUT8_OUTPUT].setVoltage(rack::math::clamp(clipSignal(inputs[IN8_INPUT].getVoltage(), inputs[RATIO8_INPUT].isConnected()?
+					(inputs[RATIO8_INPUT].getVoltage()/10.f)*params[RATIO_LEVEL8_PARAM].getValue():
+					params[RATIO_LEVEL8_PARAM].getValue()), -10.f, 10.f));
 	}
 };
 
