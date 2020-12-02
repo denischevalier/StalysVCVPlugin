@@ -198,6 +198,7 @@
       "name": "8 Offset",
       "description": "Octal offset module",
       "tags": [
+        "controller",
         "utility"
       ]
     },
@@ -209,6 +210,15 @@
         "distortion",
         "effect",
         "waveshapper",
+        "utility"
+      ]
+    },
+    {
+      "slug": "CtV",
+      "name": "8 Clock to Volt/Octave",
+      "description": "Converts clock signals to V/Oct signals",
+      "tags": [
+        "clock generator",
         "utility"
       ]
     }

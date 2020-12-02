@@ -224,6 +224,18 @@ This module is an octal soft-clipping distortion.
 
 Negative ratio will hard clip the signal. Positive ratio will soft clip the signal. Extreme values will fold the signal.
 
+</details>
+
+<details><summary>8 Clock to Volt/Octave</summary>
+
+![8 C2V/O](img/ctv.png)
+
+This modules transforms a clock input into a Volt/Octave output. Base frequency (0) is 2 hertz.
+
+Use this module to sync LFOs to a clock.
+
+Note that this modules needs at least two clock ticks to accurately compute the frequency. Thus, low BPM clocks will take some time before being accurately converted.
+
 ## Contribute
 
 You can support me in many ways:
