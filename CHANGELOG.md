@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="1.3.1"></a>
+## [1.3.1] - 2020-12-03
+### Bug
+- Fix typo in plugin.json ([#60](https://github.com/denischevalier/StalysVCVPlugin/issues/60))
+
+
 <a name="1.3.0"></a>
 ## [1.3.0] - 2020-12-02
 ### Documentation
@@ -79,7 +85,8 @@
 <a name="1.0.0"></a>
 ## 1.0.0 - 2020-11-19
 
-[Unreleased]: https://github.com/denischevalier/StalysVCVPlugin/compare/1.3.0...HEAD
+[Unreleased]: https://github.com/denischevalier/StalysVCVPlugin/compare/1.3.1...HEAD
+[1.3.1]: https://github.com/denischevalier/StalysVCVPlugin/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/denischevalier/StalysVCVPlugin/compare/1.2.1...1.3.0
 [1.2.1]: https://github.com/denischevalier/StalysVCVPlugin/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/denischevalier/StalysVCVPlugin/compare/1.1.1...1.2.0
