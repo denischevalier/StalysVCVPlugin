@@ -72,36 +72,31 @@ struct PosNegRectifierWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/PosNegRectifier.svg")));
 
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 10.16)), module, PosNegRectifier::SIGNAL1_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 25.4)), module, PosNegRectifier::SIGNAL2_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 40.64)), module, PosNegRectifier::SIGNAL3_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 55.88)), module, PosNegRectifier::SIGNAL4_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 71.12)), module, PosNegRectifier::SIGNAL5_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 86.36)), module, PosNegRectifier::SIGNAL6_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 101.6)), module, PosNegRectifier::SIGNAL7_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 116.84)), module, PosNegRectifier::SIGNAL8_INPUT));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 12.014)), module, PosNegRectifier::SIGNAL1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 26.566)), module, PosNegRectifier::SIGNAL2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 41.118)), module, PosNegRectifier::SIGNAL3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 55.778)), module, PosNegRectifier::SIGNAL4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 70.222)), module, PosNegRectifier::SIGNAL5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 84.774)), module, PosNegRectifier::SIGNAL6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 99.327)), module, PosNegRectifier::SIGNAL7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 113.879)), module, PosNegRectifier::SIGNAL8_INPUT));
-
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 11.906)), module, PosNegRectifier::POS1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(39.688, 12.014)), module, PosNegRectifier::NEG1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 26.458)), module, PosNegRectifier::POS2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(39.688, 26.566)), module, PosNegRectifier::NEG2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 41.01)), module, PosNegRectifier::POS3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(39.688, 41.118)), module, PosNegRectifier::NEG3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 55.67)), module, PosNegRectifier::POS4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(39.688, 55.778)), module, PosNegRectifier::NEG4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 70.115)), module, PosNegRectifier::POS5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(39.688, 70.222)), module, PosNegRectifier::NEG5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 84.667)), module, PosNegRectifier::POS6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(39.688, 84.774)), module, PosNegRectifier::NEG6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 99.219)), module, PosNegRectifier::POS7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(39.688, 99.327)), module, PosNegRectifier::NEG7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 113.771)), module, PosNegRectifier::POS8_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(39.688, 113.879)), module, PosNegRectifier::NEG8_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 10.16)), module, PosNegRectifier::POS1_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(38.1, 10.16)), module, PosNegRectifier::NEG1_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 25.4)), module, PosNegRectifier::POS2_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(38.1, 25.4)), module, PosNegRectifier::NEG2_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 40.64)), module, PosNegRectifier::POS3_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(38.1, 40.64)), module, PosNegRectifier::NEG3_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 55.88)), module, PosNegRectifier::POS4_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(38.1, 55.88)), module, PosNegRectifier::NEG4_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 71.12)), module, PosNegRectifier::POS5_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(38.1, 71.12)), module, PosNegRectifier::NEG5_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 86.36)), module, PosNegRectifier::POS6_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(38.1, 86.36)), module, PosNegRectifier::NEG6_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 101.6)), module, PosNegRectifier::POS7_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(38.1, 101.6)), module, PosNegRectifier::NEG7_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 116.84)), module, PosNegRectifier::POS8_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(38.1, 116.84)), module, PosNegRectifier::NEG8_OUTPUT));
 	}
 };
 
