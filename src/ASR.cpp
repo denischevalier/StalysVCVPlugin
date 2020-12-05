@@ -61,22 +61,17 @@ struct ASRWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/ASR.svg")));
 
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 10.16)), module, ASR::CLOCK_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 25.4)), module, ASR::SIGNAL_INPUT));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 11.798)), module, ASR::CLOCK_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.938, 26.351)), module, ASR::SIGNAL_INPUT));
-
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 11.906)), module, ASR::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 26.458)), module, ASR::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 41.01)), module, ASR::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 55.67)), module, ASR::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 70.115)), module, ASR::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 84.667)), module, ASR::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 99.219)), module, ASR::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 113.771)), module, ASR::OUT8_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 10.16)), module, ASR::OUT1_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 25.4)), module, ASR::OUT2_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 40.64)), module, ASR::OUT3_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(23.009, 55.746)), module, ASR::OUT4_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 71.12)), module, ASR::OUT5_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 86.36)), module, ASR::OUT6_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 101.6)), module, ASR::OUT7_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 116.84)), module, ASR::OUT8_OUTPUT));
 	}
 };
 
