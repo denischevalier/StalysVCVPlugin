@@ -98,45 +98,40 @@ struct MultiplierWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Multiplier.svg")));
 
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.86, 10.16)), module, Multiplier::CARRIER_LEVEL1_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.86, 25.4)), module, Multiplier::CARRIER_LEVEL2_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.86, 40.64)), module, Multiplier::CARRIER_LEVEL3_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.86, 55.88)), module, Multiplier::CARRIER_LEVEL4_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.86, 71.12)), module, Multiplier::CARRIER_LEVEL5_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.86, 86.36)), module, Multiplier::CARRIER_LEVEL6_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.86, 101.6)), module, Multiplier::CARRIER_LEVEL7_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.86, 116.84)), module, Multiplier::CARRIER_LEVEL8_PARAM));
 
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 12.171)), module, Multiplier::CARRIER_LEVEL1_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 26.723)), module, Multiplier::CARRIER_LEVEL2_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 41.275)), module, Multiplier::CARRIER_LEVEL3_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 55.935)), module, Multiplier::CARRIER_LEVEL4_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 70.379)), module, Multiplier::CARRIER_LEVEL5_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 84.931)), module, Multiplier::CARRIER_LEVEL6_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 99.483)), module, Multiplier::CARRIER_LEVEL7_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(22.49, 114.035)), module, Multiplier::CARRIER_LEVEL8_PARAM));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 10.16)), module, Multiplier::SIGNAL1_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 10.16)), module, Multiplier::CARRIER1_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 25.4)), module, Multiplier::SIGNAL2_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 25.4)), module, Multiplier::CARRIER2_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 40.64)), module, Multiplier::SIGNAL3_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 40.64)), module, Multiplier::CARRIER3_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 55.88)), module, Multiplier::SIGNAL4_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 55.88)), module, Multiplier::CARRIER4_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 71.12)), module, Multiplier::SIGNAL5_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 71.12)), module, Multiplier::CARRIER5_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 86.36)), module, Multiplier::SIGNAL6_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 86.36)), module, Multiplier::CARRIER6_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 101.6)), module, Multiplier::SIGNAL7_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 101.6)), module, Multiplier::CARRIER7_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 116.84)), module, Multiplier::SIGNAL8_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 116.84)), module, Multiplier::CARRIER8_INPUT));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 12.171)), module, Multiplier::SIGNAL1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 12.171)), module, Multiplier::CARRIER1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 26.723)), module, Multiplier::SIGNAL2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 26.723)), module, Multiplier::CARRIER2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 41.275)), module, Multiplier::SIGNAL3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 41.275)), module, Multiplier::CARRIER3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 55.935)), module, Multiplier::SIGNAL4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 55.935)), module, Multiplier::CARRIER4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 70.379)), module, Multiplier::SIGNAL5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 70.379)), module, Multiplier::CARRIER5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 84.931)), module, Multiplier::SIGNAL6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 84.931)), module, Multiplier::CARRIER6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 99.483)), module, Multiplier::SIGNAL7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 99.483)), module, Multiplier::CARRIER7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.26, 114.035)), module, Multiplier::SIGNAL8_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(35.719, 114.035)), module, Multiplier::CARRIER8_INPUT));
-
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 12.171)), module, Multiplier::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 26.723)), module, Multiplier::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 41.275)), module, Multiplier::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 55.935)), module, Multiplier::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 70.379)), module, Multiplier::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 84.931)), module, Multiplier::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 99.483)), module, Multiplier::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(48.948, 114.035)), module, Multiplier::OUT8_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 10.16)), module, Multiplier::OUT1_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 25.4)), module, Multiplier::OUT2_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 40.64)), module, Multiplier::OUT3_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 55.88)), module, Multiplier::OUT4_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 71.12)), module, Multiplier::OUT5_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 86.36)), module, Multiplier::OUT6_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 101.6)), module, Multiplier::OUT7_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 116.84)), module, Multiplier::OUT8_OUTPUT));
 	}
 };
 

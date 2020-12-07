@@ -172,14 +172,14 @@ struct VCSampleAndDelayWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/VCSampleAndDelay.svg")));
 
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 10.398)), module, VCSampleAndDelay::STEPS_LEVEL1_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 25.4)), module, VCSampleAndDelay::STEPS_LEVEL2_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 40.64)), module, VCSampleAndDelay::STEPS_LEVEL3_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 55.88)), module, VCSampleAndDelay::STEPS_LEVEL4_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 71.12)), module, VCSampleAndDelay::STEPS_LEVEL5_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 86.36)), module, VCSampleAndDelay::STEPS_LEVEL6_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 101.6)), module, VCSampleAndDelay::STEPS_LEVEL7_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 116.84)), module, VCSampleAndDelay::STEPS_LEVEL8_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.62, 10.398)), module, VCSampleAndDelay::STEPS_LEVEL1_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.62, 25.4)), module, VCSampleAndDelay::STEPS_LEVEL2_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.62, 40.64)), module, VCSampleAndDelay::STEPS_LEVEL3_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.62, 55.88)), module, VCSampleAndDelay::STEPS_LEVEL4_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.62, 71.12)), module, VCSampleAndDelay::STEPS_LEVEL5_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.62, 86.36)), module, VCSampleAndDelay::STEPS_LEVEL6_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.62, 101.6)), module, VCSampleAndDelay::STEPS_LEVEL7_PARAM));
+		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.62, 116.84)), module, VCSampleAndDelay::STEPS_LEVEL8_PARAM));
 
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 10.16)), module, VCSampleAndDelay::CLOCK1_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(53.34, 10.16)), module, VCSampleAndDelay::SIGNAL1_INPUT));
