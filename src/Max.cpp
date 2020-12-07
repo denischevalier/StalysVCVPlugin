@@ -1,4 +1,5 @@
 #include "plugin.hpp"
+#include "Common.hpp"
 
 
 struct Max : Module {
@@ -115,39 +116,39 @@ struct MaxWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Max.svg")));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 10.16)), module, Max::IN1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 10.16)), module, Max::IN2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 10.16)), module, Max::IN3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 25.4)), module, Max::IN4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 25.4)), module, Max::IN5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 25.4)), module, Max::IN6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 40.64)), module, Max::IN7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 40.64)), module, Max::IN8_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 40.64)), module, Max::IN9_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 55.88)), module, Max::IN10_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 55.88)), module, Max::IN11_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 55.88)), module, Max::IN12_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 71.12)), module, Max::IN13_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 71.12)), module, Max::IN14_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 71.12)), module, Max::IN15_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 86.36)), module, Max::IN16_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 86.36)), module, Max::IN17_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 86.36)), module, Max::IN18_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 101.6)), module, Max::IN19_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 101.6)), module, Max::IN20_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 101.6)), module, Max::IN21_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.922, 116.415)), module, Max::IN22_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 116.84)), module, Max::IN23_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 116.84)), module, Max::IN24_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Max::IN1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Max::IN2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 10.16)), module, Max::IN3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, Max::IN4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 25.4)), module, Max::IN5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 25.4)), module, Max::IN6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 40.64)), module, Max::IN7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 40.64)), module, Max::IN8_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 40.64)), module, Max::IN9_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 55.88)), module, Max::IN10_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 55.88)), module, Max::IN11_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 55.88)), module, Max::IN12_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 71.12)), module, Max::IN13_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 71.12)), module, Max::IN14_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 71.12)), module, Max::IN15_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 86.36)), module, Max::IN16_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 86.36)), module, Max::IN17_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 86.36)), module, Max::IN18_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 101.6)), module, Max::IN19_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 101.6)), module, Max::IN20_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 101.6)), module, Max::IN21_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.922, 116.415)), module, Max::IN22_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 116.84)), module, Max::IN23_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 116.84)), module, Max::IN24_INPUT));
 
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 10.16)), module, Max::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 25.4)), module, Max::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 40.64)), module, Max::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 55.88)), module, Max::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 71.12)), module, Max::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 86.36)), module, Max::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 101.6)), module, Max::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 116.84)), module, Max::OUT8_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 10.16)), module, Max::OUT1_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 25.4)), module, Max::OUT2_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 40.64)), module, Max::OUT3_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 55.88)), module, Max::OUT4_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 71.12)), module, Max::OUT5_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 86.36)), module, Max::OUT6_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 101.6)), module, Max::OUT7_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 116.84)), module, Max::OUT8_OUTPUT));
 	}
 };
 

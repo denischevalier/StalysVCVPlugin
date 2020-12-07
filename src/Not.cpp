@@ -1,4 +1,5 @@
 #include "plugin.hpp"
+#include "Common.hpp"
 
 
 struct Not : Module {
@@ -53,23 +54,23 @@ struct NotWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Not.svg")));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 10.16)), module, Not::IN1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 25.4)), module, Not::IN2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 40.64)), module, Not::IN3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 55.88)), module, Not::IN4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 71.12)), module, Not::IN5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 86.36)), module, Not::IN6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 101.6)), module, Not::IN7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 116.84)), module, Not::IN8_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Not::IN1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, Not::IN2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 40.64)), module, Not::IN3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 55.88)), module, Not::IN4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 71.12)), module, Not::IN5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 86.36)), module, Not::IN6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 101.6)), module, Not::IN7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 116.84)), module, Not::IN8_INPUT));
 
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 10.16)), module, Not::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 25.4)), module, Not::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 40.64)), module, Not::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 55.88)), module, Not::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 71.12)), module, Not::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 86.36)), module, Not::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 101.6)), module, Not::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 116.84)), module, Not::OUT8_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Not::OUT1_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 25.4)), module, Not::OUT2_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 40.64)), module, Not::OUT3_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 55.88)), module, Not::OUT4_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 71.12)), module, Not::OUT5_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 86.36)), module, Not::OUT6_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 101.6)), module, Not::OUT7_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 116.84)), module, Not::OUT8_OUTPUT));
 	}
 };
 

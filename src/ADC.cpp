@@ -51,16 +51,16 @@ struct ADCWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/ADC.svg")));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 10.16)), module, ADC::SIGNAL_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, ADC::SIGNAL_INPUT));
 
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 10.16)), module, ADC::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 25.4)), module, ADC::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 40.64)), module, ADC::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 55.88)), module, ADC::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 71.12)), module, ADC::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 86.36)), module, ADC::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 101.6)), module, ADC::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 116.84)), module, ADC::OUT8_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 10.16)), module, ADC::OUT1_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 25.4)), module, ADC::OUT2_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 40.64)), module, ADC::OUT3_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 55.88)), module, ADC::OUT4_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 71.12)), module, ADC::OUT5_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 86.36)), module, ADC::OUT6_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 101.6)), module, ADC::OUT7_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 116.84)), module, ADC::OUT8_OUTPUT));
 	}
 };
 

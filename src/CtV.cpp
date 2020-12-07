@@ -1,4 +1,5 @@
 #include "plugin.hpp"
+#include "Common.hpp"
 
 
 struct CtV : Module {
@@ -82,23 +83,23 @@ struct CtVWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH))); */
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 10.16)), module, CtV::IN1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 25.4)), module, CtV::IN2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 40.64)), module, CtV::IN3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.514, 55.88)), module, CtV::IN4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.514, 71.12)), module, CtV::IN5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.514, 86.36)), module, CtV::IN6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.514, 101.6)), module, CtV::IN7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.514, 116.84)), module, CtV::IN8_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, CtV::IN1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, CtV::IN2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 40.64)), module, CtV::IN3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.514, 55.88)), module, CtV::IN4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.514, 71.12)), module, CtV::IN5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.514, 86.36)), module, CtV::IN6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.514, 101.6)), module, CtV::IN7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.514, 116.84)), module, CtV::IN8_INPUT));
 
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 10.16)), module, CtV::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 25.4)), module, CtV::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 40.64)), module, CtV::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 55.88)), module, CtV::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 71.12)), module, CtV::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 86.36)), module, CtV::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 101.6)), module, CtV::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 116.84)), module, CtV::OUT8_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 10.16)), module, CtV::OUT1_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 25.4)), module, CtV::OUT2_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 40.64)), module, CtV::OUT3_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 55.88)), module, CtV::OUT4_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 71.12)), module, CtV::OUT5_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 86.36)), module, CtV::OUT6_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 101.6)), module, CtV::OUT7_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 116.84)), module, CtV::OUT8_OUTPUT));
 	}
 };
 

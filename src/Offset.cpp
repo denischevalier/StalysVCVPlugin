@@ -1,4 +1,5 @@
 #include "plugin.hpp"
+#include "Common.hpp"
 
 
 struct Offset : Module {
@@ -61,23 +62,23 @@ struct OffsetWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Offset.svg")));
 
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 10.16)), module, Offset::IN1_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 25.4)), module, Offset::IN2_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.62, 40.64)), module, Offset::IN3_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.514, 55.88)), module, Offset::IN4_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.514, 71.12)), module, Offset::IN5_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.514, 86.36)), module, Offset::IN6_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.514, 101.6)), module, Offset::IN7_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(7.514, 116.84)), module, Offset::IN8_PARAM));
+		addParam(createParamCentered<knob>(mm2px(Vec(7.62, 10.16)), module, Offset::IN1_PARAM));
+		addParam(createParamCentered<knob>(mm2px(Vec(7.62, 25.4)), module, Offset::IN2_PARAM));
+		addParam(createParamCentered<knob>(mm2px(Vec(7.62, 40.64)), module, Offset::IN3_PARAM));
+		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 55.88)), module, Offset::IN4_PARAM));
+		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 71.12)), module, Offset::IN5_PARAM));
+		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 86.36)), module, Offset::IN6_PARAM));
+		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 101.6)), module, Offset::IN7_PARAM));
+		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 116.84)), module, Offset::IN8_PARAM));
 
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 10.16)), module, Offset::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 25.4)), module, Offset::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 40.64)), module, Offset::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 55.88)), module, Offset::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 71.12)), module, Offset::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 86.36)), module, Offset::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 101.6)), module, Offset::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.86, 116.84)), module, Offset::OUT8_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Offset::OUT1_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 25.4)), module, Offset::OUT2_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 40.64)), module, Offset::OUT3_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 55.88)), module, Offset::OUT4_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 71.12)), module, Offset::OUT5_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 86.36)), module, Offset::OUT6_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 101.6)), module, Offset::OUT7_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 116.84)), module, Offset::OUT8_OUTPUT));
 	}
 };
 

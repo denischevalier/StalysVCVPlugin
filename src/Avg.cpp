@@ -1,4 +1,5 @@
 #include "plugin.hpp"
+#include "Common.hpp"
 
 
 struct Avg : Module {
@@ -153,39 +154,39 @@ struct AvgWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Avg.svg")));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 10.16)), module, Avg::IN1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 10.16)), module, Avg::IN2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 10.16)), module, Avg::IN3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 25.4)), module, Avg::IN4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 25.4)), module, Avg::IN5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 25.4)), module, Avg::IN6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 40.64)), module, Avg::IN7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 40.64)), module, Avg::IN8_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 40.64)), module, Avg::IN9_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 55.88)), module, Avg::IN10_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 55.88)), module, Avg::IN11_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 55.88)), module, Avg::IN12_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 71.12)), module, Avg::IN13_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 71.12)), module, Avg::IN14_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 71.12)), module, Avg::IN15_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 86.36)), module, Avg::IN16_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 86.36)), module, Avg::IN17_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 86.36)), module, Avg::IN18_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 101.6)), module, Avg::IN19_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 101.6)), module, Avg::IN20_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 101.6)), module, Avg::IN21_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.922, 116.415)), module, Avg::IN22_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 116.84)), module, Avg::IN23_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 116.84)), module, Avg::IN24_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Avg::IN1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Avg::IN2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 10.16)), module, Avg::IN3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, Avg::IN4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 25.4)), module, Avg::IN5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 25.4)), module, Avg::IN6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 40.64)), module, Avg::IN7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 40.64)), module, Avg::IN8_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 40.64)), module, Avg::IN9_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 55.88)), module, Avg::IN10_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 55.88)), module, Avg::IN11_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 55.88)), module, Avg::IN12_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 71.12)), module, Avg::IN13_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 71.12)), module, Avg::IN14_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 71.12)), module, Avg::IN15_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 86.36)), module, Avg::IN16_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 86.36)), module, Avg::IN17_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 86.36)), module, Avg::IN18_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 101.6)), module, Avg::IN19_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 101.6)), module, Avg::IN20_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 101.6)), module, Avg::IN21_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.922, 116.415)), module, Avg::IN22_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 116.84)), module, Avg::IN23_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 116.84)), module, Avg::IN24_INPUT));
 
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 10.16)), module, Avg::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 25.4)), module, Avg::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 40.64)), module, Avg::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 55.88)), module, Avg::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 71.12)), module, Avg::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 86.36)), module, Avg::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 101.6)), module, Avg::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 116.84)), module, Avg::OUT8_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 10.16)), module, Avg::OUT1_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 25.4)), module, Avg::OUT2_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 40.64)), module, Avg::OUT3_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 55.88)), module, Avg::OUT4_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 71.12)), module, Avg::OUT5_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 86.36)), module, Avg::OUT6_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 101.6)), module, Avg::OUT7_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 116.84)), module, Avg::OUT8_OUTPUT));
 	}
 };
 

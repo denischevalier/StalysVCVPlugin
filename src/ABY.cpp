@@ -1,4 +1,5 @@
 #include "plugin.hpp"
+#include "Common.hpp"
 
 
 struct ABY : Module {
@@ -81,39 +82,39 @@ struct ABYWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/ABY.svg")));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 10.16)), module, ABY::A1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 10.16)), module, ABY::B1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 10.16)), module, ABY::TRIG1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 25.4)), module, ABY::A2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 25.4)), module, ABY::B2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 25.4)), module, ABY::TRIG2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 40.64)), module, ABY::A3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 40.64)), module, ABY::B3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 40.64)), module, ABY::TRIG3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 55.88)), module, ABY::A4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 55.88)), module, ABY::B4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 55.88)), module, ABY::TRIG4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 71.12)), module, ABY::A5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 71.12)), module, ABY::B5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 71.12)), module, ABY::TRIG5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 86.36)), module, ABY::A6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 86.36)), module, ABY::B6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 86.36)), module, ABY::TRIG6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 101.6)), module, ABY::A7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 101.6)), module, ABY::B7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 101.6)), module, ABY::TRIG7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(7.62, 116.84)), module, ABY::A8_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.86, 116.84)), module, ABY::B8_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.1, 116.84)), module, ABY::TRIG8_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, ABY::A1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 10.16)), module, ABY::B1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 10.16)), module, ABY::TRIG1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, ABY::A2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 25.4)), module, ABY::B2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 25.4)), module, ABY::TRIG2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 40.64)), module, ABY::A3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 40.64)), module, ABY::B3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 40.64)), module, ABY::TRIG3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 55.88)), module, ABY::A4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 55.88)), module, ABY::B4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 55.88)), module, ABY::TRIG4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 71.12)), module, ABY::A5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 71.12)), module, ABY::B5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 71.12)), module, ABY::TRIG5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 86.36)), module, ABY::A6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 86.36)), module, ABY::B6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 86.36)), module, ABY::TRIG6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 101.6)), module, ABY::A7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 101.6)), module, ABY::B7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 101.6)), module, ABY::TRIG7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 116.84)), module, ABY::A8_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 116.84)), module, ABY::B8_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 116.84)), module, ABY::TRIG8_INPUT));
 
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 10.16)), module, ABY::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 25.4)), module, ABY::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 40.64)), module, ABY::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 55.88)), module, ABY::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 71.12)), module, ABY::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 86.36)), module, ABY::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 101.6)), module, ABY::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(53.34, 116.84)), module, ABY::OUT8_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 10.16)), module, ABY::OUT1_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 25.4)), module, ABY::OUT2_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 40.64)), module, ABY::OUT3_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 55.88)), module, ABY::OUT4_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 71.12)), module, ABY::OUT5_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 86.36)), module, ABY::OUT6_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 101.6)), module, ABY::OUT7_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(53.34, 116.84)), module, ABY::OUT8_OUTPUT));
 	}
 };
 
