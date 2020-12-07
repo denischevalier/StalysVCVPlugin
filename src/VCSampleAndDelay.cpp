@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct VCSampleAndDelay : Module {
+struct VCSampleAndDelay : StalysModule {
 	enum ParamIds {
 		STEPS_LEVEL1_PARAM,
 		STEPS_LEVEL2_PARAM,
@@ -168,10 +167,13 @@ struct VCSampleAndDelay : Module {
 };
 
 
-struct VCSampleAndDelayWidget : ModuleWidget {
+struct VCSampleAndDelayWidget : StalysModuleWidget {
+	static constexpr int hp = 15;
+
 	VCSampleAndDelayWidget(VCSampleAndDelay* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/VCSampleAndDelay.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "VCSampleAndDelay");
 
 		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 10.398)), module, VCSampleAndDelay::STEPS_LEVEL1_PARAM));
 		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 25.4)), module, VCSampleAndDelay::STEPS_LEVEL2_PARAM));

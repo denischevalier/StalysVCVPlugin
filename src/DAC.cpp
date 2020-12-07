@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct DAC : Module {
+struct DAC : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -43,10 +42,13 @@ struct DAC : Module {
 };
 
 
-struct DACWidget : ModuleWidget {
+struct DACWidget : StalysModuleWidget {
+	static constexpr int hp = 6;
+
 	DACWidget(DAC* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/DAC.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "DAC");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, DAC::TRIG1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, DAC::TRIG2_INPUT));

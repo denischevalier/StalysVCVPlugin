@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Avg : Module {
+struct Avg : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -149,10 +148,13 @@ struct Avg : Module {
 };
 
 
-struct AvgWidget : ModuleWidget {
+struct AvgWidget : StalysModuleWidget {
+	static constexpr int hp = 12;
+
 	AvgWidget(Avg* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Avg.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Avg");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Avg::IN1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Avg::IN2_INPUT));

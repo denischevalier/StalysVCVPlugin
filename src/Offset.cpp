@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Offset : Module {
+struct Offset : StalysModule {
 	enum ParamIds {
 		IN1_PARAM,
 		IN2_PARAM,
@@ -57,10 +56,13 @@ struct Offset : Module {
 };
 
 
-struct OffsetWidget : ModuleWidget {
+struct OffsetWidget : StalysModuleWidget {
+	static constexpr int hp = 6;
+
 	OffsetWidget(Offset* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Offset.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Offset");
 
 		addParam(createParamCentered<knob>(mm2px(Vec(7.62, 10.16)), module, Offset::IN1_PARAM));
 		addParam(createParamCentered<knob>(mm2px(Vec(7.62, 25.4)), module, Offset::IN2_PARAM));

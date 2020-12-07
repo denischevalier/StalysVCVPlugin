@@ -1,7 +1,6 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
-struct VCDualNeuron : Module {
+struct VCDualNeuron : StalysModule {
 	enum ParamIds {
 		// Neuron A inputs
 		A_CARRIER_LEVEL_PARAM,
@@ -226,10 +225,13 @@ struct VCDualNeuron : Module {
 	}
 };
 
-struct VCDualNeuronWidget : ModuleWidget {
+struct VCDualNeuronWidget : StalysModuleWidget {
+	static constexpr int hp = 42;
+
 	VCDualNeuronWidget(VCDualNeuron* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/VCDualNeuron.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "VCDualNeuron");
 
 		addParam(createParamCentered<knob>(mm2px(Vec(38.1, 25.4)), module, VCDualNeuron::A_CARRIER_LEVEL_PARAM));
 		addParam(createParamCentered<knob>(mm2px(Vec(68.58, 25.4)), module, VCDualNeuron::A_OFFSET_LEVEL_PARAM));

@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Multiplier : Module {
+struct Multiplier : StalysModule {
 	enum ParamIds {
 		CARRIER_LEVEL1_PARAM,
 		CARRIER_LEVEL2_PARAM,
@@ -93,10 +92,13 @@ struct Multiplier : Module {
 };
 
 
-struct MultiplierWidget : ModuleWidget {
+struct MultiplierWidget : StalysModuleWidget {
+	static constexpr int hp = 12;
+
 	MultiplierWidget(Multiplier* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Multiplier.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Multiplier");
 
 		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 10.16)), module, Multiplier::CARRIER_LEVEL1_PARAM));
 		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 25.4)), module, Multiplier::CARRIER_LEVEL2_PARAM));

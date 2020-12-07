@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct CtV : Module {
+struct CtV : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -73,15 +72,13 @@ struct CtV : Module {
 };
 
 
-struct CtVWidget : ModuleWidget {
+struct CtVWidget : StalysModuleWidget {
+	static constexpr int hp = 6;
+
 	CtVWidget(CtV* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/CtV.svg")));
-
-		/* addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH))); */
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "CtV");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, CtV::IN1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, CtV::IN2_INPUT));

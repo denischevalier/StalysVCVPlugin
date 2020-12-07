@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Max : Module {
+struct Max : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -111,10 +110,13 @@ struct Max : Module {
 };
 
 
-struct MaxWidget : ModuleWidget {
+struct MaxWidget : StalysModuleWidget {
+	static constexpr int hp = 12;
+
 	MaxWidget(Max* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Max.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Max");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Max::IN1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Max::IN2_INPUT));

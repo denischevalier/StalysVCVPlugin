@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Function : Module {
+struct Function : StalysModule {
 	enum ParamIds {
 		RISE_LEVEL1_PARAM,
 		FALL_LEVEL1_PARAM,
@@ -236,10 +235,13 @@ struct Function : Module {
 };
 
 
-struct FunctionWidget : ModuleWidget {
+struct FunctionWidget : StalysModuleWidget {
+	static constexpr int hp = 30;
+
 	FunctionWidget(Function* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Function.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Function");
 
 		addParam(createParamCentered<knob>(mm2px(Vec(38.1, 10.16)), module, Function::RISE_LEVEL1_PARAM));
 		addParam(createParamCentered<knob>(mm2px(Vec(68.58, 10.16)), module, Function::FALL_LEVEL1_PARAM));

@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Comparator : Module {
+struct Comparator : StalysModule {
 	enum ParamIds {
 		VALUE_LEVEL1_PARAM,
 		VALUE_LEVEL2_PARAM,
@@ -82,10 +81,12 @@ struct Comparator : Module {
 };
 
 
-struct ComparatorWidget : ModuleWidget {
+struct ComparatorWidget : StalysModuleWidget {
+	static constexpr int hp = 12;
 	ComparatorWidget(Comparator* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Comparator.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Comparator");
 
 		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 10.16)), module, Comparator::VALUE_LEVEL1_PARAM));
 		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 25.4)), module, Comparator::VALUE_LEVEL2_PARAM));

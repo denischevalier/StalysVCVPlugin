@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Not : Module {
+struct Not : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -49,10 +48,13 @@ struct Not : Module {
 };
 
 
-struct NotWidget : ModuleWidget {
+struct NotWidget : StalysModuleWidget {
+	static constexpr int hp = 6;
+
 	NotWidget(Not* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Not.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Not");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Not::IN1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, Not::IN2_INPUT));

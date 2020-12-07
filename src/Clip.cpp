@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Clip : Module {
+struct Clip : StalysModule {
 	enum ParamIds {
 		RATIO_LEVEL1_PARAM,
 		RATIO_LEVEL2_PARAM,
@@ -89,10 +88,13 @@ struct Clip : Module {
 };
 
 
-struct ClipWidget : ModuleWidget {
+struct ClipWidget : StalysModuleWidget {
+	static constexpr int hp = 12;
+
 	ClipWidget(Clip* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Clip.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Clip");
 
 		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 10.16)), module, Clip::RATIO_LEVEL1_PARAM));
 		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 25.4)), module, Clip::RATIO_LEVEL2_PARAM));

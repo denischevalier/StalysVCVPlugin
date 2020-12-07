@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct PosNegRectifier : Module {
+struct PosNegRectifier : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -68,10 +67,13 @@ struct PosNegRectifier : Module {
 };
 
 
-struct PosNegRectifierWidget : ModuleWidget {
+struct PosNegRectifierWidget : StalysModuleWidget {
+	static constexpr int hp = 9;
+
 	PosNegRectifierWidget(PosNegRectifier* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/PosNegRectifier.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "PosNegRectifier");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, PosNegRectifier::SIGNAL1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, PosNegRectifier::SIGNAL2_INPUT));
