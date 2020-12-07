@@ -1,4 +1,5 @@
 #include "plugin.hpp"
+#include "Common.hpp"
 
 
 struct VCSampleAndDelay : Module {
@@ -172,53 +173,48 @@ struct VCSampleAndDelayWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/VCSampleAndDelay.svg")));
 
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 10.398)), module, VCSampleAndDelay::STEPS_LEVEL1_PARAM));
+		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 25.4)), module, VCSampleAndDelay::STEPS_LEVEL2_PARAM));
+		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 40.64)), module, VCSampleAndDelay::STEPS_LEVEL3_PARAM));
+		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 55.88)), module, VCSampleAndDelay::STEPS_LEVEL4_PARAM));
+		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 71.12)), module, VCSampleAndDelay::STEPS_LEVEL5_PARAM));
+		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 86.36)), module, VCSampleAndDelay::STEPS_LEVEL6_PARAM));
+		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 101.6)), module, VCSampleAndDelay::STEPS_LEVEL7_PARAM));
+		addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 116.84)), module, VCSampleAndDelay::STEPS_LEVEL8_PARAM));
 
-		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(8.075, 11.769)), module, VCSampleAndDelay::STEPS_LEVEL1_PARAM));
-		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 26.33)), module, VCSampleAndDelay::STEPS_LEVEL2_PARAM));
-		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 40.882)), module, VCSampleAndDelay::STEPS_LEVEL3_PARAM));
-		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 55.542)), module, VCSampleAndDelay::STEPS_LEVEL4_PARAM));
-		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 69.986)), module, VCSampleAndDelay::STEPS_LEVEL5_PARAM));
-		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 84.538)), module, VCSampleAndDelay::STEPS_LEVEL6_PARAM));
-		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 99.091)), module, VCSampleAndDelay::STEPS_LEVEL7_PARAM));
-		addParam(createParamCentered<RoundBlackSnapKnob>(mm2px(Vec(7.328, 113.643)), module, VCSampleAndDelay::STEPS_LEVEL8_PARAM));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 10.16)), module, VCSampleAndDelay::CLOCK1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(53.34, 10.16)), module, VCSampleAndDelay::SIGNAL1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.622, 10.398)), module, VCSampleAndDelay::STEPS1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 25.4)), module, VCSampleAndDelay::STEPS2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 25.4)), module, VCSampleAndDelay::CLOCK2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(53.34, 25.4)), module, VCSampleAndDelay::SIGNAL2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 40.64)), module, VCSampleAndDelay::STEPS3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 40.64)), module, VCSampleAndDelay::CLOCK3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(53.34, 40.64)), module, VCSampleAndDelay::SIGNAL3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 55.88)), module, VCSampleAndDelay::STEPS4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 55.88)), module, VCSampleAndDelay::CLOCK4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(53.34, 55.88)), module, VCSampleAndDelay::SIGNAL4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 71.12)), module, VCSampleAndDelay::STEPS5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 71.12)), module, VCSampleAndDelay::CLOCK5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(53.34, 71.12)), module, VCSampleAndDelay::SIGNAL5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 86.36)), module, VCSampleAndDelay::STEPS6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 86.36)), module, VCSampleAndDelay::CLOCK6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(53.34, 86.36)), module, VCSampleAndDelay::SIGNAL6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 101.6)), module, VCSampleAndDelay::STEPS7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 101.6)), module, VCSampleAndDelay::CLOCK7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(53.34, 101.6)), module, VCSampleAndDelay::SIGNAL7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(22.86, 116.84)), module, VCSampleAndDelay::STEPS8_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(38.1, 116.84)), module, VCSampleAndDelay::CLOCK8_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(53.34, 116.84)), module, VCSampleAndDelay::SIGNAL8_INPUT));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(21.304, 11.877)), module, VCSampleAndDelay::STEPS1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(34.534, 11.877)), module, VCSampleAndDelay::CLOCK1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(47.763, 11.877)), module, VCSampleAndDelay::SIGNAL1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(34.534, 26.429)), module, VCSampleAndDelay::CLOCK2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(47.763, 26.429)), module, VCSampleAndDelay::SIGNAL2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(20.558, 26.438)), module, VCSampleAndDelay::STEPS2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(34.534, 40.981)), module, VCSampleAndDelay::CLOCK3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(47.763, 40.981)), module, VCSampleAndDelay::SIGNAL3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(20.558, 40.99)), module, VCSampleAndDelay::STEPS3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(34.534, 55.641)), module, VCSampleAndDelay::CLOCK4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(47.763, 55.641)), module, VCSampleAndDelay::SIGNAL4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(20.558, 55.65)), module, VCSampleAndDelay::STEPS4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(34.534, 70.085)), module, VCSampleAndDelay::CLOCK5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(47.763, 70.085)), module, VCSampleAndDelay::SIGNAL5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(20.558, 70.094)), module, VCSampleAndDelay::STEPS5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(34.534, 84.637)), module, VCSampleAndDelay::CLOCK6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(47.763, 84.637)), module, VCSampleAndDelay::SIGNAL6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(20.558, 84.646)), module, VCSampleAndDelay::STEPS6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(34.534, 99.189)), module, VCSampleAndDelay::CLOCK7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(47.763, 99.189)), module, VCSampleAndDelay::SIGNAL7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(20.558, 99.198)), module, VCSampleAndDelay::STEPS7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(34.534, 113.741)), module, VCSampleAndDelay::CLOCK8_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(47.763, 113.741)), module, VCSampleAndDelay::SIGNAL8_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(20.558, 113.75)), module, VCSampleAndDelay::STEPS8_INPUT));
-
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(60.992, 11.877)), module, VCSampleAndDelay::OUT1_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(60.992, 26.429)), module, VCSampleAndDelay::OUT2_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(60.992, 40.981)), module, VCSampleAndDelay::OUT3_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(60.992, 55.641)), module, VCSampleAndDelay::OUT4_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(60.992, 70.085)), module, VCSampleAndDelay::OUT5_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(60.992, 84.637)), module, VCSampleAndDelay::OUT6_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(60.992, 99.189)), module, VCSampleAndDelay::OUT7_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(60.992, 113.741)), module, VCSampleAndDelay::OUT8_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(68.342, 10.16)), module, VCSampleAndDelay::OUT1_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(68.58, 25.4)), module, VCSampleAndDelay::OUT2_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(68.58, 40.64)), module, VCSampleAndDelay::OUT3_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(68.58, 55.88)), module, VCSampleAndDelay::OUT4_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(68.58, 71.12)), module, VCSampleAndDelay::OUT5_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(68.58, 86.36)), module, VCSampleAndDelay::OUT6_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(68.58, 101.6)), module, VCSampleAndDelay::OUT7_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(68.58, 116.84)), module, VCSampleAndDelay::OUT8_OUTPUT));
 	}
 };
 

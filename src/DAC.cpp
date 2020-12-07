@@ -48,21 +48,16 @@ struct DACWidget : ModuleWidget {
 		setModule(module);
 		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/DAC.svg")));
 
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, 0)));
-		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
-		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, DAC::TRIG1_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, DAC::TRIG2_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 40.64)), module, DAC::TRIG3_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 55.88)), module, DAC::TRIG4_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 71.12)), module, DAC::TRIG5_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 86.36)), module, DAC::TRIG6_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 101.6)), module, DAC::TRIG7_INPUT));
+		addInput(createInputCentered<port>(mm2px(Vec(7.62, 116.84)), module, DAC::TRIG8_INPUT));
 
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(6.615, 11.798)), module, DAC::TRIG1_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(6.615, 26.351)), module, DAC::TRIG2_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(6.615, 40.903)), module, DAC::TRIG3_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(6.615, 55.562)), module, DAC::TRIG4_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(6.615, 70.007)), module, DAC::TRIG5_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(6.615, 84.559)), module, DAC::TRIG6_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(6.615, 99.111)), module, DAC::TRIG7_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(6.615, 113.663)), module, DAC::TRIG8_INPUT));
-
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(22.49, 11.906)), module, DAC::OUT_OUTPUT));
+		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 10.16)), module, DAC::OUT_OUTPUT));
 	}
 };
 
