@@ -49,7 +49,7 @@ This might seem overwhelming, but just experiment: feed it with LFOs, envelopes,
 
 </details>
 
-<details><summary>Analog Shift Register</summary>
+<details><summary>8-bit Shift Register</summary>
 
 ![ASR](/img/asr.png)
 
@@ -79,7 +79,7 @@ If no cable is plugged into an output, it is summed to the next outputs.
 
 </details>
 
-<details><summary>8 Sum</summary>
+<details><summary>8 Summing mixer</summary>
 
 ![8 Sum](/img/sum.png)
 
@@ -89,15 +89,15 @@ If no cable is plugged into an output, it is summed to the next outputs.
 
 </details>
 
-<details><summary>8 Diff</summary>
+<details><summary>8 Substractor</summary>
 
 ![8 Diff](/img/diff.png)
 
-This module is 8 three inputs subtracter.
+This module is 8 three inputs difference computer.
 
 </details>
 
-<details><summary>8 Not</summary>
+<details><summary>8 Not operator</summary>
 
 ![8 Not](/img/not.png)
 
@@ -105,7 +105,7 @@ This module is 8 boolean Not operators: they invert the gates they receive as in
 
 </details>
 
-<details><summary>8 Abs</summary>
+<details><summary>8 Absolute</summary>
 
 ![8 Abs](/img/abs.png)
 
@@ -123,7 +123,7 @@ This can serve for counterpoint melody generation, VC clock division, or any usu
 
 </details>
 
-<details><summary>Digital to Analog Converter</summary>
+<details><summary>DA Converter</summary>
 
 ![DAC](/img/dac.png)
 
@@ -133,7 +133,7 @@ One example of use for it is in a Rungler context: Connect it's output to the fr
 
 </details>
 
-<details><summary>Analog to Digital Converter</summary>
+<details><summary>AD Converter</summary>
 
 ![ADC](/img/adc.png)
 
@@ -143,7 +143,7 @@ Pair it with DAC and invert or mute some gates to get a pretty gnarly bitcrusher
 
 </details>
 
-<details><summary>8 Max</summary>
+<details><summary>8 Max/or operator</summary>
 
 ![8 Max](/img/max.png)
 
@@ -151,7 +151,7 @@ This module is 8 times three input MAX operator logic module (ie. Analog OR). In
 
 </details>
 
-<details><summary>8 Min</summary>
+<details><summary>8 Min/and operator</summary>
 
 ![8 Min](/img/min.png)
 
@@ -159,7 +159,7 @@ This module is 8 times three input MIN operator logic module (ie. Analog AND). I
 
 </details>
 
-<details><summary>8 Rectifier (±)</summary>
+<details><summary>8 Positive/negative rectifier</summary>
 
 ![8 Positive/Negative Rectifier](/img/posnegrectifier.png)
 
@@ -198,7 +198,7 @@ Inspired by [Befaco Slew Limiter](https://github.com/VCVRack/Befaco/blob/v1/src/
 
 </details>
 
-<details><summary>8 A/B Y</summary>
+<details><summary>8 A/B Y switches</summary>
 
 ![8 A/B Y](/img/aby.png)
 
@@ -226,7 +226,7 @@ Negative ratio will hard clip the signal. Positive ratio will soft clip the sign
 
 </details>
 
-<details><summary>8 Clock to Volt/Octave</summary>
+<details><summary>8 Clock to V/Oct</summary>
 
 ![8 C2V/O](img/ctv.png)
 
@@ -235,6 +235,8 @@ This modules transforms a clock input into a Volt/Octave output. Base frequency 
 Use this module to sync LFOs to a clock.
 
 Note that this modules needs at least two clock ticks to accurately compute the frequency. Thus, low BPM clocks will take some time before being accurately converted.
+
+</details>
 
 ## Contribute
 
