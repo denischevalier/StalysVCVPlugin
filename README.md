@@ -1,6 +1,6 @@
 # Stalys
 
-![All Modules](/img/allmodules.png)
+![All Modules](/img/allmodules-hornet.png)
 
 ## Abstract
 
@@ -24,6 +24,34 @@ My dream is to one day port it to eurorack (but I'd need to learn electronics fi
 - **Go into the plugin directory:** `cd StalysVCVPlugin`.
 - **Setup the environmnent:** `export RACK_DIR=path/to/your/sdk/installation`.
 - **Build and install the modules:** `make install`.
+
+## Skins
+
+New with v1.4.0 are four different skins for Stalys modules:
+
+<details><summary>Bee</summary>
+
+![All Modules](/img/allmodules-bee.png)
+
+</details>
+
+<details><summary>Hornet</summary>
+
+![All Modules](/img/allmodules-hornet.png)
+
+</details>
+
+<details><summary>Light</summary>
+
+![All Modules](/img/allmodules-light.png)
+
+</details>
+
+<details><summary>Dark</summary>
+
+![All Modules](/img/allmodules-dark.png)
+
+</details>
 
 ## Modules
 
