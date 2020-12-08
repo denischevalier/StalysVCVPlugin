@@ -221,6 +221,15 @@
         "clock generator",
         "utility"
       ]
+    },
+    {
+      "slug": "Blank",
+      "name": "Blank",
+      "description": "Blank panel",
+      "tags": [
+        "blank",
+        "visual"
+      ]
     }
   ]
 }

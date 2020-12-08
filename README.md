@@ -267,6 +267,14 @@ Note that this modules needs at least two clock ticks to accurately compute the 
 
 </details>
 
+<details><summary>Blank</summary>
+
+![Blank](img/blank.png)
+
+This is just your regular 24hp blank panel, themable.
+
+</details>
+
 ## Contribute
 
 You can support me in many ways:
