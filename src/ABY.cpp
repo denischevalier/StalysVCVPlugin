@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct ABY : Module {
+struct ABY : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -77,10 +76,13 @@ struct ABY : Module {
 };
 
 
-struct ABYWidget : ModuleWidget {
+struct ABYWidget : StalysModuleWidget {
+	static constexpr int hp = 12;
+
 	ABYWidget(ABY* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/ABY.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "ABY");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, ABY::A1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(22.86, 10.16)), module, ABY::B1_INPUT));

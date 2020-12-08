@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct ASR : Module {
+struct ASR : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -57,10 +56,13 @@ struct ASR : Module {
 };
 
 
-struct ASRWidget : ModuleWidget {
+struct ASRWidget : StalysModuleWidget {
+	static constexpr int hp = 6;
+
 	ASRWidget(ASR* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/ASR.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "ASR");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, ASR::CLOCK_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 25.4)), module, ASR::SIGNAL_INPUT));

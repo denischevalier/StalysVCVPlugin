@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct ADC : Module {
+struct ADC : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -46,10 +45,12 @@ struct ADC : Module {
 };
 
 
-struct ADCWidget : ModuleWidget {
+struct ADCWidget : StalysModuleWidget {
+	static constexpr int hp = 6;
 	ADCWidget(ADC* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/ADC.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "ADC");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, ADC::SIGNAL_INPUT));
 

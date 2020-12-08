@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Diff : Module {
+struct Diff : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -65,10 +64,13 @@ struct Diff : Module {
 };
 
 
-struct DiffWidget : ModuleWidget {
+struct DiffWidget : StalysModuleWidget {
+	static constexpr int hp = 12;
+
 	DiffWidget(Diff* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Diff.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Diff");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Diff::IN1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Diff::IN2_INPUT));

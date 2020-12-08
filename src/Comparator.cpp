@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Comparator : Module {
+struct Comparator : StalysModule {
 	enum ParamIds {
 		VALUE_LEVEL1_PARAM,
 		VALUE_LEVEL2_PARAM,
@@ -82,19 +81,21 @@ struct Comparator : Module {
 };
 
 
-struct ComparatorWidget : ModuleWidget {
+struct ComparatorWidget : StalysModuleWidget {
+	static constexpr int hp = 12;
 	ComparatorWidget(Comparator* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Comparator.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Comparator");
 
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 10.16)), module, Comparator::VALUE_LEVEL1_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 25.4)), module, Comparator::VALUE_LEVEL2_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 40.64)), module, Comparator::VALUE_LEVEL3_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 55.88)), module, Comparator::VALUE_LEVEL4_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 71.12)), module, Comparator::VALUE_LEVEL5_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 86.36)), module, Comparator::VALUE_LEVEL6_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 101.6)), module, Comparator::VALUE_LEVEL7_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 116.84)), module, Comparator::VALUE_LEVEL8_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 10.16)), module, Comparator::VALUE_LEVEL1_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 25.4)), module, Comparator::VALUE_LEVEL2_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 40.64)), module, Comparator::VALUE_LEVEL3_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 55.88)), module, Comparator::VALUE_LEVEL4_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 71.12)), module, Comparator::VALUE_LEVEL5_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 86.36)), module, Comparator::VALUE_LEVEL6_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 101.6)), module, Comparator::VALUE_LEVEL7_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 116.84)), module, Comparator::VALUE_LEVEL8_PARAM));
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Comparator::SIGNAL1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(38.1, 10.16)), module, Comparator::VALUE1_INPUT));

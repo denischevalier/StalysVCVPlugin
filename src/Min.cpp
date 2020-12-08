@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Min : Module {
+struct Min : StalysModule {
 	enum ParamIds {
 		NUM_PARAMS
 	};
@@ -111,10 +110,13 @@ struct Min : Module {
 };
 
 
-struct MinWidget : ModuleWidget {
+struct MinWidget : StalysModuleWidget {
+	static constexpr int hp = 12;
+
 	MinWidget(Min* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Min.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Min");
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Min::IN1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Min::IN2_INPUT));

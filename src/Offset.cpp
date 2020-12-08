@@ -1,8 +1,7 @@
-#include "plugin.hpp"
 #include "Common.hpp"
 
 
-struct Offset : Module {
+struct Offset : StalysModule {
 	enum ParamIds {
 		IN1_PARAM,
 		IN2_PARAM,
@@ -57,19 +56,22 @@ struct Offset : Module {
 };
 
 
-struct OffsetWidget : ModuleWidget {
+struct OffsetWidget : StalysModuleWidget {
+	static constexpr int hp = 6;
+
 	OffsetWidget(Offset* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Offset.svg")));
+		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
+		setPanel(box.size, "Offset");
 
-		addParam(createParamCentered<knob>(mm2px(Vec(7.62, 10.16)), module, Offset::IN1_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(7.62, 25.4)), module, Offset::IN2_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(7.62, 40.64)), module, Offset::IN3_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 55.88)), module, Offset::IN4_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 71.12)), module, Offset::IN5_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 86.36)), module, Offset::IN6_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 101.6)), module, Offset::IN7_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(7.514, 116.84)), module, Offset::IN8_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(7.62, 10.16)), module, Offset::IN1_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(7.62, 25.4)), module, Offset::IN2_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(7.62, 40.64)), module, Offset::IN3_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(7.514, 55.88)), module, Offset::IN4_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(7.514, 71.12)), module, Offset::IN5_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(7.514, 86.36)), module, Offset::IN6_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(7.514, 101.6)), module, Offset::IN7_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(7.514, 116.84)), module, Offset::IN8_PARAM));
 
 		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Offset::OUT1_OUTPUT));
 		addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 25.4)), module, Offset::OUT2_OUTPUT));
