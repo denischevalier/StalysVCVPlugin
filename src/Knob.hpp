@@ -2,14 +2,13 @@
 #include "plugin.hpp"
 #include "SkinChangedListener.hpp"
 
-struct knob : SvgKnob, SkinChangedListener {
-	knob() {
+struct smallKnob : SvgKnob, SkinChangedListener {
+	smallKnob() {
 		minAngle = -0.83 * M_PI;
 		maxAngle = 0.83 * M_PI;
 		shadow->opacity = 0;
-		std::string def = "bee";
-		skinChanged(def);
+		skinChanged("");
 	}
 
-	void skinChanged(std::string& skin) override;
+	void skinChanged(const std::string& skin) override;
 };

@@ -1,6 +1,8 @@
 #pragma once
 #include "Common.hpp"
 
+static const std::string DEFAULT_SKIN = "hornet";
+
 struct Skin {
 	std::string key;
 	std::string display;
@@ -11,7 +13,6 @@ struct Skin {
 class Skins {
 	private:
 		std::vector<Skin> availableSkins;
-		std::string def;
 		bool loaded = false;
 		std::mutex lock;
 
@@ -22,7 +23,6 @@ class Skins {
 
 		static const Skins& skins();
 		inline const std::vector<Skin>& available() const { return availableSkins; }
-		inline const std::string& defaultKey() const { return def; }
 		bool validKey(const std::string& key) const;
 	private:
 		void loadSkins();

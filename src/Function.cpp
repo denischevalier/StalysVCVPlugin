@@ -243,22 +243,22 @@ struct FunctionWidget : StalysModuleWidget {
 		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
 		setPanel(box.size, "Function");
 
-		addParam(createParamCentered<knob>(mm2px(Vec(38.1, 10.16)), module, Function::RISE_LEVEL1_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(68.58, 10.16)), module, Function::FALL_LEVEL1_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(68.41, 25.502)), module, Function::FALL_LEVEL2_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(37.793, 25.532)), module, Function::RISE_LEVEL2_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(68.58, 40.64)), module, Function::FALL_LEVEL3_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(37.962, 40.669)), module, Function::RISE_LEVEL3_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(68.41, 55.982)), module, Function::FALL_LEVEL4_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(37.793, 56.012)), module, Function::RISE_LEVEL4_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(68.41, 71.222)), module, Function::FALL_LEVEL5_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(37.793, 71.252)), module, Function::RISE_LEVEL5_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(68.58, 86.36)), module, Function::FALL_LEVEL6_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(37.962, 86.389)), module, Function::RISE_LEVEL6_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(68.58, 101.6)), module, Function::FALL_LEVEL7_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(37.962, 101.629)), module, Function::RISE_LEVEL7_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(68.749, 116.63)), module, Function::FALL_LEVEL8_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(38.132, 116.659)), module, Function::RISE_LEVEL8_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(38.1, 10.16)), module, Function::RISE_LEVEL1_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 10.16)), module, Function::FALL_LEVEL1_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(68.41, 25.502)), module, Function::FALL_LEVEL2_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(37.793, 25.532)), module, Function::RISE_LEVEL2_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 40.64)), module, Function::FALL_LEVEL3_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(37.962, 40.669)), module, Function::RISE_LEVEL3_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(68.41, 55.982)), module, Function::FALL_LEVEL4_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(37.793, 56.012)), module, Function::RISE_LEVEL4_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(68.41, 71.222)), module, Function::FALL_LEVEL5_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(37.793, 71.252)), module, Function::RISE_LEVEL5_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 86.36)), module, Function::FALL_LEVEL6_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(37.962, 86.389)), module, Function::RISE_LEVEL6_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 101.6)), module, Function::FALL_LEVEL7_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(37.962, 101.629)), module, Function::RISE_LEVEL7_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(68.749, 116.63)), module, Function::FALL_LEVEL8_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(38.132, 116.659)), module, Function::RISE_LEVEL8_PARAM));
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Function::TRIG1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(22.86, 10.16)), module, Function::SIGNAL1_INPUT));

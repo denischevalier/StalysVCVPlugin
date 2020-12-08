@@ -27,7 +27,6 @@ void Skins::loadSkins() {
 	availableSkins.push_back(Skin("hornet", "Hornet"));
 	availableSkins.push_back(Skin("light", "Light"));
 	availableSkins.push_back(Skin("dark", "Dark"));
-	def = "hornet";
 
 	std::string path = rack::asset::user("stalys.json");
 	if (access(path.c_str(), R_OK) != 0) {
@@ -60,7 +59,6 @@ void Skins::loadSkins() {
 				}
 			}
 			else {
-				def = dk;
 				INFO("Stalys: skin information loaded successfully from %s\n", path.c_str());
 			}
 		}

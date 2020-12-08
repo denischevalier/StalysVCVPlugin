@@ -27,7 +27,7 @@ void StalysModule::addSkinChangedListener(SkinChangedListener* listener) {
 	skinChangedListeners.push_back(listener);
 }
 
-void StalysModule::setSkin(std::string skin) {
+void StalysModule::setSkin(const std::string skin) {
 	if (skin == "default" || Skins::skins().validKey(skin)) {
 		theme = skin;
 		for (auto scl : skinChangedListeners) {

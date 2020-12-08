@@ -100,14 +100,14 @@ struct MultiplierWidget : StalysModuleWidget {
 		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
 		setPanel(box.size, "Multiplier");
 
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 10.16)), module, Multiplier::CARRIER_LEVEL1_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 25.4)), module, Multiplier::CARRIER_LEVEL2_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 40.64)), module, Multiplier::CARRIER_LEVEL3_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 55.88)), module, Multiplier::CARRIER_LEVEL4_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 71.12)), module, Multiplier::CARRIER_LEVEL5_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 86.36)), module, Multiplier::CARRIER_LEVEL6_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 101.6)), module, Multiplier::CARRIER_LEVEL7_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 116.84)), module, Multiplier::CARRIER_LEVEL8_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 10.16)), module, Multiplier::CARRIER_LEVEL1_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 25.4)), module, Multiplier::CARRIER_LEVEL2_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 40.64)), module, Multiplier::CARRIER_LEVEL3_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 55.88)), module, Multiplier::CARRIER_LEVEL4_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 71.12)), module, Multiplier::CARRIER_LEVEL5_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 86.36)), module, Multiplier::CARRIER_LEVEL6_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 101.6)), module, Multiplier::CARRIER_LEVEL7_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 116.84)), module, Multiplier::CARRIER_LEVEL8_PARAM));
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Multiplier::SIGNAL1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(38.1, 10.16)), module, Multiplier::CARRIER1_INPUT));

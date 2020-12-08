@@ -15,7 +15,7 @@ struct StalysModuleWidget : ModuleWidget, SkinChangedListener {
 
 	virtual void contextMenu(Menu *menu) {}
 
-	void skinChanged(std::string& skin) override;
+	void skinChanged(const std::string& skin) override;
 	void setPanel(Vec size, std::string slug);
 	void updatePanel();
 };

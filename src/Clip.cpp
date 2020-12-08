@@ -96,14 +96,14 @@ struct ClipWidget : StalysModuleWidget {
 		box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
 		setPanel(box.size, "Clip");
 
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 10.16)), module, Clip::RATIO_LEVEL1_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 25.4)), module, Clip::RATIO_LEVEL2_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 40.64)), module, Clip::RATIO_LEVEL3_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 55.88)), module, Clip::RATIO_LEVEL4_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 71.12)), module, Clip::RATIO_LEVEL5_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 86.36)), module, Clip::RATIO_LEVEL6_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 101.6)), module, Clip::RATIO_LEVEL7_PARAM));
-		addParam(createParamCentered<knob>(mm2px(Vec(22.86, 116.84)), module, Clip::RATIO_LEVEL8_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 10.16)), module, Clip::RATIO_LEVEL1_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 25.4)), module, Clip::RATIO_LEVEL2_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 40.64)), module, Clip::RATIO_LEVEL3_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 55.88)), module, Clip::RATIO_LEVEL4_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 71.12)), module, Clip::RATIO_LEVEL5_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 86.36)), module, Clip::RATIO_LEVEL6_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 101.6)), module, Clip::RATIO_LEVEL7_PARAM));
+		addParam(createParamCentered<smallKnob>(mm2px(Vec(22.86, 116.84)), module, Clip::RATIO_LEVEL8_PARAM));
 
 		addInput(createInputCentered<port>(mm2px(Vec(7.62, 10.16)), module, Clip::IN1_INPUT));
 		addInput(createInputCentered<port>(mm2px(Vec(38.1, 10.16)), module, Clip::RATIO1_INPUT));

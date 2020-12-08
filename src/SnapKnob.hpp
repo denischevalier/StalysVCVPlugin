@@ -1,8 +1,7 @@
 #pragma once
-#include "plugin.hpp"
 #include "Knob.hpp"
 
-struct snapKnob: knob {
+struct snapKnob: smallKnob {
 	snapKnob() {
 		snap = true;
 	}

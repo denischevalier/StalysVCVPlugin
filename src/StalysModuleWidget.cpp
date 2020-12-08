@@ -4,10 +4,10 @@
 
 void StalysModuleWidget::addParam(ParamWidget* param) {
 	ModuleWidget::addParam(param);
-	if (this->module) {
+	if (module) {
 		auto l = dynamic_cast<SkinChangedListener*>(param);
 		if(l) {
-			auto m = dynamic_cast<StalysModule*>(this->module);
+			auto m = dynamic_cast<StalysModule*>(module);
 			assert(m);
 			m->addSkinChangedListener(l);
 		}
@@ -16,10 +16,10 @@ void StalysModuleWidget::addParam(ParamWidget* param) {
 
 void StalysModuleWidget::addInput(PortWidget* input) {
 	ModuleWidget::addInput(input);
-	if (this->module) {
+	if (module) {
 		auto l = dynamic_cast<SkinChangedListener*>(input);
 		if(l) {
-			auto m = dynamic_cast<StalysModule*>(this->module);
+			auto m = dynamic_cast<StalysModule*>(module);
 			assert(m);
 			m->addSkinChangedListener(l);
 		}
@@ -28,17 +28,17 @@ void StalysModuleWidget::addInput(PortWidget* input) {
 
 void StalysModuleWidget::addOutput(PortWidget* output) {
 	ModuleWidget::addOutput(output);
-	if (this->module) {
+	if (module) {
 		auto l = dynamic_cast<SkinChangedListener*>(output);
 		if(l) {
-			auto m = dynamic_cast<StalysModule*>(this->module);
+			auto m = dynamic_cast<StalysModule*>(module);
 			assert(m);
 			m->addSkinChangedListener(l);
 		}
 	}
 }
 
-void StalysModuleWidget::skinChanged(std::string& skin) {
+void StalysModuleWidget::skinChanged(const std::string& skin) {
 	updatePanel();
 }
 
@@ -49,15 +49,14 @@ void StalysModuleWidget::updatePanel() {
 		modulePanel = NULL;
 	}
 
-	const Skins& skins = Skins::skins();
-	std::string skin = skins.defaultKey();
+	std::string skin = DEFAULT_SKIN;
 
 	if (module) {
 		auto m = dynamic_cast<StalysModule*>(module);
 		assert(m);
 		skin = m->theme;
 		if (skin == "" || skin == "default") {
-			skin = skins.defaultKey();
+			skin = DEFAULT_SKIN;
 		}
 	}
 
