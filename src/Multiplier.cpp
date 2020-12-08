@@ -49,26 +49,26 @@ struct Multiplier : StalysModule {
 
 	Multiplier() {
 		config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
-		configParam(CARRIER_LEVEL1_PARAM, -1.f, 1.f, 0.f, "Carrier level");
-		configParam(CARRIER_LEVEL2_PARAM, -1.f, 1.f, 0.f, "Carrier level");
-		configParam(CARRIER_LEVEL3_PARAM, -1.f, 1.f, 0.f, "Carrier level");
-		configParam(CARRIER_LEVEL4_PARAM, -1.f, 1.f, 0.f, "Carrier level");
-		configParam(CARRIER_LEVEL5_PARAM, -1.f, 1.f, 0.f, "Carrier level");
-		configParam(CARRIER_LEVEL6_PARAM, -1.f, 1.f, 0.f, "Carrier level");
-		configParam(CARRIER_LEVEL7_PARAM, -1.f, 1.f, 0.f, "Carrier level");
-		configParam(CARRIER_LEVEL8_PARAM, -1.f, 1.f, 0.f, "Carrier level");
+		configParam(CARRIER_LEVEL1_PARAM, -2.f, 2.f, 0.f, "Carrier level");
+		configParam(CARRIER_LEVEL2_PARAM, -2.f, 2.f, 0.f, "Carrier level");
+		configParam(CARRIER_LEVEL3_PARAM, -2.f, 2.f, 0.f, "Carrier level");
+		configParam(CARRIER_LEVEL4_PARAM, -2.f, 2.f, 0.f, "Carrier level");
+		configParam(CARRIER_LEVEL5_PARAM, -2.f, 2.f, 0.f, "Carrier level");
+		configParam(CARRIER_LEVEL6_PARAM, -2.f, 2.f, 0.f, "Carrier level");
+		configParam(CARRIER_LEVEL7_PARAM, -2.f, 2.f, 0.f, "Carrier level");
+		configParam(CARRIER_LEVEL8_PARAM, -2.f, 2.f, 0.f, "Carrier level");
 	}
 
 	void process(const ProcessArgs& args) override {
 		const float results[8] = {
-			inputs[SIGNAL1_INPUT].getNormalVoltage(0.f) * inputs[CARRIER1_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL1_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL2_INPUT].getNormalVoltage(0.f) * inputs[CARRIER2_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL2_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL3_INPUT].getNormalVoltage(0.f) * inputs[CARRIER3_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL3_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL4_INPUT].getNormalVoltage(0.f) * inputs[CARRIER4_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL4_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL5_INPUT].getNormalVoltage(0.f) * inputs[CARRIER5_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL5_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL6_INPUT].getNormalVoltage(0.f) * inputs[CARRIER6_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL6_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL7_INPUT].getNormalVoltage(0.f) * inputs[CARRIER7_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL7_PARAM].getValue()) / 5.f,
-			inputs[SIGNAL8_INPUT].getNormalVoltage(0.f) * inputs[CARRIER8_INPUT].getNormalVoltage(5.f) * 2.f * exponent(params[CARRIER_LEVEL8_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL1_INPUT].getNormalVoltage(0.f) * inputs[CARRIER1_INPUT].getNormalVoltage(5.f) * 4.f * exponent(params[CARRIER_LEVEL1_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL2_INPUT].getNormalVoltage(0.f) * inputs[CARRIER2_INPUT].getNormalVoltage(5.f) * 4.f * exponent(params[CARRIER_LEVEL2_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL3_INPUT].getNormalVoltage(0.f) * inputs[CARRIER3_INPUT].getNormalVoltage(5.f) * 4.f * exponent(params[CARRIER_LEVEL3_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL4_INPUT].getNormalVoltage(0.f) * inputs[CARRIER4_INPUT].getNormalVoltage(5.f) * 4.f * exponent(params[CARRIER_LEVEL4_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL5_INPUT].getNormalVoltage(0.f) * inputs[CARRIER5_INPUT].getNormalVoltage(5.f) * 4.f * exponent(params[CARRIER_LEVEL5_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL6_INPUT].getNormalVoltage(0.f) * inputs[CARRIER6_INPUT].getNormalVoltage(5.f) * 4.f * exponent(params[CARRIER_LEVEL6_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL7_INPUT].getNormalVoltage(0.f) * inputs[CARRIER7_INPUT].getNormalVoltage(5.f) * 4.f * exponent(params[CARRIER_LEVEL7_PARAM].getValue()) / 5.f,
+			inputs[SIGNAL8_INPUT].getNormalVoltage(0.f) * inputs[CARRIER8_INPUT].getNormalVoltage(5.f) * 4.f * exponent(params[CARRIER_LEVEL8_PARAM].getValue()) / 5.f,
 		};
 
 		const float out1 = results[0];

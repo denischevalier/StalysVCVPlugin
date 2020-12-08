@@ -102,7 +102,7 @@ Plug two different LFOs to see complex rhythms emerge.
 
 ![8 Multiplier](/img/multiplier.png)
 
-This module is 8 four quadrant multipliers or ring-modulators (with attenuversion of the Carrier). A 5V voltage is normaled to the Carrier input.
+This module is 8 four quadrant multipliers or ring-modulators (with attenuversion of the Carrier). A 5V voltage is normaled to the Carrier input. The Carrier knob goes from -2 to 2. Between -1 and 1, it will act like a normal four-quadrant. Outside those limits, the signal will be amplified up to ~2 times the original amplitude. This allows it to act as a gain stage before a distortion like our **8 Clip** module.
 
 If no cable is plugged into an output, it is summed to the next outputs.
 
