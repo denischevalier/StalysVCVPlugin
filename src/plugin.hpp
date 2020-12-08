@@ -29,4 +29,5 @@ extern Model* modelABY;
 extern Model* modelOffset;
 extern Model* modelClip;
 extern Model* modelCtV;
+extern Model* modelBlank;
 
