@@ -15,7 +15,8 @@ My dream is to one day port it to eurorack (but I'd need to learn electronics fi
 - Neuron original design: [Andrew Fitch](https://www.nonlinearcircuits.com/)
 - Code and Panels: [Stalys](https://linktr.ee/stalysmusic)
 - Neuron VCV implementation: [Michael Hetrick](https://mhetrick.com/)
-- Befaco AxB+C VCV implementation: [Befaco](https://github.com/VCVRack/Befaco)
+- Befaco slew limiter VCV implementation: [Befaco](https://github.com/VCVRack/Befaco)
+- BogAudio skinable module classes: [BogAudio](https://github.com/bogaudio/BogaudioModules)
 
 ## Installation
 
