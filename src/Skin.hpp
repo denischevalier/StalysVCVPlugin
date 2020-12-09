@@ -1,7 +1,10 @@
 #pragma once
-#include "Common.hpp"
+#include "plugin.hpp"
+#include <unordered_set>
 
-static const std::string DEFAULT_SKIN = "hornet";
+struct DefaultSkinChangeListener {
+	virtual void defaultSkinChanged(const std::string& skin) = 0;
+};
 
 struct Skin {
 	std::string key;
@@ -12,18 +15,28 @@ struct Skin {
 
 class Skins {
 	private:
+		typedef std::unordered_set<DefaultSkinChangeListener*> default_skin_listeners_set;
 		std::vector<Skin> availableSkins;
 		bool loaded = false;
 		std::mutex lock;
+		std::string defaultKey;
+		default_skin_listeners_set defaultSkinListeners;
+		std::mutex defaultSkinListenersLock;
 
 	public:
 		Skins() {}
 		Skins(const Skins&) = delete;
 		void operator=(const Skins&) = delete;
 
-		static const Skins& skins();
+		static Skins& skins();
 		inline const std::vector<Skin>& available() const { return availableSkins; }
+		inline const std::string defaultSkin() const { return defaultKey; }
 		bool validKey(const std::string& key) const;
+
+		void setDefaultSkin(std::string skinKey);
+		void registerDefaultSkinChangeListener(DefaultSkinChangeListener* listener);
+		void deregisterDefaultSkinChangeListener(DefaultSkinChangeListener* listener);
+
 	private:
 		void loadSkins();
 };
