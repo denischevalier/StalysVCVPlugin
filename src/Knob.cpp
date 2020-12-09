@@ -4,7 +4,7 @@
 void smallKnob::skinChanged(const std::string& skin) {
 	std::string _skin = skin;
 	if (_skin == "" || _skin == "default") {
-		_skin = DEFAULT_SKIN;
+		_skin = Skins::skins().defaultSkin();
 	}
 
 	std::string svg = "res/"+_skin+"/knob.svg";

@@ -1,8 +1,9 @@
 #include "Skin.hpp"
-#include "Common.hpp"
 #include <unistd.h>
+#include <fstream>
+#include <cstdio>
 
-const Skins& Skins::skins() {
+Skins& Skins::skins() {
 	static Skins instance;
 	std::lock_guard<std::mutex> lock(instance.lock);
 	if (!instance.loaded) {
@@ -27,6 +28,7 @@ void Skins::loadSkins() {
 	availableSkins.push_back(Skin("hornet", "Hornet"));
 	availableSkins.push_back(Skin("light", "Light"));
 	availableSkins.push_back(Skin("dark", "Dark"));
+	defaultKey = "hornet";
 
 	std::string path = rack::asset::user("stalys.json");
 	if (access(path.c_str(), R_OK) != 0) {
@@ -67,3 +69,45 @@ void Skins::loadSkins() {
 	json_decref(root);
 }
 
+void Skins::setDefaultSkin(std::string skinKey) {
+	if (skinKey == "default") {
+		skinKey = "hornet";
+	}
+	std::string path = rack::asset::user("Stalys.json");
+	std::string error;
+	if (!validKey(skinKey)) {
+		error = "invalid key: " + skinKey;
+	}
+	else {
+		std::ofstream f(path);
+		f << "{\n  \"skins\": {\n    \"default\": \"";
+		f << skinKey;
+		f << "\"\n  }\n}\n";
+		if (!f) {
+			error = "error writing \"" + path + "\": " + strerror(errno);
+		}
+	}
+
+	if (error.size() > 0) {
+		WARN("Stalys: setting default skin: %s\n", error.c_str());
+	}
+	else {
+		defaultKey = skinKey;
+		INFO("Stalys: skin information written to %s\n", path.c_str());
+
+		std::lock_guard<std::mutex> lock(defaultSkinListenersLock);
+		for (auto listener : defaultSkinListeners) {
+			listener->defaultSkinChanged(defaultKey);
+		}
+	}
+}
+
+void Skins::registerDefaultSkinChangeListener(DefaultSkinChangeListener* listener) {
+	std::lock_guard<std::mutex> lock(defaultSkinListenersLock);
+	defaultSkinListeners.insert(listener);
+}
+
+void Skins::deregisterDefaultSkinChangeListener(DefaultSkinChangeListener* listener) {
+	std::lock_guard<std::mutex> lock(defaultSkinListenersLock);
+	defaultSkinListeners.erase(listener);
+}
