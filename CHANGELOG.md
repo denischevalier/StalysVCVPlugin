@@ -2,6 +2,19 @@
 ## [Unreleased]
 
 
+<a name="1.4.0"></a>
+## [1.4.0] - 2020-12-09
+### Module
+- Add 24hp blank panel ([#73](https://github.com/denischevalier/StalysVCVPlugin/issues/73))
+- 8 Multiplier can amplify voltage ([#70](https://github.com/denischevalier/StalysVCVPlugin/issues/70))
+
+### Performance
+- Use -ffast-math on compile ([#69](https://github.com/denischevalier/StalysVCVPlugin/issues/69))
+
+### UI
+- Add alternative skins ([#67](https://github.com/denischevalier/StalysVCVPlugin/issues/67))
+- Redraw all panels ([#66](https://github.com/denischevalier/StalysVCVPlugin/issues/66))
+
 <a name="1.3.1"></a>
 ## [1.3.1] - 2020-12-03
 ### Bug
