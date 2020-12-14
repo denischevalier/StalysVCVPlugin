@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="1.4.1"></a>
+## [1.4.1] - 2020-12-14
+### Bug
+- Revert use of -ffast-math on compile ([#76](https://github.com/denischevalier/StalysVCVPlugin/issues/76))
+
+
 <a name="1.4.0"></a>
 ## [1.4.0] - 2020-12-09
 ### Module
