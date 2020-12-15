@@ -26,6 +26,10 @@ My dream is to one day port it to eurorack (but I'd need to learn electronics fi
 - **Setup the environmnent:** `export RACK_DIR=path/to/your/sdk/installation`.
 - **Build and install the modules:** `make install`.
 
+## Examples
+
+Some example and real-life usage of this plugin can be found under the [/patches](/patches) directory.
+
 ## Skins
 
 New with v1.4.0 are four different skins for Stalys modules:
