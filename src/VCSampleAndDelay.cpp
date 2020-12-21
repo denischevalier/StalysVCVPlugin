@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct VCSampleAndDelay : StalysModule {
   enum ParamIds {
     STEPS_LEVEL1_PARAM,
@@ -78,30 +77,30 @@ struct VCSampleAndDelay : StalysModule {
 
   void process(const ProcessArgs &args) override {
     const float steps[8] = {
-      rack::math::clamp(std::floor(inputs[STEPS1_INPUT].getNormalVoltage(
-                            params[STEPS_LEVEL1_PARAM].getValue())),
-                        1.f, 10.f),
-      rack::math::clamp(std::floor(inputs[STEPS2_INPUT].getNormalVoltage(
-                            params[STEPS_LEVEL2_PARAM].getValue())),
-                        1.f, 10.f),
-      rack::math::clamp(std::floor(inputs[STEPS3_INPUT].getNormalVoltage(
-                            params[STEPS_LEVEL3_PARAM].getValue())),
-                        1.f, 10.f),
-      rack::math::clamp(std::floor(inputs[STEPS4_INPUT].getNormalVoltage(
-                            params[STEPS_LEVEL4_PARAM].getValue())),
-                        1.f, 10.f),
-      rack::math::clamp(std::floor(inputs[STEPS5_INPUT].getNormalVoltage(
-                            params[STEPS_LEVEL5_PARAM].getValue())),
-                        1.f, 10.f),
-      rack::math::clamp(std::floor(inputs[STEPS6_INPUT].getNormalVoltage(
-                            params[STEPS_LEVEL6_PARAM].getValue())),
-                        1.f, 10.f),
-      rack::math::clamp(std::floor(inputs[STEPS7_INPUT].getNormalVoltage(
-                            params[STEPS_LEVEL7_PARAM].getValue())),
-                        1.f, 10.f),
-      rack::math::clamp(std::floor(inputs[STEPS8_INPUT].getNormalVoltage(
-                            params[STEPS_LEVEL8_PARAM].getValue())),
-                        1.f, 10.f),
+        rack::math::clamp(std::floor(inputs[STEPS1_INPUT].getNormalVoltage(
+                              params[STEPS_LEVEL1_PARAM].getValue())),
+                          1.f, 10.f),
+        rack::math::clamp(std::floor(inputs[STEPS2_INPUT].getNormalVoltage(
+                              params[STEPS_LEVEL2_PARAM].getValue())),
+                          1.f, 10.f),
+        rack::math::clamp(std::floor(inputs[STEPS3_INPUT].getNormalVoltage(
+                              params[STEPS_LEVEL3_PARAM].getValue())),
+                          1.f, 10.f),
+        rack::math::clamp(std::floor(inputs[STEPS4_INPUT].getNormalVoltage(
+                              params[STEPS_LEVEL4_PARAM].getValue())),
+                          1.f, 10.f),
+        rack::math::clamp(std::floor(inputs[STEPS5_INPUT].getNormalVoltage(
+                              params[STEPS_LEVEL5_PARAM].getValue())),
+                          1.f, 10.f),
+        rack::math::clamp(std::floor(inputs[STEPS6_INPUT].getNormalVoltage(
+                              params[STEPS_LEVEL6_PARAM].getValue())),
+                          1.f, 10.f),
+        rack::math::clamp(std::floor(inputs[STEPS7_INPUT].getNormalVoltage(
+                              params[STEPS_LEVEL7_PARAM].getValue())),
+                          1.f, 10.f),
+        rack::math::clamp(std::floor(inputs[STEPS8_INPUT].getNormalVoltage(
+                              params[STEPS_LEVEL8_PARAM].getValue())),
+                          1.f, 10.f),
     };
 
     if (trig1.process(inputs[CLOCK1_INPUT].getVoltage())) {
@@ -180,7 +179,6 @@ struct VCSampleAndDelay : StalysModule {
   }
 };
 
-
 struct VCSampleAndDelayWidget : StalysModuleWidget {
   static constexpr int hp = 15;
 
@@ -189,22 +187,24 @@ struct VCSampleAndDelayWidget : StalysModuleWidget {
     box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
     setPanel(box.size, "VCSampleAndDelay");
 
-    addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 10.398)), module,
-                                           VCSampleAndDelay::STEPS_LEVEL1_PARAM));
-    addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 25.4)), module,
-                                           VCSampleAndDelay::STEPS_LEVEL2_PARAM));
-    addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 40.64)), module,
-                                           VCSampleAndDelay::STEPS_LEVEL3_PARAM));
-    addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 55.88)), module,
-                                           VCSampleAndDelay::STEPS_LEVEL4_PARAM));
-    addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 71.12)), module,
-                                           VCSampleAndDelay::STEPS_LEVEL5_PARAM));
-    addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 86.36)), module,
-                                           VCSampleAndDelay::STEPS_LEVEL6_PARAM));
-    addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 101.6)), module,
-                                           VCSampleAndDelay::STEPS_LEVEL7_PARAM));
-    addParam(createParamCentered<snapKnob>(mm2px(Vec(7.62, 116.84)), module,
-                                           VCSampleAndDelay::STEPS_LEVEL8_PARAM));
+    addParam(
+        createParamCentered<snapKnob>(mm2px(Vec(7.62, 10.398)), module,
+                                      VCSampleAndDelay::STEPS_LEVEL1_PARAM));
+    addParam(createParamCentered<snapKnob>(
+        mm2px(Vec(7.62, 25.4)), module, VCSampleAndDelay::STEPS_LEVEL2_PARAM));
+    addParam(createParamCentered<snapKnob>(
+        mm2px(Vec(7.62, 40.64)), module, VCSampleAndDelay::STEPS_LEVEL3_PARAM));
+    addParam(createParamCentered<snapKnob>(
+        mm2px(Vec(7.62, 55.88)), module, VCSampleAndDelay::STEPS_LEVEL4_PARAM));
+    addParam(createParamCentered<snapKnob>(
+        mm2px(Vec(7.62, 71.12)), module, VCSampleAndDelay::STEPS_LEVEL5_PARAM));
+    addParam(createParamCentered<snapKnob>(
+        mm2px(Vec(7.62, 86.36)), module, VCSampleAndDelay::STEPS_LEVEL6_PARAM));
+    addParam(createParamCentered<snapKnob>(
+        mm2px(Vec(7.62, 101.6)), module, VCSampleAndDelay::STEPS_LEVEL7_PARAM));
+    addParam(
+        createParamCentered<snapKnob>(mm2px(Vec(7.62, 116.84)), module,
+                                      VCSampleAndDelay::STEPS_LEVEL8_PARAM));
 
     addInput(createInputCentered<port>(mm2px(Vec(38.1, 10.16)), module,
                                        VCSampleAndDelay::CLOCK1_INPUT));
@@ -273,7 +273,6 @@ struct VCSampleAndDelayWidget : StalysModuleWidget {
                                          VCSampleAndDelay::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelVCSampleAndDelay =
     createModel<VCSampleAndDelay, VCSampleAndDelayWidget>("VCSampleAndDelay");

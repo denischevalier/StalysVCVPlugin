@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Not : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -31,24 +30,23 @@ struct Not : StalysModule {
 
   void process(const ProcessArgs &args) override {
     outputs[OUT1_OUTPUT].setVoltage(
-      inputs[IN1_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
+        inputs[IN1_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
     outputs[OUT2_OUTPUT].setVoltage(
-      inputs[IN2_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
+        inputs[IN2_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
     outputs[OUT3_OUTPUT].setVoltage(
-      inputs[IN3_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
+        inputs[IN3_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
     outputs[OUT4_OUTPUT].setVoltage(
-      inputs[IN4_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
+        inputs[IN4_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
     outputs[OUT5_OUTPUT].setVoltage(
-      inputs[IN5_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
+        inputs[IN5_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
     outputs[OUT6_OUTPUT].setVoltage(
-      inputs[IN6_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
+        inputs[IN6_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
     outputs[OUT7_OUTPUT].setVoltage(
-      inputs[IN7_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
+        inputs[IN7_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
     outputs[OUT8_OUTPUT].setVoltage(
-      inputs[IN8_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
+        inputs[IN8_INPUT].getNormalVoltage(0.f) > 1.f ? 0.f : 10.f);
   }
 };
-
 
 struct NotWidget : StalysModuleWidget {
   static constexpr int hp = 6;
@@ -93,6 +91,5 @@ struct NotWidget : StalysModuleWidget {
                                          Not::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelNot = createModel<Not, NotWidget>("Not");

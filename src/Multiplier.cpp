@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Multiplier : StalysModule {
   enum ParamIds {
     CARRIER_LEVEL1_PARAM,
@@ -112,7 +111,6 @@ struct Multiplier : StalysModule {
   }
 };
 
-
 struct MultiplierWidget : StalysModuleWidget {
   static constexpr int hp = 12;
 
@@ -189,7 +187,6 @@ struct MultiplierWidget : StalysModuleWidget {
                                          Multiplier::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelMultiplier =
     createModel<Multiplier, MultiplierWidget>("Multiplier");

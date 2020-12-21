@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Min : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -84,17 +83,17 @@ struct Min : StalysModule {
                            ? outs[1]
                            : std::min(outs[0],outs[1]);
     const float out3 =
-        outputs[OUT2_OUTPUT].isConnected()? outs[2]: std::min(out2, outs[2]);
+        outputs[OUT2_OUTPUT].isConnected() ? outs[2] : std::min(out2, outs[2]);
     const float out4 =
-        outputs[OUT3_OUTPUT].isConnected()? outs[3]: std::min(out3, outs[3]);
+        outputs[OUT3_OUTPUT].isConnected() ? outs[3] : std::min(out3, outs[3]);
     const float out5 =
-        outputs[OUT4_OUTPUT].isConnected()? outs[4]: std::min(out4, outs[4]);
+        outputs[OUT4_OUTPUT].isConnected() ? outs[4] : std::min(out4, outs[4]);
     const float out6 =
-        outputs[OUT5_OUTPUT].isConnected()? outs[5]: std::min(out5, outs[5]);
+        outputs[OUT5_OUTPUT].isConnected() ? outs[5] : std::min(out5, outs[5]);
     const float out7 =
-        outputs[OUT6_OUTPUT].isConnected()? outs[6]: std::min(out6, outs[6]);
+        outputs[OUT6_OUTPUT].isConnected() ? outs[6] : std::min(out6, outs[6]);
     const float out8 =
-        outputs[OUT7_OUTPUT].isConnected()? outs[7]: std::min(out7, outs[7]);
+        outputs[OUT7_OUTPUT].isConnected() ? outs[7] : std::min(out7, outs[7]);
 
     outputs[OUT1_OUTPUT].setVoltage(outs[0]);
     outputs[OUT2_OUTPUT].setVoltage(out2);
@@ -106,7 +105,6 @@ struct Min : StalysModule {
     outputs[OUT8_OUTPUT].setVoltage(out8);
   }
 };
-
 
 struct MinWidget : StalysModuleWidget {
   static constexpr int hp = 12;
@@ -183,6 +181,5 @@ struct MinWidget : StalysModuleWidget {
                                          Min::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelMin = createModel<Min, MinWidget>("Min");

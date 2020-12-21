@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Avg : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -47,11 +46,11 @@ struct Avg : StalysModule {
 
   void process(const ProcessArgs &args) override {
     const float in[24] = {
-        inputs[IN1_INPUT].getVoltage(), inputs[IN2_INPUT].getVoltage(),
-        inputs[IN3_INPUT].getVoltage(), inputs[IN4_INPUT].getVoltage(),
-        inputs[IN5_INPUT].getVoltage(), inputs[IN6_INPUT].getVoltage(),
-        inputs[IN7_INPUT].getVoltage(), inputs[IN8_INPUT].getVoltage(),
-        inputs[IN9_INPUT].getVoltage(), inputs[IN10_INPUT].getVoltage(),
+        inputs[IN1_INPUT].getVoltage(),  inputs[IN2_INPUT].getVoltage(),
+        inputs[IN3_INPUT].getVoltage(),  inputs[IN4_INPUT].getVoltage(),
+        inputs[IN5_INPUT].getVoltage(),  inputs[IN6_INPUT].getVoltage(),
+        inputs[IN7_INPUT].getVoltage(),  inputs[IN8_INPUT].getVoltage(),
+        inputs[IN9_INPUT].getVoltage(),  inputs[IN10_INPUT].getVoltage(),
         inputs[IN11_INPUT].getVoltage(), inputs[IN12_INPUT].getVoltage(),
         inputs[IN13_INPUT].getVoltage(), inputs[IN14_INPUT].getVoltage(),
         inputs[IN15_INPUT].getVoltage(), inputs[IN16_INPUT].getVoltage(),
@@ -60,11 +59,11 @@ struct Avg : StalysModule {
         inputs[IN21_INPUT].getVoltage(), inputs[IN22_INPUT].getVoltage(),
         inputs[IN23_INPUT].getVoltage(), inputs[IN24_INPUT].getVoltage()};
     const bool inConnected[24] = {
-        inputs[IN1_INPUT].isConnected(), inputs[IN2_INPUT].isConnected(),
-        inputs[IN3_INPUT].isConnected(), inputs[IN4_INPUT].isConnected(),
-        inputs[IN5_INPUT].isConnected(), inputs[IN6_INPUT].isConnected(),
-        inputs[IN7_INPUT].isConnected(), inputs[IN8_INPUT].isConnected(),
-        inputs[IN9_INPUT].isConnected(), inputs[IN10_INPUT].isConnected(),
+        inputs[IN1_INPUT].isConnected(),  inputs[IN2_INPUT].isConnected(),
+        inputs[IN3_INPUT].isConnected(),  inputs[IN4_INPUT].isConnected(),
+        inputs[IN5_INPUT].isConnected(),  inputs[IN6_INPUT].isConnected(),
+        inputs[IN7_INPUT].isConnected(),  inputs[IN8_INPUT].isConnected(),
+        inputs[IN9_INPUT].isConnected(),  inputs[IN10_INPUT].isConnected(),
         inputs[IN11_INPUT].isConnected(), inputs[IN12_INPUT].isConnected(),
         inputs[IN13_INPUT].isConnected(), inputs[IN14_INPUT].isConnected(),
         inputs[IN15_INPUT].isConnected(), inputs[IN16_INPUT].isConnected(),
@@ -81,7 +80,7 @@ struct Avg : StalysModule {
 
     float n = 0.f;
     float sum = 0.f;
-    for (int i = 0; i<8; i++)  {
+    for (int i = 0; i < 8; i++)  {
       if (inConnected[i]) {
         n++;
         sum += in[i];
@@ -91,7 +90,8 @@ struct Avg : StalysModule {
         sum += in[i + 1];
       }
       if (inConnected[i + 2]) {
-        n++; sum += in[i + 2];
+        n++;
+        sum += in[i + 2];
       }
       if (outConnected[i]) {
         out[i] = sum / n;
@@ -109,7 +109,6 @@ struct Avg : StalysModule {
     outputs[OUT8_OUTPUT].setVoltage(out[7]);
   }
 };
-
 
 struct AvgWidget : StalysModuleWidget {
   static constexpr int hp = 12;
@@ -186,6 +185,5 @@ struct AvgWidget : StalysModuleWidget {
                                          Avg::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelAvg = createModel<Avg, AvgWidget>("Avg");

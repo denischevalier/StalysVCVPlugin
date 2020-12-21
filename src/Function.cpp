@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Function : StalysModule {
   enum ParamIds {
     RISE_LEVEL1_PARAM,
@@ -137,44 +136,44 @@ struct Function : StalysModule {
         inputs[SIGNAL5_INPUT].getVoltage(), inputs[SIGNAL6_INPUT].getVoltage(),
         inputs[SIGNAL7_INPUT].getVoltage(), inputs[SIGNAL8_INPUT].getVoltage()};
 
-    const float riseCV[8] = {inputs[RISE1_INPUT].getVoltage()/10.f +
+    const float riseCV[8] = {inputs[RISE1_INPUT].getVoltage() / 10.f +
                                  params[RISE_LEVEL1_PARAM].getValue(),
-                             inputs[RISE2_INPUT].getVoltage()/10.f +
+                             inputs[RISE2_INPUT].getVoltage() / 10.f +
                                  params[RISE_LEVEL2_PARAM].getValue(),
-                             inputs[RISE3_INPUT].getVoltage()/10.f +
+                             inputs[RISE3_INPUT].getVoltage() / 10.f +
                                  params[RISE_LEVEL3_PARAM].getValue(),
-                             inputs[RISE4_INPUT].getVoltage()/10.f +
+                             inputs[RISE4_INPUT].getVoltage() / 10.f +
                                  params[RISE_LEVEL4_PARAM].getValue(),
-                             inputs[RISE5_INPUT].getVoltage()/10.f +
+                             inputs[RISE5_INPUT].getVoltage() / 10.f +
                                  params[RISE_LEVEL5_PARAM].getValue(),
-                             inputs[RISE6_INPUT].getVoltage()/10.f +
+                             inputs[RISE6_INPUT].getVoltage() / 10.f +
                                  params[RISE_LEVEL6_PARAM].getValue(),
-                             inputs[RISE7_INPUT].getVoltage()/10.f +
+                             inputs[RISE7_INPUT].getVoltage() / 10.f +
                                  params[RISE_LEVEL7_PARAM].getValue(),
-                             inputs[RISE8_INPUT].getVoltage()/10.f +
+                             inputs[RISE8_INPUT].getVoltage() / 10.f +
                                  params[RISE_LEVEL8_PARAM].getValue()};
 
-    const float fallCV[8] = {inputs[FALL1_INPUT].getVoltage()/10.f +
+    const float fallCV[8] = {inputs[FALL1_INPUT].getVoltage() / 10.f +
                                  params[FALL_LEVEL1_PARAM].getValue(),
-                             inputs[FALL2_INPUT].getVoltage()/10.f +
+                             inputs[FALL2_INPUT].getVoltage() / 10.f +
                                  params[FALL_LEVEL2_PARAM].getValue(),
-                             inputs[FALL3_INPUT].getVoltage()/10.f +
+                             inputs[FALL3_INPUT].getVoltage() / 10.f +
                                  params[FALL_LEVEL3_PARAM].getValue(),
-                             inputs[FALL4_INPUT].getVoltage()/10.f +
+                             inputs[FALL4_INPUT].getVoltage() / 10.f +
                                  params[FALL_LEVEL4_PARAM].getValue(),
-                             inputs[FALL5_INPUT].getVoltage()/10.f +
+                             inputs[FALL5_INPUT].getVoltage() / 10.f +
                                  params[FALL_LEVEL5_PARAM].getValue(),
-                             inputs[FALL6_INPUT].getVoltage()/10.f +
+                             inputs[FALL6_INPUT].getVoltage() / 10.f +
                                  params[FALL_LEVEL6_PARAM].getValue(),
-                             inputs[FALL7_INPUT].getVoltage()/10.f +
+                             inputs[FALL7_INPUT].getVoltage() / 10.f +
                                  params[FALL_LEVEL7_PARAM].getValue(),
-                             inputs[FALL8_INPUT].getVoltage()/10.f +
+                             inputs[FALL8_INPUT].getVoltage() / 10.f +
                                  params[FALL_LEVEL8_PARAM].getValue()};
 
     bool rising[8] = {false, false, false, false, false, false, false, false};
     bool falling[8] = {false, false, false, false, false, false, false, false};
 
-    for(int i = 0; i < 8; i++) {
+    for (int i = 0; i < 8; i++) {
       if (trig[i]) {
         gate[i] = true;
       }
@@ -236,7 +235,6 @@ struct Function : StalysModule {
     outputs[EOC8_OUTPUT].setVoltage(eoc[8] ? 10.f : 0.f);
   }
 };
-
 
 struct FunctionWidget : StalysModuleWidget {
   static constexpr int hp = 30;
@@ -410,6 +408,5 @@ struct FunctionWidget : StalysModuleWidget {
                                          Function::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelFunction = createModel<Function, FunctionWidget>("Function");

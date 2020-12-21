@@ -13,7 +13,6 @@ Skins &Skins::skins() {
   return instance;
 }
 
-
 bool Skins::validKey(const std::string &key) const {
   for (auto s : availableSkins) {
     if (s.key == key) {

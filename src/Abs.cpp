@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Abs : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -31,25 +30,24 @@ struct Abs : StalysModule {
 
   void process(const ProcessArgs &args) override {
     const float ins[8] = {inputs[IN1_INPUT].getNormalVoltage(0.f),
-              inputs[IN2_INPUT].getNormalVoltage(0.f),
-              inputs[IN3_INPUT].getNormalVoltage(0.f),
-              inputs[IN4_INPUT].getNormalVoltage(0.f),
-              inputs[IN5_INPUT].getNormalVoltage(0.f),
-              inputs[IN6_INPUT].getNormalVoltage(0.f),
-              inputs[IN7_INPUT].getNormalVoltage(0.f),
-              inputs[IN8_INPUT].getNormalVoltage(0.f)};
+                          inputs[IN2_INPUT].getNormalVoltage(0.f),
+                          inputs[IN3_INPUT].getNormalVoltage(0.f),
+                          inputs[IN4_INPUT].getNormalVoltage(0.f),
+                          inputs[IN5_INPUT].getNormalVoltage(0.f),
+                          inputs[IN6_INPUT].getNormalVoltage(0.f),
+                          inputs[IN7_INPUT].getNormalVoltage(0.f),
+                          inputs[IN8_INPUT].getNormalVoltage(0.f)};
 
-    outputs[OUT1_OUTPUT].setVoltage(ins[0] >= 0.f? ins[0]: -1.f * ins[0]);
-    outputs[OUT2_OUTPUT].setVoltage(ins[1] >= 0.f? ins[1]: -1.f * ins[1]);
-    outputs[OUT3_OUTPUT].setVoltage(ins[2] >= 0.f? ins[2]: -1.f * ins[2]);
-    outputs[OUT4_OUTPUT].setVoltage(ins[3] >= 0.f? ins[3]: -1.f * ins[3]);
-    outputs[OUT5_OUTPUT].setVoltage(ins[4] >= 0.f? ins[4]: -1.f * ins[4]);
-    outputs[OUT6_OUTPUT].setVoltage(ins[5] >= 0.f? ins[5]: -1.f * ins[5]);
-    outputs[OUT7_OUTPUT].setVoltage(ins[6] >= 0.f? ins[6]: -1.f * ins[6]);
-    outputs[OUT8_OUTPUT].setVoltage(ins[7] >= 0.f? ins[7]: -1.f * ins[7]);
+    outputs[OUT1_OUTPUT].setVoltage(ins[0] >= 0.f ? ins[0] : -1.f * ins[0]);
+    outputs[OUT2_OUTPUT].setVoltage(ins[1] >= 0.f ? ins[1] : -1.f * ins[1]);
+    outputs[OUT3_OUTPUT].setVoltage(ins[2] >= 0.f ? ins[2] : -1.f * ins[2]);
+    outputs[OUT4_OUTPUT].setVoltage(ins[3] >= 0.f ? ins[3] : -1.f * ins[3]);
+    outputs[OUT5_OUTPUT].setVoltage(ins[4] >= 0.f ? ins[4] : -1.f * ins[4]);
+    outputs[OUT6_OUTPUT].setVoltage(ins[5] >= 0.f ? ins[5] : -1.f * ins[5]);
+    outputs[OUT7_OUTPUT].setVoltage(ins[6] >= 0.f ? ins[6] : -1.f * ins[6]);
+    outputs[OUT8_OUTPUT].setVoltage(ins[7] >= 0.f ? ins[7] : -1.f * ins[7]);
   }
 };
-
 
 struct AbsWidget : StalysModuleWidget {
   static constexpr int hp = 6;
@@ -93,6 +91,5 @@ struct AbsWidget : StalysModuleWidget {
                                          Abs::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelAbs = createModel<Abs, AbsWidget>("Abs");

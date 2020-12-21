@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Diff : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -81,7 +80,6 @@ struct Diff : StalysModule {
   }
 };
 
-
 struct DiffWidget : StalysModuleWidget {
   static constexpr int hp = 12;
 
@@ -157,6 +155,5 @@ struct DiffWidget : StalysModuleWidget {
                                          Diff::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelDiff = createModel<Diff, DiffWidget>("Diff");

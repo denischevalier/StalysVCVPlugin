@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct ASR : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds { CLOCK_INPUT, SIGNAL_INPUT, NUM_INPUTS };
@@ -23,7 +22,7 @@ struct ASR : StalysModule {
   rack::dsp::SchmittTrigger trig;
 
   void process(const ProcessArgs &args) override {
-    if(trig.process(inputs[CLOCK_INPUT].getVoltage())) {
+    if (trig.process(inputs[CLOCK_INPUT].getVoltage())) {
       values[7] = values[6];
       values[6] = values[5];
       values[5] = values[4];
@@ -44,7 +43,6 @@ struct ASR : StalysModule {
     outputs[OUT8_OUTPUT].setVoltage(values[7]);
   }
 };
-
 
 struct ASRWidget : StalysModuleWidget {
   static constexpr int hp = 6;
@@ -77,6 +75,5 @@ struct ASRWidget : StalysModuleWidget {
                                          ASR::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelASR = createModel<ASR, ASRWidget>("ASR");

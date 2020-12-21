@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct PosNegRectifier : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -44,25 +43,24 @@ struct PosNegRectifier : StalysModule {
         inputs[SIGNAL5_INPUT].getVoltage(), inputs[SIGNAL6_INPUT].getVoltage(),
         inputs[SIGNAL7_INPUT].getVoltage(), inputs[SIGNAL8_INPUT].getVoltage()};
 
-    ins[0] > 0.f? outputs[POS1_OUTPUT].setVoltage(ins[0])
-                : outputs[NEG1_OUTPUT].setVoltage(ins[0]);
-    ins[1] > 0.f? outputs[POS2_OUTPUT].setVoltage(ins[1])
-                : outputs[NEG2_OUTPUT].setVoltage(ins[1]);
-    ins[2] > 0.f? outputs[POS3_OUTPUT].setVoltage(ins[2])
-                : outputs[NEG3_OUTPUT].setVoltage(ins[2]);
-    ins[3] > 0.f? outputs[POS4_OUTPUT].setVoltage(ins[3])
-                : outputs[NEG4_OUTPUT].setVoltage(ins[3]);
-    ins[4] > 0.f? outputs[POS5_OUTPUT].setVoltage(ins[4])
-                : outputs[NEG5_OUTPUT].setVoltage(ins[4]);
-    ins[5] > 0.f? outputs[POS6_OUTPUT].setVoltage(ins[5])
-                : outputs[NEG6_OUTPUT].setVoltage(ins[5]);
-    ins[6] > 0.f? outputs[POS7_OUTPUT].setVoltage(ins[6])
-                : outputs[NEG7_OUTPUT].setVoltage(ins[6]);
-    ins[7] > 0.f? outputs[POS8_OUTPUT].setVoltage(ins[7])
-                : outputs[NEG8_OUTPUT].setVoltage(ins[7]);
+    ins[0] > 0.f ? outputs[POS1_OUTPUT].setVoltage(ins[0])
+                 : outputs[NEG1_OUTPUT].setVoltage(ins[0]);
+    ins[1] > 0.f ? outputs[POS2_OUTPUT].setVoltage(ins[1])
+                 : outputs[NEG2_OUTPUT].setVoltage(ins[1]);
+    ins[2] > 0.f ? outputs[POS3_OUTPUT].setVoltage(ins[2])
+                 : outputs[NEG3_OUTPUT].setVoltage(ins[2]);
+    ins[3] > 0.f ? outputs[POS4_OUTPUT].setVoltage(ins[3])
+                 : outputs[NEG4_OUTPUT].setVoltage(ins[3]);
+    ins[4] > 0.f ? outputs[POS5_OUTPUT].setVoltage(ins[4])
+                 : outputs[NEG5_OUTPUT].setVoltage(ins[4]);
+    ins[5] > 0.f ? outputs[POS6_OUTPUT].setVoltage(ins[5])
+                 : outputs[NEG6_OUTPUT].setVoltage(ins[5]);
+    ins[6] > 0.f ? outputs[POS7_OUTPUT].setVoltage(ins[6])
+                 : outputs[NEG7_OUTPUT].setVoltage(ins[6]);
+    ins[7] > 0.f ? outputs[POS8_OUTPUT].setVoltage(ins[7])
+                 : outputs[NEG8_OUTPUT].setVoltage(ins[7]);
   }
 };
-
 
 struct PosNegRectifierWidget : StalysModuleWidget {
   static constexpr int hp = 9;
@@ -123,7 +121,6 @@ struct PosNegRectifierWidget : StalysModuleWidget {
                                          PosNegRectifier::NEG8_OUTPUT));
   }
 };
-
 
 Model *modelPosNegRectifier =
     createModel<PosNegRectifier, PosNegRectifierWidget>("PosNegRectifier");

@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct CtV : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -60,7 +59,6 @@ struct CtV : StalysModule {
   }
 };
 
-
 struct CtVWidget : StalysModuleWidget {
   static constexpr int hp = 6;
 
@@ -104,6 +102,5 @@ struct CtVWidget : StalysModuleWidget {
                                          CtV::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelCtV = createModel<CtV, CtVWidget>("CtV");

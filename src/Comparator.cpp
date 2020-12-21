@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Comparator : StalysModule {
   enum ParamIds {
     VALUE_LEVEL1_PARAM,
@@ -94,7 +93,6 @@ struct Comparator : StalysModule {
   }
 };
 
-
 struct ComparatorWidget : StalysModuleWidget {
   static constexpr int hp = 12;
   ComparatorWidget(Comparator *module) {
@@ -170,7 +168,6 @@ struct ComparatorWidget : StalysModuleWidget {
                                          Comparator::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelComparator =
     createModel<Comparator, ComparatorWidget>("Comparator");

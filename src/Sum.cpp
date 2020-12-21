@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Sum : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -73,19 +72,19 @@ struct Sum : StalysModule {
 
     const float out1 = results[0];
     const float out2 =
-        outputs[OUT1_OUTPUT].isConnected() ? results[1] : results[1]+out1;
+        outputs[OUT1_OUTPUT].isConnected() ? results[1] : results[1] + out1;
     const float out3 =
-        outputs[OUT2_OUTPUT].isConnected() ? results[2] : results[2]+out2;
+        outputs[OUT2_OUTPUT].isConnected() ? results[2] : results[2] + out2;
     const float out4 =
-        outputs[OUT3_OUTPUT].isConnected() ? results[3] : results[3]+out3;
+        outputs[OUT3_OUTPUT].isConnected() ? results[3] : results[3] + out3;
     const float out5 =
-        outputs[OUT4_OUTPUT].isConnected()  ? results[4] : results[4]+out4;
+        outputs[OUT4_OUTPUT].isConnected()  ? results[4] : results[4] + out4;
     const float out6 =
-        outputs[OUT5_OUTPUT].isConnected() ? results[5] : results[5]+out5;
+        outputs[OUT5_OUTPUT].isConnected() ? results[5] : results[5] + out5;
     const float out7 =
-        outputs[OUT6_OUTPUT].isConnected() ? results[6] : results[6]+out6;
+        outputs[OUT6_OUTPUT].isConnected() ? results[6] : results[6] + out6;
     const float out8 =
-        outputs[OUT7_OUTPUT].isConnected() ? results[7] : results[7]+out7;
+        outputs[OUT7_OUTPUT].isConnected() ? results[7] : results[7] + out7;
 
     outputs[OUT1_OUTPUT].setVoltage(clipSignal(out1));
     outputs[OUT2_OUTPUT].setVoltage(clipSignal(out2));
@@ -97,7 +96,6 @@ struct Sum : StalysModule {
     outputs[OUT8_OUTPUT].setVoltage(clipSignal(out8));
   }
 };
-
 
 struct SumWidget : StalysModuleWidget {
   static constexpr int hp = 12;
@@ -174,6 +172,5 @@ struct SumWidget : StalysModuleWidget {
                                          Sum::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelSum = createModel<Sum, SumWidget>("Sum");

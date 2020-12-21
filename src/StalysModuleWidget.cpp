@@ -1,7 +1,7 @@
-#include <functional>
 #include "StalysModuleWidget.hpp"
-#include "Skin.hpp"
 #include "Menu.hpp"
+#include "Skin.hpp"
+#include <functional>
 
 StalysModuleWidget::StalysModuleWidget() {
   Skins::skins().registerDefaultSkinChangeListener(this);
@@ -15,7 +15,7 @@ void StalysModuleWidget::addParam(ParamWidget *param) {
   ModuleWidget::addParam(param);
   if (module) {
     auto l = dynamic_cast<SkinChangedListener *>(param);
-    if(l) {
+    if (l) {
       auto m = dynamic_cast<StalysModule *>(module);
       assert(m);
       m->addSkinChangedListener(l);
@@ -27,7 +27,7 @@ void StalysModuleWidget::addInput(PortWidget *input) {
   ModuleWidget::addInput(input);
   if (module) {
     auto l = dynamic_cast<SkinChangedListener *>(input);
-    if(l) {
+    if (l) {
       auto m = dynamic_cast<StalysModule *>(module);
       assert(m);
       m->addSkinChangedListener(l);
@@ -39,7 +39,7 @@ void StalysModuleWidget::addOutput(PortWidget *output) {
   ModuleWidget::addOutput(output);
   if (module) {
     auto l = dynamic_cast<SkinChangedListener *>(output);
-    if(l) {
+    if (l) {
       auto m = dynamic_cast<StalysModule *>(module);
       assert(m);
       m->addSkinChangedListener(l);
@@ -91,22 +91,20 @@ void StalysModuleWidget::setPanel(Vec panelSize, std::string moduleSlug) {
 void StalysModuleWidget::appendContextMenu(Menu *menu) {
   auto m = dynamic_cast<StalysModule *>(module);
   assert(m);
-  Skins* skins = &Skins::skins();
+  Skins *skins = &Skins::skins();
 
   if (skins->available().size() > 0) {
     menu->addChild(new MenuLabel());
     OptionsMenuItem *s = new OptionsMenuItem("Panel");
 
     s->addItem(OptionMenuItem(
-      "Default", [m]() { return m->theme == "default"; },
-      [m]() { m->setSkin("default"); }));
+        "Default", [m]() { return m->theme == "default"; },
+        [m]() { m->setSkin("default"); }));
     for (auto skin : skins->available()) {
       std::string key = skin.key;
       s->addItem(OptionMenuItem(
-            skin.display.c_str(),
-            [m, key]() { return m->theme == key; },
-            [m, key]() { m->setSkin(key); }
-            ));
+          skin.display.c_str(), [m, key]() { return m->theme == key; },
+          [m, key]() { m->setSkin(key); }));
     }
 
     s->addSpacer();
@@ -114,8 +112,8 @@ void StalysModuleWidget::appendContextMenu(Menu *menu) {
       std::string key = skin.key;
       s->addItem(
         OptionMenuItem((std::string("Default to ") + skin.display).c_str(),
-                       [key, skins]() { return skins->defaultSkin() == key; },
-                       [key, skins]() { skins->setDefaultSkin(key); }));
+                         [key, skins]() { return skins->defaultSkin() == key; },
+                         [key, skins]() { skins->setDefaultSkin(key); }));
     }
 
     OptionsMenuItem::addToMenu(s, menu);

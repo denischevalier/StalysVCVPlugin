@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct ADC : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds { SIGNAL_INPUT, NUM_INPUTS };
@@ -32,10 +31,9 @@ struct ADC : StalysModule {
     outputs[OUT5_OUTPUT].setVoltage(bits & 0b00010000 ? 10.f : 0.f);
     outputs[OUT6_OUTPUT].setVoltage(bits & 0b00100000 ? 10.f : 0.f);
     outputs[OUT7_OUTPUT].setVoltage(bits & 0b01000000 ? 10.f : 0.f);
-    outputs[OUT8_OUTPUT].setVoltage(signal<0.f ? 10.f : 0.f);
+    outputs[OUT8_OUTPUT].setVoltage(signal < 0.f ? 10.f : 0.f);
   }
 };
-
 
 struct ADCWidget : StalysModuleWidget {
   static constexpr int hp = 6;
@@ -65,6 +63,5 @@ struct ADCWidget : StalysModuleWidget {
                                          ADC::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelADC = createModel<ADC, ADCWidget>("ADC");

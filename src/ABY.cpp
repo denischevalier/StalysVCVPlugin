@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct ABY : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -101,7 +100,6 @@ struct ABY : StalysModule {
   }
 };
 
-
 struct ABYWidget : StalysModuleWidget {
   static constexpr int hp = 12;
 
@@ -177,6 +175,5 @@ struct ABYWidget : StalysModuleWidget {
                                          ABY::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelABY = createModel<ABY, ABYWidget>("ABY");

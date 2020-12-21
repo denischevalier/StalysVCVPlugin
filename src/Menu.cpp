@@ -13,8 +13,7 @@ Menu *OptionsMenuItem::createChildMenu() {
   for (const OptionMenuItem &item : menuItems) {
     if (item.text == "<spacer>") {
       menu->addChild(new MenuLabel());
-    }
-    else {
+    } else {
       menu->addChild(new OptionMenuItem(item));
     }
   }

@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Clip : StalysModule {
   enum ParamIds {
     RATIO_LEVEL1_PARAM,
@@ -117,7 +116,6 @@ struct Clip : StalysModule {
   }
 };
 
-
 struct ClipWidget : StalysModuleWidget {
   static constexpr int hp = 12;
 
@@ -194,6 +192,5 @@ struct ClipWidget : StalysModuleWidget {
                                          Clip::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelClip = createModel<Clip, ClipWidget>("Clip");

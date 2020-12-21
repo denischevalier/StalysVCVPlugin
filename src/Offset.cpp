@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Offset : StalysModule {
   enum ParamIds {
     IN1_PARAM,
@@ -51,7 +50,6 @@ struct Offset : StalysModule {
   }
 };
 
-
 struct OffsetWidget : StalysModuleWidget {
   static constexpr int hp = 6;
 
@@ -95,6 +93,5 @@ struct OffsetWidget : StalysModuleWidget {
                                          Offset::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelOffset = createModel<Offset, OffsetWidget>("Offset");

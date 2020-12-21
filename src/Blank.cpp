@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Blank : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds { NUM_INPUTS };
@@ -12,7 +11,6 @@ struct Blank : StalysModule {
   void process(const ProcessArgs &args) override {}
 };
 
-
 struct BlankWidget : StalysModuleWidget {
   static constexpr int hp = 24;
 
@@ -22,6 +20,5 @@ struct BlankWidget : StalysModuleWidget {
     setPanel(box.size, "Blank");
   }
 };
-
 
 Model *modelBlank = createModel<Blank, BlankWidget>("Blank");

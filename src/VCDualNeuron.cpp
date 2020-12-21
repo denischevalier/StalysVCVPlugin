@@ -244,7 +244,7 @@ struct VCDualNeuron : StalysModule {
 
     // Neuron B
     outputs[B_OUTPUT_OUTPUT].setVoltage(clipSignal(bOutput));
-    
+
     // Combiner
     outputs[DIFFRECT_POS_OUTPUT].setVoltage(clipSignal(diffrectPos));
     outputs[DIFFRECT_NEG_OUTPUT].setVoltage(clipSignal(diffrectNeg));
@@ -263,46 +263,50 @@ struct VCDualNeuronWidget : StalysModuleWidget {
     box.size = Vec(RACK_GRID_WIDTH * hp, RACK_GRID_HEIGHT);
     setPanel(box.size, "VCDualNeuron");
 
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(38.1, 25.4)), module,
-                                            VCDualNeuron::A_CARRIER_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 25.4)), module,
-                                            VCDualNeuron::A_OFFSET_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(38.1, 25.4)), module, VCDualNeuron::A_CARRIER_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(68.58, 25.4)), module, VCDualNeuron::A_OFFSET_LEVEL_PARAM));
     addParam(createParamCentered<smallKnob>(mm2px(Vec(99.06, 25.4)), module,
                                             VCDualNeuron::A_SENSE_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(38.1, 40.64)), module,
-                                            VCDualNeuron::B_CARRIER_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 40.64)), module,
-                                            VCDualNeuron::B_OFFSET_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(129.54, 40.64)), module,
-                                            VCDualNeuron::G_CARRIER_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(160.02, 40.64)), module,
-                                            VCDualNeuron::G_OFFSET_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(38.1, 55.88)), module,
-                                            VCDualNeuron::C_CARRIER_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 55.88)), module,
-                                            VCDualNeuron::C_OFFSET_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(99.06, 55.88)), module,
-                                            VCDualNeuron::A_RESPONSE_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(38.1, 71.12)), module,
-                                            VCDualNeuron::D_CARRIER_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 71.12)), module,
-                                            VCDualNeuron::D_OFFSET_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(38.1, 40.64)), module, VCDualNeuron::B_CARRIER_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(68.58, 40.64)), module, VCDualNeuron::B_OFFSET_LEVEL_PARAM));
+    addParam(
+        createParamCentered<smallKnob>(mm2px(Vec(129.54, 40.64)), module,
+                                       VCDualNeuron::G_CARRIER_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(160.02, 40.64)), module, VCDualNeuron::G_OFFSET_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(38.1, 55.88)), module, VCDualNeuron::C_CARRIER_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(68.58, 55.88)), module, VCDualNeuron::C_OFFSET_LEVEL_PARAM));
+    addParam(
+        createParamCentered<smallKnob>(mm2px(Vec(99.06, 55.88)), module,
+                                       VCDualNeuron::A_RESPONSE_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(38.1, 71.12)), module, VCDualNeuron::D_CARRIER_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(68.58, 71.12)), module, VCDualNeuron::D_OFFSET_LEVEL_PARAM));
     addParam(createParamCentered<smallKnob>(mm2px(Vec(99.06, 71.12)), module,
                                             VCDualNeuron::B_SENSE_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(38.1, 86.36)), module,
-                                            VCDualNeuron::E_CARRIER_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 86.36)), module,
-                                            VCDualNeuron::E_OFFSET_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(129.54, 86.36)), module,
-                                            VCDualNeuron::H_CARRIER_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(160.02, 86.36)), module,
-                                            VCDualNeuron::H_OFFSET_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(38.1, 101.6)), module,
-                                            VCDualNeuron::F_CARRIER_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(68.58, 101.6)), module,
-                                            VCDualNeuron::F_OFFSET_LEVEL_PARAM));
-    addParam(createParamCentered<smallKnob>(mm2px(Vec(99.06, 101.6)), module,
-                                            VCDualNeuron::B_RESPONSE_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(38.1, 86.36)), module, VCDualNeuron::E_CARRIER_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(68.58, 86.36)), module, VCDualNeuron::E_OFFSET_LEVEL_PARAM));
+    addParam(
+        createParamCentered<smallKnob>(mm2px(Vec(129.54, 86.36)), module,
+                                       VCDualNeuron::H_CARRIER_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(160.02, 86.36)), module, VCDualNeuron::H_OFFSET_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(38.1, 101.6)), module, VCDualNeuron::F_CARRIER_LEVEL_PARAM));
+    addParam(createParamCentered<smallKnob>(
+        mm2px(Vec(68.58, 101.6)), module, VCDualNeuron::F_OFFSET_LEVEL_PARAM));
+    addParam(
+        createParamCentered<smallKnob>(mm2px(Vec(99.06, 101.6)), module,
+                                       VCDualNeuron::B_RESPONSE_LEVEL_PARAM));
 
     addInput(createInputCentered<port>(mm2px(Vec(22.86, 25.4)), module,
                                        VCDualNeuron::A_SIGNAL_INPUT));
@@ -379,7 +383,6 @@ struct VCDualNeuronWidget : StalysModuleWidget {
                                          VCDualNeuron::DIFFRECT_NEG_OUTPUT));
   }
 };
-
 
 Model *modelVCDualNeuron =
     createModel<VCDualNeuron, VCDualNeuronWidget>("VCDualNeuron");

@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct DAC : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -21,17 +20,16 @@ struct DAC : StalysModule {
 
   void process(const ProcessArgs &args) override {
     outputs[OUT_OUTPUT].setVoltage(
-        clipSignal(((inputs[TRIG1_INPUT].getVoltage() > 1.f? 1.f: 0.f) +
-                    (inputs[TRIG2_INPUT].getVoltage() > 1.f? 2.f: 0.f) +
-                    (inputs[TRIG3_INPUT].getVoltage() > 1.f? 4.f: 0.f) +
-                    (inputs[TRIG4_INPUT].getVoltage() > 1.f? 8.f: 0.f) +
-                    (inputs[TRIG5_INPUT].getVoltage() > 1.f? 16.f: 0.f) +
-                    (inputs[TRIG6_INPUT].getVoltage() > 1.f? 32.f: 0.f) +
-                    (inputs[TRIG7_INPUT].getVoltage() > 1.f? 64.f: 0.f)) /
-                   (inputs[TRIG8_INPUT].getVoltage() > 1.f? -12.7f: 12.7f)));
+        clipSignal(((inputs[TRIG1_INPUT].getVoltage() > 1.f ? 1.f : 0.f) +
+                    (inputs[TRIG2_INPUT].getVoltage() > 1.f ? 2.f : 0.f) +
+                    (inputs[TRIG3_INPUT].getVoltage() > 1.f ? 4.f : 0.f) +
+                    (inputs[TRIG4_INPUT].getVoltage() > 1.f ? 8.f : 0.f) +
+                    (inputs[TRIG5_INPUT].getVoltage() > 1.f ? 16.f : 0.f) +
+                    (inputs[TRIG6_INPUT].getVoltage() > 1.f ? 32.f : 0.f) +
+                    (inputs[TRIG7_INPUT].getVoltage() > 1.f ? 64.f : 0.f)) /
+                   (inputs[TRIG8_INPUT].getVoltage() > 1.f ? -12.7f : 12.7f)));
   }
 };
-
 
 struct DACWidget : StalysModuleWidget {
   static constexpr int hp = 6;
@@ -59,9 +57,8 @@ struct DACWidget : StalysModuleWidget {
                                        DAC::TRIG8_INPUT));
 
     addOutput(createOutputCentered<port>(mm2px(Vec(22.86, 10.16)), module,
-                                       DAC::OUT_OUTPUT));
+                                         DAC::OUT_OUTPUT));
   }
 };
-
 
 Model *modelDAC = createModel<DAC, DACWidget>("DAC");

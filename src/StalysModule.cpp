@@ -15,8 +15,7 @@ void StalysModule::dataFromJson(json_t *root) {
   json_t *s = json_object_get(root, SKIN);
   if (s) {
     setSkin(json_string_value(s));
-  }
-  else {
+  } else {
     setSkin(theme);
   }
 

@@ -1,6 +1,5 @@
 #include "Common.hpp"
 
-
 struct Max : StalysModule {
   enum ParamIds { NUM_PARAMS };
   enum InputIds {
@@ -107,7 +106,6 @@ struct Max : StalysModule {
   }
 };
 
-
 struct MaxWidget : StalysModuleWidget {
   static constexpr int hp = 12;
 
@@ -183,6 +181,5 @@ struct MaxWidget : StalysModuleWidget {
                                          Max::OUT8_OUTPUT));
   }
 };
-
 
 Model *modelMax = createModel<Max, MaxWidget>("Max");
