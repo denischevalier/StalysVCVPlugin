@@ -17,4 +17,3 @@ float exponent(const float x, const float ratio) {
   const float clamped = rack::math::clamp(x, -1.17f, 1.17f);
   return clamped * clamped * clamped * ratio;
 }
-

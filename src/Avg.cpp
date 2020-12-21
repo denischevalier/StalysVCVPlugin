@@ -80,7 +80,7 @@ struct Avg : StalysModule {
 
     float n = 0.f;
     float sum = 0.f;
-    for (int i = 0; i < 8; i++)  {
+    for (int i = 0; i < 8; i++) {
       if (inConnected[i]) {
         n++;
         sum += in[i];

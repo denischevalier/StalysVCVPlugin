@@ -81,7 +81,7 @@ struct Min : StalysModule {
 
     const float out2 = outputs[OUT1_OUTPUT].isConnected()
                            ? outs[1]
-                           : std::min(outs[0],outs[1]);
+                           : std::min(outs[0], outs[1]);
     const float out3 =
         outputs[OUT2_OUTPUT].isConnected() ? outs[2] : std::min(out2, outs[2]);
     const float out4 =

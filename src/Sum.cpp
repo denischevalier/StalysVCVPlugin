@@ -78,7 +78,7 @@ struct Sum : StalysModule {
     const float out4 =
         outputs[OUT3_OUTPUT].isConnected() ? results[3] : results[3] + out3;
     const float out5 =
-        outputs[OUT4_OUTPUT].isConnected()  ? results[4] : results[4] + out4;
+        outputs[OUT4_OUTPUT].isConnected() ? results[4] : results[4] + out4;
     const float out6 =
         outputs[OUT5_OUTPUT].isConnected() ? results[5] : results[5] + out5;
     const float out7 =

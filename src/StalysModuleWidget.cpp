@@ -74,7 +74,7 @@ void StalysModuleWidget::updatePanel() {
 
   addChildBottom(modulePanel);
   modulePanel->setBackground(
-    APP->window->loadSvg(asset::plugin(pluginInstance, svg)));
+      APP->window->loadSvg(asset::plugin(pluginInstance, svg)));
 }
 
 void StalysModuleWidget::setPanel(Vec panelSize, std::string moduleSlug) {
@@ -111,7 +111,7 @@ void StalysModuleWidget::appendContextMenu(Menu *menu) {
     for (auto skin : skins->available()) {
       std::string key = skin.key;
       s->addItem(
-        OptionMenuItem((std::string("Default to ") + skin.display).c_str(),
+          OptionMenuItem((std::string("Default to ") + skin.display).c_str(),
                          [key, skins]() { return skins->defaultSkin() == key; },
                          [key, skins]() { skins->setDefaultSkin(key); }));
     }
