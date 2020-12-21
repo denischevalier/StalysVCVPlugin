@@ -1,6 +1,7 @@
 #pragma once
 #include "plugin.hpp"
 #include <unordered_set>
+#include <mutex>
 
 struct DefaultSkinChangeListener {
 	virtual void defaultSkinChanged(const std::string& skin) = 0;
