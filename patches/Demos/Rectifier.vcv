@@ -1,0 +1,141 @@
+{
+  "version": "1.1.6",
+  "modules": [
+    {
+      "id": 21,
+      "plugin": "Stalys",
+      "version": "1.3.1",
+      "model": "Blank",
+      "params": [],
+      "rightModuleId": 73,
+      "data": {
+        "skin": "hornet"
+      },
+      "pos": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 71,
+      "plugin": "Fundamental",
+      "version": "1.4.0",
+      "model": "Scope",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        },
+        {
+          "id": 1,
+          "value": 1.38000011
+        },
+        {
+          "id": 2,
+          "value": 0.0
+        },
+        {
+          "id": 3,
+          "value": -1.22999978
+        },
+        {
+          "id": 4,
+          "value": 15.1099987
+        },
+        {
+          "id": 5,
+          "value": 0.0
+        },
+        {
+          "id": 6,
+          "value": 0.0
+        },
+        {
+          "id": 7,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 74,
+      "data": {
+        "lissajous": 0,
+        "external": 0
+      },
+      "pos": [
+        36,
+        0
+      ]
+    },
+    {
+      "id": 73,
+      "plugin": "TinyTricks",
+      "version": "1.5.0",
+      "model": "TTSIN",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        },
+        {
+          "id": 1,
+          "value": 0.0
+        },
+        {
+          "id": 2,
+          "value": 0.00999999978
+        }
+      ],
+      "leftModuleId": 21,
+      "rightModuleId": 74,
+      "data": {
+        "skin": 0,
+        "forcebright": false
+      },
+      "pos": [
+        24,
+        0
+      ]
+    },
+    {
+      "id": 74,
+      "plugin": "Stalys",
+      "version": "1.3.1",
+      "model": "PosNegRectifier",
+      "params": [],
+      "leftModuleId": 73,
+      "rightModuleId": 71,
+      "data": {
+        "skin": ""
+      },
+      "pos": [
+        27,
+        0
+      ]
+    }
+  ],
+  "cables": [
+    {
+      "id": 304,
+      "outputModuleId": 73,
+      "outputId": 0,
+      "inputModuleId": 74,
+      "inputId": 0,
+      "color": "#c9b70e"
+    },
+    {
+      "id": 305,
+      "outputModuleId": 74,
+      "outputId": 0,
+      "inputModuleId": 71,
+      "inputId": 0,
+      "color": "#0c8e15"
+    },
+    {
+      "id": 306,
+      "outputModuleId": 74,
+      "outputId": 1,
+      "inputModuleId": 71,
+      "inputId": 1,
+      "color": "#c91847"
+    }
+  ]
+}

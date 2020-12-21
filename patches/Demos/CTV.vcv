@@ -1,0 +1,273 @@
+{
+  "version": "1.1.6",
+  "modules": [
+    {
+      "id": 21,
+      "plugin": "Stalys",
+      "version": "1.3.1",
+      "model": "Blank",
+      "params": [],
+      "rightModuleId": 85,
+      "data": {
+        "skin": "hornet"
+      },
+      "pos": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 44,
+      "plugin": "Fundamental",
+      "version": "1.4.0",
+      "model": "Scope",
+      "params": [
+        {
+          "id": 0,
+          "value": 1.0
+        },
+        {
+          "id": 1,
+          "value": -0.870000243
+        },
+        {
+          "id": 2,
+          "value": 0.0
+        },
+        {
+          "id": 3,
+          "value": -9.15000057
+        },
+        {
+          "id": 4,
+          "value": 8.74499607
+        },
+        {
+          "id": 5,
+          "value": 0.0
+        },
+        {
+          "id": 6,
+          "value": 0.0
+        },
+        {
+          "id": 7,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 86,
+      "data": {
+        "lissajous": 0,
+        "external": 0
+      },
+      "pos": [
+        72,
+        0
+      ]
+    },
+    {
+      "id": 84,
+      "plugin": "Stalys",
+      "version": "1.3.1",
+      "model": "CtV",
+      "params": [],
+      "leftModuleId": 85,
+      "rightModuleId": 86,
+      "data": {
+        "skin": ""
+      },
+      "pos": [
+        54,
+        0
+      ]
+    },
+    {
+      "id": 85,
+      "plugin": "Stalys",
+      "version": "1.3.1",
+      "model": "Function",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.449999839
+        },
+        {
+          "id": 1,
+          "value": 0.337500006
+        },
+        {
+          "id": 2,
+          "value": 0.430500209
+        },
+        {
+          "id": 3,
+          "value": 0.548999906
+        },
+        {
+          "id": 4,
+          "value": 0.0
+        },
+        {
+          "id": 5,
+          "value": 0.0
+        },
+        {
+          "id": 6,
+          "value": 0.0
+        },
+        {
+          "id": 7,
+          "value": 0.0
+        },
+        {
+          "id": 8,
+          "value": 0.0
+        },
+        {
+          "id": 9,
+          "value": 0.0
+        },
+        {
+          "id": 10,
+          "value": 0.0
+        },
+        {
+          "id": 11,
+          "value": 0.0
+        },
+        {
+          "id": 12,
+          "value": 0.0
+        },
+        {
+          "id": 13,
+          "value": 0.0
+        },
+        {
+          "id": 14,
+          "value": 0.0
+        },
+        {
+          "id": 15,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 21,
+      "rightModuleId": 84,
+      "data": {
+        "skin": ""
+      },
+      "pos": [
+        24,
+        0
+      ]
+    },
+    {
+      "id": 86,
+      "plugin": "Stalys",
+      "version": "1.3.1",
+      "model": "Multiplier",
+      "params": [
+        {
+          "id": 0,
+          "value": -0.648000062
+        },
+        {
+          "id": 1,
+          "value": 0.0
+        },
+        {
+          "id": 2,
+          "value": 0.0
+        },
+        {
+          "id": 3,
+          "value": 0.0
+        },
+        {
+          "id": 4,
+          "value": 0.0
+        },
+        {
+          "id": 5,
+          "value": 0.0
+        },
+        {
+          "id": 6,
+          "value": 0.0
+        },
+        {
+          "id": 7,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 84,
+      "rightModuleId": 44,
+      "data": {
+        "skin": ""
+      },
+      "pos": [
+        60,
+        0
+      ]
+    }
+  ],
+  "cables": [
+    {
+      "id": 319,
+      "outputModuleId": 85,
+      "outputId": 3,
+      "inputModuleId": 85,
+      "inputId": 1,
+      "color": "#0c8e15"
+    },
+    {
+      "id": 323,
+      "outputModuleId": 84,
+      "outputId": 0,
+      "inputModuleId": 44,
+      "inputId": 0,
+      "color": "#0c8e15"
+    },
+    {
+      "id": 326,
+      "outputModuleId": 85,
+      "outputId": 2,
+      "inputModuleId": 44,
+      "inputId": 1,
+      "color": "#0c8e15"
+    },
+    {
+      "id": 327,
+      "outputModuleId": 85,
+      "outputId": 2,
+      "inputModuleId": 84,
+      "inputId": 0,
+      "color": "#c91847"
+    },
+    {
+      "id": 328,
+      "outputModuleId": 85,
+      "outputId": 6,
+      "inputModuleId": 85,
+      "inputId": 5,
+      "color": "#0986ad"
+    },
+    {
+      "id": 329,
+      "outputModuleId": 85,
+      "outputId": 4,
+      "inputModuleId": 86,
+      "inputId": 0,
+      "color": "#c9b70e"
+    },
+    {
+      "id": 330,
+      "outputModuleId": 86,
+      "outputId": 0,
+      "inputModuleId": 85,
+      "inputId": 2,
+      "color": "#0c8e15"
+    }
+  ]
+}
