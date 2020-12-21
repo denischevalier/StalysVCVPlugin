@@ -3,48 +3,48 @@
 #include "plugin.hpp"
 
 struct OptionMenuItem : MenuItem {
-	std::function<bool()> checker;
-	std::function<void()> setter;
+  std::function<bool()> checker;
+  std::function<void()> setter;
 
-	OptionMenuItem(const char* label, std::function<bool()> check, std::function<void()> set)
-	: checker(check)
-	, setter(set)
-	{
-		this->text = label;
-	}
+  OptionMenuItem(const char* label, std::function<bool()> check, std::function<void()> set)
+  : checker(check)
+  , setter(set)
+  {
+    this->text = label;
+  }
 
-	void onAction(const event::Action& e) override {
-		setter();
-	}
+  void onAction(const event::Action& e) override {
+    setter();
+  }
 
-	void step() override {
-		MenuItem::step();
-		rightText = checker() ? "✔" : "";
-	}
+  void step() override {
+    MenuItem::step();
+    rightText = checker() ? "✔" : "";
+  }
 };
 
 struct SpacerOptionMenuItem : OptionMenuItem {
-	SpacerOptionMenuItem()
-	: OptionMenuItem("<spacer>", []() { return false; }, []() {})
-	{}
+  SpacerOptionMenuItem()
+  : OptionMenuItem("<spacer>", []() { return false; }, []() {})
+  {}
 };
 
 struct BoolOptionMenuItem : OptionMenuItem {
-	BoolOptionMenuItem(const char* label, std::function<bool*()> get)
-	: OptionMenuItem(label, [=]() { return *(get()); }, [=]() { bool* b = get(); *b = !*b; })
-	{}
+  BoolOptionMenuItem(const char* label, std::function<bool*()> get)
+  : OptionMenuItem(label, [=]() { return *(get()); }, [=]() { bool* b = get(); *b = !*b; })
+  {}
 };
 
 struct OptionsMenuItem : MenuItem {
-	std::vector<OptionMenuItem> menuItems;
+  std::vector<OptionMenuItem> menuItems;
 
-	OptionsMenuItem(const char* label) {
-		this->text = label;
-		this->rightText = "▸";
-	}
+  OptionsMenuItem(const char* label) {
+    this->text = label;
+    this->rightText = "▸";
+  }
 
-	void addItem(const OptionMenuItem& item);
-	void addSpacer();
-	Menu* createChildMenu() override;
-	static void addToMenu(OptionsMenuItem* item, Menu* menu);
+  void addItem(const OptionMenuItem& item);
+  void addSpacer();
+  Menu* createChildMenu() override;
+  static void addToMenu(OptionsMenuItem* item, Menu* menu);
 };
