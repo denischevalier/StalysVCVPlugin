@@ -1,12 +1,17 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+## [1.4.2] - 2020-12-21
+### Bug
+- Fix build on windows ([#80](https://github.com/denischevalier/StalysVCVPlugin/issues/80))
+
+### Documentation
+- Add example patches ([#77](https://github.com/denischevalier/StalysVCVPlugin/issues/77))
 
 <a name="1.4.1"></a>
 ## [1.4.1] - 2020-12-14
 ### Bug
 - Revert use of -ffast-math on compile ([#76](https://github.com/denischevalier/StalysVCVPlugin/issues/76))
-
 
 <a name="1.4.0"></a>
 ## [1.4.0] - 2020-12-09
@@ -25,7 +30,6 @@
 ## [1.3.1] - 2020-12-03
 ### Bug
 - Fix typo in plugin.json ([#60](https://github.com/denischevalier/StalysVCVPlugin/issues/60))
-
 
 <a name="1.3.0"></a>
 ## [1.3.0] - 2020-12-02
@@ -52,12 +56,10 @@
 - Snap steps knob and floor steps CV on VCSampleAndDelay ([#18](https://github.com/denischevalier/StalysVCVPlugin/issues/18))
 - Create VC Sample&Delay ([#17](https://github.com/denischevalier/StalysVCVPlugin/issues/17))
 
-
 <a name="1.2.1"></a>
 ## [1.2.1] - 2020-11-24
 ### Performance
 - Reimplement clip and exponential functions ([#16](https://github.com/denischevalier/StalysVCVPlugin/issues/16))
-
 
 <a name="1.2.0"></a>
 ## [1.2.0] - 2020-11-23
@@ -73,7 +75,6 @@
 - Create 8 Sum module ([#11](https://github.com/denischevalier/StalysVCVPlugin/issues/11))
 - Create 8 Multiplier module ([#10](https://github.com/denischevalier/StalysVCVPlugin/issues/10))
 
-
 <a name="1.1.1"></a>
 ## [1.1.1] - 2020-11-22
 ### Bug
@@ -83,12 +84,10 @@
 - put common functions in a separate file and header. ([#9](https://github.com/denischevalier/StalysVCVPlugin/issues/9))
 - Enforce the use of `const` on immutable variables ([#8](https://github.com/denischevalier/StalysVCVPlugin/issues/8))
 
-
 <a name="1.1.0"></a>
 ## [1.1.0] - 2020-11-22
 ### Modules
 - Create 8 Comparator module ([#6](https://github.com/denischevalier/StalysVCVPlugin/issues/6))
-
 
 <a name="1.0.1"></a>
 ## [1.0.1] - 2020-11-20
@@ -99,7 +98,6 @@
 - Add CHANGELOG.md (PR [#4](https://github.com/denischevalier/StalysVCVPlugin/issues/4))
 - Fix typo in README.md: s/AxBxC/AxB+C/ (PR [#3](https://github.com/denischevalier/StalysVCVPlugin/issues/3))
 - Update README.md with abstract, TODO and Contribute (PR [#1](https://github.com/denischevalier/StalysVCVPlugin/issues/1))
-
 
 <a name="1.0.0"></a>
 ## 1.0.0 - 2020-11-19
