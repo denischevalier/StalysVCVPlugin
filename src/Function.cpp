@@ -232,7 +232,7 @@ struct Function : StalysModule {
     outputs[OUT8_OUTPUT].setVoltage(clipSignal(out[7]));
     outputs[RISE_GATE8_OUTPUT].setVoltage(rising[7] ? 10.f : 0.f);
     outputs[FALL_GATE8_OUTPUT].setVoltage(falling[7] ? 10.f : 0.f);
-    outputs[EOC8_OUTPUT].setVoltage(eoc[8] ? 10.f : 0.f);
+    outputs[EOC8_OUTPUT].setVoltage(eoc[7] ? 10.f : 0.f);
   }
 };
 
