@@ -11,7 +11,5 @@ struct StalysModule: Module {
 
   void addSkinChangedListener(SkinChangedListener* listener);
   void setSkin(const std::string skin);
-
-  virtual json_t* toJson(json_t* root) { return root; }
 };
 
