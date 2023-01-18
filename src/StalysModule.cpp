@@ -8,7 +8,7 @@ json_t *StalysModule::dataToJson() {
   if (theme != "default") {
     json_object_set_new(root, SKIN, json_string(theme.c_str()));
   }
-  return toJson(root);
+  return root;
 }
 
 void StalysModule::dataFromJson(json_t *root) {
@@ -18,8 +18,6 @@ void StalysModule::dataFromJson(json_t *root) {
   } else {
     setSkin(theme);
   }
-
-  fromJson(root);
 }
 
 void StalysModule::addSkinChangedListener(SkinChangedListener *listener) {
